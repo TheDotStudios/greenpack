@@ -14182,10 +14182,10 @@ footer.footer-5-area {
   transition-timing-function: linear;
 }
 .brand-section-5__active .swiper-wrapper .swiper-slide {
-  /* width: auto; */
-  width: 150px !important;
+  width: auto;
+  /* width: 150px !important;
   margin-left: 10px !important;
-  margin-right: 10px !important;
+  margin-right: 10px !important; */
 }
 .brand-section-5__item {
   gap: 20px;
