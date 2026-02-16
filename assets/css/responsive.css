@@ -7,12 +7,24 @@
     gap: 20px;
     align-items: start;
 }
+
+.about-section-wrapper .section-heading .title {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    max-width: 900px !important;
+}
+.container-1600 {
+        max-width: 1200px !important;
+        margin: 0 auto;
+    }
 .ds__cta__section {
     margin-top: 48px;
     margin-bottom: 48px;
 }
 .brand-name {
-    font-size: 19px !important;
+    /* font-size: 19px !important; */
+    font-size: 16px !important;
 
 }
 .image-box {
@@ -41,9 +53,9 @@
         width: 270px !important;
     }
     .section-heading .title {
-    font-weight: 500;
-    font-size: 36px !important;
-    line-height: 50px !important;
+    font-weight: 600;
+    font-size: 50px !important;
+    line-height: 1 !important;
     }
 
 .about-section-content .title {
@@ -51,7 +63,10 @@
     font-size: 19px !important;
 
 }
-
+.about-section-wrapper .section-heading {
+    margin-bottom: 70px !important;
+    position: relative;
+}
 .hero-section__card .rr-btn-border .icon svg {
     color: var(--primary);
     height: 17px;
@@ -74,7 +89,7 @@
 }
 .work-section {
     /* padding: 320px 0 130px; */
-    padding: 0px 0 150px !important;
+    padding: 0px 0 200px !important;
     background-image: unset !important;
     background-color: #101010;
     /* background: #f0f2f4; */
@@ -92,6 +107,7 @@
 }
 .milestone-2__content p {
     font-size: 16px !important;
+    line-height: 1.4 !important;
 }
 .milestone-2__item {
     max-width: 462px;
@@ -118,10 +134,15 @@
     background: white;
 }
 .about-section-item {
-    background: var(--gray-three);
-    padding: 24px 30px !important;
+    /* background: var(--gray-three); */
+    /* padding: 15px 10px !important; */
+    padding: 0px 0px !important;
     border-radius: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+}
+
+.project-section .swiper-pagination {
+    bottom: 180px !important;
 }
 .hero-section__card .rr-btn-border .text {
     font-weight: 500;
@@ -141,11 +162,41 @@
 }
 .section__title {
     /* font-size: 72px; */
-    font-size: 36px !important;
+    font-size: 50px !important;
     max-width: 800px;
 }
     .hero-section__card .title {
         font-size: 36px !important;
         line-height: 40px !important;
     }
+    .who-we-are-3__top .about-section-3__content {
+    gap: 260px !important;
+    margin-top: 60px;
+}
+
+.blog__top span {
+    font-size: 16px;
+    display: block;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--black);
+    margin-bottom: 15px !important;
+    font-family: var(--font_kanit);
+}
+.blog__top .title {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1 !important;
+    /* color: var(--primary); */
+    color: var(--black);
+    margin-bottom: 15px !important;
+    /* text-decoration: underline; */
+}
+.image-box img {
+    width: 100%;
+    height: 380px !important;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition-smooth);
+}
 }
