@@ -20,15 +20,12 @@
   <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
   <style>
-    .testimonial-section-3__item {
-  /* padding: 20px; */
-  padding: 35px;
-  max-width: 626px;
-  position: relative;
-  padding-right: 56px;
-  border-radius: 10px;
-  background:#f7f7f7 ;
-}
+    .testimonial-area8{
+      background-color: #fff !important;
+    }
+    .testimonial-area8 .section-title{
+      color: #000 !important;
+    }
 .header-area-7 .main-menu li a:hover {
     color: #fff !important;
 }
@@ -147,7 +144,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li ><a href="products.html">Products</a></li>
-                    <li><a href="#">Team</a></li>
+                    <li><a href="team.html">Team</a></li>
                     <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </nav>
@@ -204,1186 +201,194 @@
             </div>
           </div>
         </section>
-
-
-<style>
-           /* .ds__main__container {
-            min-height: 100vh;
-        } */
-
-        .ds__content__wrapper {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            /* align-items: start; */
-            align-items: center;
-        }
-
-     .ds__left__column {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(70vh - 120px); /* Full height minus padding */
-    justify-content: space-between;
-}
-
-
-.ds__image__gallery {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-top: auto;
-}
-.image-column{
-   display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-top: auto;
-}
-        .ds__logo__section {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .ds__logo__icon {
-            width: 32px;
-            height: 32px;
-            background-color: #000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ds__logo__shape__left {
-            width: 8px;
-            height: 8px;
-            background-color: #fff;
-            border-radius: 50%;
-            margin-right: 4px;
-        }
-
-        .ds__logo__shape__right {
-            width: 6px;
-            height: 12px;
-            background-color: #fff;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .ds__brand__label {
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: #666;
-            text-transform: uppercase;
-        }
-
-        .ds__hero__heading {
-            font-size: 48px;
-            line-height: 1.2;
-            margin-top: 33px;
-            color: #1a1a1a;
-            font-weight: 500;
-            margin-bottom: 20px;
-            /* letter-spacing: -0.5px; */
-        }
-
-        /* .ds__image__gallery {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-        } */
-
-        .ds__gallery__item {
-            flex-shrink: 0;
-        }
-
-        .ds__gallery__img img{
-            width: 120px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 8px;
-            /* background-color: #d4c4b0; */
-        }
-
-        .ds__gallery__img__small img{
-             width: 160px;
-    height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            /* background-color: #c8b89f; */
-        }
-
-        /* Right Column */
-        /* .ds__right__column {
-            padding-top: 40px;
-        } */
-
-        .ds__tagline__heading {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 24px;
-            letter-spacing: 0.3px;
-        }
-
-        .ds__description__block {
-            margin-bottom: 32px;
-        }
-
-        .ds__description__text {
-           font-size: 16px;
-    line-height: 26px;
-    font-weight: 400;
-            /* color: #4a4a4a; */
-            margin-bottom: 20px;
-        }
-
-        .ds__description__text:last-child {
-            margin-bottom: 0;
-        }
-
-        .ds__cta__section {
-            margin-top: 48px;
-        }
-
-        .ds__cta__button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #1a1a1a;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 4px 0;
-            border-bottom: 1px solid #1a1a1a;
-            transition: opacity 0.3s ease;
-        }
-
-        .ds__cta__button:hover {
-            opacity: 0.7;
-        }
-
-        .ds__cta__arrow {
-            font-size: 14px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 968px) {
-            .ds__content__wrapper {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-
-            .ds__right__column {
-                padding-top: 0;
-            }
-
-            .ds__hero__heading {
-                font-size: 36px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .ds__main__container {
-                padding: 40px 24px;
-            }
-
-            .ds__hero__heading {
-                font-size: 32px;
-            }
-
-            .ds__image__gallery {
-                gap: 12px;
-            }
-
-            .ds__gallery__img {
-                width: 100px;
-                height: 140px;
-            }
-
-            .ds__gallery__img__small {
-                width: 70px;
-                height: 70px;
-            }
-        }
-        .parallax-view img{
-            height: 550px;
-            object-fit: cover;
-            width: 100%;
-        }
-</style>
-
-<div class="ds__main__container pt-150px pb-150px">
-        <div class="ds__content__wrapper">
-            <!-- Left Column -->
-            <div class="ds__left__column">
-                <!-- Logo -->
-                <!-- <div class="ds__logo__section">
-                    <div class="ds__logo__icon">
-                        <div class="ds__logo__shape__left"></div>
-                        <div class="ds__logo__shape__right"></div>
-                    </div>
-                    <span class="ds__brand__label">Our Stories</span>
-                </div> -->
-
-                <div class="column image-column">
-                <div class="carousel-wrapper">
-                    <div class="image-box">
-                        <figure class="image image-1">
-                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Team Meeting" data-slide="0">
-                        </figure>
-                        <figure class="image image-2">
-                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="Color Samples" data-slide="1">
-                        </figure>
-                    </div>
-                    
-                    <!-- Navigation Arrows -->
-                    <div class="nav-arrows">
-                        <button class="arrow-btn prev-btn">
-                            <span>↑</span>
-                        </button>
-                        <button class="arrow-btn next-btn">
-                            <span>↓</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-                <!-- Image Gallery -->
-                <!-- <div class="ds__image__gallery">
-                    <div class="ds__gallery__item">
-                        <div class="ds__gallery__img">
-                            <img src="assets/imgs/home-5/186008.png" alt="">
-                        </div>
-                    </div>
-                    <div class="ds__gallery__item">
-                        <div class="ds__gallery__img">
-                            <img src="assets/imgs/home-5/3.-Paper-Cups-without-handle-1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="ds__gallery__item">
-                        <div class="ds__gallery__img__small">
-                            <img src="assets/imgs/home-5/h-cup.png" alt="">
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-
-            <!-- Right Column -->
-            <div class="ds__right__column">
-                <!-- Tagline -->
-                   <!-- Hero Heading -->
-                    <h4 class="section__subtitle wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"><span></span>Our Stories</h4>
-                <h1 class="ds__hero__heading wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </h1>
-                <!-- <h2 class="ds__tagline__heading">
-                    Where brand integrity meets digital possibility.
-                </h2> -->
-
-                <!-- Description Block 1 -->
-                <div class="ds__description__block wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                    <p class="ds__description__text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem minima tempore numquam, inventore voluptatibus aperiam totam non quis explicabo, commodi optio velit iusto accusamus dolorem distinctio reprehenderit nam. Non!
-                    </p>
-                    <p class="ds__description__text">
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos autem minima tempore numquam, inventore voluptatibus aperiam totam non quis explicabo, commodi optio velit iusto accusamus dolorem distinctio reprehenderit nam. Non!
-                    </p>
-                </div>
-
-                <!-- CTA -->
-                <div class="ds__cta__section wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                  <a href="#" class="rr-btn-border">
-                        <span class="text">CONTACT US TODAY</span>
-                        <span class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_22_142)">
-                              <path d="M22.0004 10.9995C16.6011 10.9995 12.2227 6.07534 12.2227 -0.00044632" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                              <path d="M12.2227 21.9995C12.2227 15.9253 16.5997 10.9995 22.0004 10.9995" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                              <path d="M22.0005 10.9995H0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                            </g>
-                          </svg>
-                        </span>
-                      </a>
-                </div>
-            </div>
-        </div>
-        <div class="client-section pt-70px">
-        <div class="rr-container-1800" style="margin: 0 auto !important;">
-            <div class="col-md-12">
+<section class="about-section-3__area pt-150px pb-150px">
+          <div class="container rr-container-1800">
             <div class="row">
-                <div class="col-md-6">
-                   
-                </div>
-                <div class="col-md-6">
-
-                     <div class="brand-slide-5__area overflow-hidden " style="position: relative;">
-                      <div class="brand-title">
-                        <h6 class="wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">Clientele</h6>
-                      </div>
-                <div class="container-fluid">
-                  
-                  <div class="testimonial-section-3__wrapper" style="position: relative;">
-                     <div class="box-shado"></div>
-                    <div dir="ltr" class="brand-section-5__slide">
-                        <div class="swiper brand-section-5__active swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl">
-                            <div class="swiper-wrapper" id="swiper-wrapper-7b783c1fe4727f86" aria-live="off" style="transform: translate3d(2620px, 0px, 0px); transition-duration: 3500ms;"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                        <img src="assets/imgs/home-5/Greenpack-client-01.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-02.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-03.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-04.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-05.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="5" role="group" aria-label="6 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-06.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group" aria-label="1 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-07.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group" aria-label="2 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                       <img src="assets/imgs/home-5/Greenpack-client-08.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-swiper-slide-index="2" role="group" aria-label="3 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                       <img src="assets/imgs/home-5/Greenpack-client-09.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-swiper-slide-index="3" role="group" aria-label="4 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-10.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-swiper-slide-index="4" role="group" aria-label="5 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                      <img src="assets/imgs/home-5/Greenpack-client-11.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="5" role="group" aria-label="6 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                       <img src="assets/imgs/home-5/Greenpack-client-12.png" alt="brand not found">
-                                    </div>
-                                </div>
-                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="0" role="group" aria-label="1 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                      <img src="assets/imgs/home-5/Greenpack-client-13.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="1" role="group" aria-label="2 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-14.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                        <img src="assets/imgs/home-5/Greenpack-client-15.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-16.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-17.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="5" role="group" aria-label="6 / 6" style="width: 198.333px; margin-left: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-18.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                  <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-19.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                    <img src="assets/imgs/home-5/Greenpack-client-19.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-20.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-21.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                        <img src="assets/imgs/home-5/Greenpack-client-22.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="5" role="group" aria-label="6 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                       <img src="assets/imgs/home-5/Greenpack-client-23.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group" aria-label="1 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                      <img src="assets/imgs/home-5/Greenpack-client-24.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group" aria-label="2 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-25.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-swiper-slide-index="2" role="group" aria-label="3 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-26.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-swiper-slide-index="3" role="group" aria-label="4 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                        <img src="assets/imgs/home-5/Greenpack-client-27.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-swiper-slide-index="4" role="group" aria-label="5 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-28.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="5" role="group" aria-label="6 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-29.png" alt="brand not found">
-                                    </div>
-                                </div>
-                            <div class="swiper-slide swiper-slide-duplicate " data-swiper-slide-index="0" role="group" aria-label="1 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-30.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="1" role="group" aria-label="2 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-31.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-32.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                        <img src="assets/imgs/home-5/Greenpack-client-33.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                    <img src="assets/imgs/home-5/Greenpack-client-34.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="5" role="group" aria-label="6 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-35.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate " data-swiper-slide-index="0" role="group" aria-label="1 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-36.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="1" role="group" aria-label="2 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-37.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-38.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                        <img src="assets/imgs/home-5/Greenpack-client-39.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                    <img src="assets/imgs/home-5/Greenpack-client-40.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="5" role="group" aria-label="6 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-41.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate " data-swiper-slide-index="0" role="group" aria-label="1 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                          <img src="assets/imgs/home-5/Greenpack-client-42.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="1" role="group" aria-label="2 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-43.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-44.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                        <img src="assets/imgs/home-5/Greenpack-client-45.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                    <img src="assets/imgs/home-5/Greenpack-client-46.png" alt="brand not found">
-                                    </div>
-                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="5" role="group" aria-label="6 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-47.png" alt="brand not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="5" role="group" aria-label="6 / 6" style="width: 198.333px; margin-right: 20px;">
-                                    <div class="brand-section-5__item">
-                                         <img src="assets/imgs/home-5/Greenpack-client-48.png" alt="brand not found">
-                                    </div>
-                                </div>
-                              </div>
-                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-                    </div>
-                         <div class="box-shado"></div>
+              <div class="col-lg-6">
+                <div class="about-section-3__wrap">
+                  <div class="section-heading__wrap_3">
+                    <h4 class="section__subtitle wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"><span></span>About us</h4>
+                    <h2 class="section__title rr-title-anim-2">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis iste ad at
+                    </h2>
                   </div>
-                    
+                  <div class="about-section-3__content">
+                    <div class="about-section-3__circle">
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div class="about-section-3__info">
+                      <p class="about-section-3__text wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ea nam facere necessitatibus quia illum molestias nobis repellendus eaque delectus!</p>
+                      <a href="#" class="rr-btn-border">
+                        <span class="text">VIEW ALL</span>
+                        <span class="icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M22.0007 10.9995C16.6014 10.9995 12.2229 6.0753 12.2229 -0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
+                                <path d="M12.2229 21.9995C12.2229 15.9253 16.5999 10.9995 22.0007 10.9995" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
+                                <path d="M22.0005 10.9995H0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
+                            </svg>
+                        </span>
+                    </a>
+                    </div>
+                  </div>
+
                 </div>
-            </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="about-section-3__thumb rr-ov-hidden">
+                  <video class="wow about-video fadeInUp"
+       data-wow-delay="0.3s"
+       data-speed="0.8"
+       data-lag="0"
+       autoplay
+       muted
+       loop
+       playsinline
+       style="transform: translate(0px, -2.5px); will-change: transform; visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+       
+    <source src="assets/imgs/Corporate Video GreenPack.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
                 </div>
+              </div>
             </div>
-        </div>
-        </div>
-    </div>
-    </div>
-    <style>
-        /* Mission Section */
-.mission-section {
-    position: relative;
-    background: linear-gradient(0deg, #8cab1f 0%, #faffe7 100%);
-    padding: 152px 0 148px 0;
-    overflow: hidden;
-}
-
-.about-mission-container {
-    max-width: 1600px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    padding: 0 20px;
-}
-
-/* Column Layout */
-.column {
-    flex: 1;
-}
-
-.image-column {
-    padding: 0 15px;
-}
-
-.content-column {
-    padding: 0 15px;
-}
-
-/* Carousel Wrapper */
-.carousel-wrapper {
-    position: relative;
-}
-
-/* Image Box */
-.image-box {
-    position: relative;
-    display: block;
-    padding: 0 32px;
-    margin-right: 56px;
-    transition: opacity 0.25s ease-in-out;
-    cursor: grab;
-}
-
-.image-box:active {
-    cursor: grabbing;
-}
-
-.image-box .image {
-    border-radius: 25px;
-    overflow: hidden;
-    margin: 0;
-}
-
-.image-box .image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 25px;
-}
-
-/* Image 1 - Front */
-.image-box .image-1 {
-    position: relative;
-    z-index: 2;
-}
-
-/* Image 2 - Background with rotation */
-.image-box .image-2 {
-    position: absolute;
-    left: 32px;
-    top: 0;
-    transform: rotate(10deg);
-    z-index: 1;
-}
-
-/* Navigation Arrows */
-.nav-arrows {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%) rotate(90deg);
-    display: flex;
-    gap: 10px;
-    z-index: 3;
-}
-
-.arrow-btn {
-    position: relative;
-    display: inline-block;
-    background: transparent;
-    border: none;
-    font-size: 30px;
-    color: #0c0c0c;
-    cursor: pointer;
-    width: auto;
-    height: auto;
-    line-height: 30px;
-    margin: 0 5px;
-    transition: all 0.3s ease;
-    transform: rotate(-90deg);
-}
-
-.arrow-btn:hover {
-    color: #fff;
-}
-
-.arrow-btn span {
-    display: block;
-}
-
-/* Content Box */
-.content-box {
-    padding: 0;
-}
-
-/* Icon Box */
-.icon-box {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 70px;
-    background: #c1dc4d;
-    color: #fff;
-    border-radius: 15px;
-    margin-bottom: 43px;
-}
-
-.icon-box svg {
-    width: 30px;
-    height: 30px;
-    stroke: currentColor;
-}
-
-/* Section Header */
-.section-header {
-    margin-bottom: 30px;
-}
-
-.subtitle {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #000;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.mission_title {
-    font-size: 42px;
-    font-weight: 700;
-    color: #0c0c0c;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-/* Description */
-.description {
-    font-size: 16px;
-    /* color: #666; */
-    line-height: 1.8;
-    margin-bottom: 30px;
-}
-
-/* Feature List */
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.feature-list li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: #333;
-}
-
-.feature-list .checkmark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    background: #f7f7f7;
-    color: #000;
-    border-radius: 4px;
-    font-size: 14px;
-    flex-shrink: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .mission-section {
-        padding: 100px 0;
-    }
-
-    .container {
-        flex-direction: column;
-        gap: 60px;
-    }
-
-    .column {
-        width: 100%;
-    }
-
-    .image-box {
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    .mission_title {
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 768px) {
-    .mission-section {
-        padding: 80px 0;
-    }
-
-    .mission_title {
-        font-size: 32px;
-    }
-
-    .description {
-        font-size: 15px;
-    }
-
-    .image-box {
-        padding: 0 20px;
-        margin-right: 40px;
-    }
-
-    .nav-arrows {
-        right: -10px;
-    }
-}
-
-@media (max-width: 576px) {
-
-    .icon-box {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 30px;
-    }
-
-    .icon-box svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    .image-box {
-        padding: 0 15px;
-        margin-right: 30px;
-    }
-
-    .image-box .image-2 {
-        left: 15px;
-    }
-}
-    </style>
-    
-    <script>
-        // Mission Section Carousel
-class MissionCarousel {
-    constructor() {
-        this.carousel = document.querySelector('.carousel-wrapper');
-        this.imageBox = document.querySelector('.image-box');
-        this.images = document.querySelectorAll('.image-box .image');
-        this.prevBtn = document.querySelector('.prev-btn');
-        this.nextBtn = document.querySelector('.next-btn');
-        
-        this.currentIndex = 0;
-        this.totalSlides = 2; // We have 2 image sets
-        this.isAnimating = false;
-        
-        // Touch/Swipe variables
-        this.touchStartX = 0;
-        this.touchEndX = 0;
-        this.touchStartY = 0;
-        this.touchEndY = 0;
-        
-        this.init();
-    }
-    
-    init() {
-        // Clone images for infinite loop effect
-        this.setupCarousel();
-        
-        // Event listeners
-        this.prevBtn.addEventListener('click', () => this.previousSlide());
-        this.nextBtn.addEventListener('click', () => this.nextSlide());
-        
-        // Touch events
-        this.imageBox.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
-        this.imageBox.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: true });
-        this.imageBox.addEventListener('touchend', () => this.handleTouchEnd());
-        
-        // Mouse drag events
-        this.imageBox.addEventListener('mousedown', (e) => this.handleMouseDown(e));
-        
-        // Auto-play (optional - uncomment if you want auto-play)
-        // this.startAutoPlay();
-    }
-    
-    setupCarousel() {
-        // Add transition class
-        this.imageBox.style.transition = 'transform 0.5s ease-in-out';
-    }
-    
-    nextSlide() {
-        if (this.isAnimating) return;
-        this.isAnimating = true;
-        
-        this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
-        this.updateCarousel();
-    }
-    
-    previousSlide() {
-        if (this.isAnimating) return;
-        this.isAnimating = true;
-        
-        this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
-        this.updateCarousel();
-    }
-    
-    updateCarousel() {
-        // Swap images
-        const image1 = document.querySelector('.image-1 img');
-        const image2 = document.querySelector('.image-2 img');
-        
-        // Add fade effect
-        this.imageBox.style.opacity = '0';
-        
-        setTimeout(() => {
-            // Swap image sources
-            const temp = image1.src;
-            image1.src = image2.src;
-            image2.src = temp;
-            
-            // Fade back in
-            this.imageBox.style.opacity = '1';
-            
-            setTimeout(() => {
-                this.isAnimating = false;
-            }, 500);
-        }, 250);
-    }
-    
-    // Touch handlers
-    handleTouchStart(e) {
-        this.touchStartX = e.changedTouches[0].screenX;
-        this.touchStartY = e.changedTouches[0].screenY;
-    }
-    
-    handleTouchMove(e) {
-        this.touchEndX = e.changedTouches[0].screenX;
-        this.touchEndY = e.changedTouches[0].screenY;
-    }
-    
-    handleTouchEnd() {
-        const swipeThreshold = 50;
-        const diffX = this.touchStartX - this.touchEndX;
-        const diffY = Math.abs(this.touchStartY - this.touchEndY);
-        
-        // Only trigger if horizontal swipe is greater than vertical
-        if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > diffY) {
-            if (diffX > 0) {
-                // Swiped left - next slide
-                this.nextSlide();
-            } else {
-                // Swiped right - previous slide
-                this.previousSlide();
-            }
-        }
-    }
-    
-    // Mouse drag handlers
-    handleMouseDown(e) {
-        e.preventDefault();
-        this.touchStartX = e.clientX;
-        
-        const handleMouseMove = (e) => {
-            this.touchEndX = e.clientX;
-        };
-        
-        const handleMouseUp = () => {
-            const swipeThreshold = 50;
-            const diffX = this.touchStartX - this.touchEndX;
-            
-            if (Math.abs(diffX) > swipeThreshold) {
-                if (diffX > 0) {
-                    this.nextSlide();
-                } else {
-                    this.previousSlide();
-                }
-            }
-            
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('mouseup', handleMouseUp);
-        };
-        
-        document.addEventListener('mousemove', handleMouseMove);
-        document.addEventListener('mouseup', handleMouseUp);
-    }
-    
-    // Optional: Auto-play functionality
-    startAutoPlay(interval = 3000) {
-        this.autoPlayInterval = setInterval(() => {
-            this.nextSlide();
-        }, interval);
-        
-        // Pause on hover
-        this.imageBox.addEventListener('mouseenter', () => {
-            clearInterval(this.autoPlayInterval);
-        });
-        
-        this.imageBox.addEventListener('mouseleave', () => {
-            this.startAutoPlay(interval);
-        });
-    }
-}
-
-// Initialize carousel when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new MissionCarousel();
-});
-    </script>
- <section class="milestone-2__area pt-50px pb-150px rr-pos-rel " style="background:linear-gradient(0deg, #8cab1f 0%, #ffffff 100%);">
-          <div class="milestone-2__inner">
-            <div class="container rr-container-1800">
+            <!-- <div class="about-section-3__bottom section-spacing-top">
+              <div class="row mb-minus-30">
+                <div class="col-lg-4">
+                  <div class="about-section-3__card wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="about-section-3__info">
+                      <h3 class="about-section-3__title">OUR MISSION<a href="#"><i class="fa-regular fa-arrow-right"></i></a></h3>
+                      <p class="about-section-3__dec">At Trexa, we simplify complex tech
+                        to empower innovation &amp; efficiency
+                        in every business we serve.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="about-section-3__card wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="about-section-3__info">
+                      <h3 class="about-section-3__title">OUR VISION<a href="#"><i class="fa-regular fa-arrow-right"></i></a></h3>
+                      <p class="about-section-3__dec">At Trexa, we simplify complex tech
+                        to empower innovation &amp; efficiency
+                        in every business we serve.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="about-section-3__card wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                    <div class="about-section-3__info">
+                      <h3 class="about-section-3__title">Our Expertise<a href="#"><i class="fa-regular fa-arrow-right"></i></a></h3>
+                      <p class="about-section-3__dec">At Trexa, we simplify complex tech
+                        to empower innovation &amp; efficiency
+                        in every business we serve.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </section>
+<section class="identity-2 pt-150px pb-150px">
+          <div class="container rr-container-1800">
+            <div class="identity-2__inner">
               <div class="section-title-2__wrapper">
-                <h4 class="section__subtitle"><span></span>Our Journey</h4>
-                <h2 class="title text-center wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Every big change begins with a simple idea </h2>
+                <h4 class="section__subtitle wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"><span></span>Our Journey</h4>
+                <h2 class="title wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Doloremque eius qui tempore quos, aspernatur veniam illum iusto atque non velit.</h2>
+               
               </div>
 
-            </div>
-            <div class="milestone-2__wrapper">
-              <div class="swiper milestone-2__active swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
-                <div class="swiper-wrapper" id="swiper-wrapper-aa58a8f6bf7aea01" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-2980px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2017</span>
-                        <h6 class="title">The Foundation </h6>
-                        <p>The GreenPack story began in 2017, born from a vision to build India’s first integrated paper-based tableware and packaging company. 
-By the end of that year, the groundwork was laid — machinery finalized, partners aligned, and a clear mission set: to replace single-use plastic with planet-friendly alternatives. </p>
-
-                      </div>
-                      <div class="milestone-2__media">
-                        <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
-                  </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2018</span>
-                        <h6 class="title">The First Step</h6>
-                        <p>On Sharad Purnima, October 24th, 2018, our first machine arrived — an auspicious start symbolizing light, purpose, and new beginnings. 
-By December, the first reel was processed, and GreenPack officially entered the biodegradable packaging market. </p>
-
-                      </div>
-                      <div class="milestone-2__media">
-                         <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
-                  </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2019</span>
-                        <h6 class="title">Growth & New Horizons</h6>
-                        <p>Momentum followed. We added new die-cutting capacity, doubled our output, and conceptualized Project HoReCa — our dedicated line for Quick Service Restaurants and foodservice packaging.</p>
-
-                      </div>
-                      <div class="milestone-2__media">
-                        <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
-                  </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="3" role="group" aria-label="4 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2020</span>
-                        <h6 class="title">Resilience in Adversity</h6>
-                        <p>When the world slowed down, we sped up. 
-Despite Covid disruptions, we launched our second production line, showcased at Aahar 2020, and finalized major expansions — including machinery for our Tableware Division and the upcoming Ahmedabad plant. </p>
-
-                      </div>
-                      <div class="milestone-2__media">
-                       <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
+              <div class="identity-2__wrapper">
+                <div class="identity-2__item wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                  <div class="number">
+                    <span>2017 </span>
                   </div>
-                  <div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group" aria-label="1 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2021</span>
-                        <h6 class="title">Expanding Our Footprint </h6>
-                        <p>GreenPack’s ripple cup line went live, and our Ahmedabad unit began full-scale operations — strengthening our presence across Western India and cementing our position as a national manufacturer. </p>
+                  <div class="text">
+                    <h5 class="title">The Foundation </h5>
+                    <p class="desc">The GreenPack story began in 2017, born from a vision to build India’s first integrated paper-based tableware and packaging company. 
 
-                      </div>
-                      <div class="milestone-2__media">
-                        <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
+By the end of that year, the groundwork was laid — machinery finalized, partners aligned, and a clear mission set: to replace single-use plastic with planet-friendly alternatives.</p>
                   </div>
-                  <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group" aria-label="2 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2022</span>
-                        <h6 class="title">Streamlining for Scale</h6>
-                        <p>We focused inward — automating systems, tightening processes, and building an error-free, agile operation. The goal: faster delivery, consistent quality, and readiness for global standards. </p>
+                </div>
+                <div class="identity-2__item wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                  <div class="number">
+                    <span>2018 </span>
+                  </div>
+                    <div class="text">
+                    <h5 class="title">The First Step </h5>
+                    <p class="desc">On Sharad Purnima, October 24th, 2018, our first machine arrived — an auspicious start symbolizing light, purpose, and new beginnings. 
 
-                      </div>
-                      <div class="milestone-2__media">
-                       <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
+By December, the first reel was processed, and GreenPack officially entered the biodegradable packaging market.</p>
                   </div>
-                  <div class="swiper-slide" data-swiper-slide-index="2" role="group" aria-label="3 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2023</span>
-                        <h6 class="title">Reinvention & Customization </h6>
-                        <p>Our Tableware Project shifted to Greater Noida, adding capacity and flexibility to meet the growing demand for customized eco-packaging from QSRs and corporate clients. </p>
+                </div>
+                <div class="identity-2__item wow fadeInUp" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+                  <div class="number">
+                    <span>2019 </span>
+                  </div>
+                     <div class="text">
+                    <h5 class="title">Growth & New Horizons </h5>
+                    <p class="desc">Momentum followed. We added new die-cutting capacity, doubled our output, and conceptualized Project HoReCa — our dedicated line for Quick Service Restaurants and foodservice packaging. </p>
+                  </div>
+                </div>
+                <div class="identity-2__item wow fadeInUp" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+                  <div class="number">
+                    <span>2020  </span>
+                  </div>
+                     <div class="text">
+                    <h5 class="title">Resilience in Adversity  </h5>
+                    <p class="desc">When the world slowed down, we sped up. 
 
-                      </div>
-                      <div class="milestone-2__media">
-                        <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
+Despite Covid disruptions, we launched our second production line, showcased at Aahar 2020, and finalized major expansions — including machinery for our Tableware Division and the upcoming Ahmedabad plant.  </p>
                   </div>
-                  <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="3" role="group" aria-label="4 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2024</span>
-                        <h6 class="title">The Next Leap</h6>
-                        <p>2024 marks GreenPack’s most ambitious phase yet — a large-scale expansion in 
+                </div>
+                <div class="identity-2__item wow fadeInUp" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+                  <div class="number">
+                    <span>2021  </span>
+                  </div>
+                     <div class="text">
+                    <h5 class="title">Expanding Our Footprint </h5>
+                    <p class="desc">GreenPack’s ripple cup line went live, and our Ahmedabad unit began full-scale operations — strengthening our presence across Western India and cementing our position as a national manufacturer.  </p>
+                  </div>
+                </div>
+                 <div class="identity-2__item wow fadeInUp" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+                  <div class="number">
+                    <span>2022  </span>
+                  </div>
+                     <div class="text">
+                    <h5 class="title">Streamlining for Scale </h5>
+                    <p class="desc">We focused inward — automating systems, tightening processes, and building an error-free, agile operation. The goal: faster delivery, consistent quality, and readiness for global standards. </p>
+                  </div>
+                </div>
+                 <div class="identity-2__item wow fadeInUp" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+                  <div class="number">
+                    <span>2023  </span>
+                  </div>
+                     <div class="text">
+                    <h5 class="title"> Reinvention & Customization </h5>
+                    <p class="desc">Our Tableware Project shifted to Greater Noida, adding capacity and flexibility to meet the growing demand for customized eco-packaging from QSRs and corporate clients. </p>
+                  </div>
+                </div>
+                 <div class="identity-2__item wow fadeInUp" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+                  <div class="number">
+                    <span>2024   </span>
+                  </div>
+                     <div class="text">
+                    <h5 class="title">The Next Leap </h5>
+                    <p class="desc">2024 marks GreenPack’s most ambitious phase yet — a large-scale expansion in 
+
 biodegradable tableware. 
+
+We’re leveraging years of learning, optimization, and innovation to lead India’s sustainable packaging revolution. 
 <br>
-We’re leveraging years of learning, optimization, and innovation to lead India’s sustainable packaging revolution. <br> 
-This year is more than growth — it’s our commitment to shaping a cleaner, greener future for generations to come. </p>
-
-                      </div>
-                      <div class="milestone-2__media">
-                       <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
+This year is more than growth — it’s our commitment to shaping a cleaner, greener future for generations to come. 
+<br>
+Group 10, Grouped object 
+<br>
+From one reel in 2018 to three factories across India, our journey is proof that sustainability isn’t just a goal — it’s who we are, and the future we’re building, one cup at a time.   </p>
                   </div>
-
-                <div class="swiper-slide swiper-slide-duplicate swiper-slide-visible swiper-slide-active" data-swiper-slide-index="0" role="group" aria-label="1 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2010</span>
-                        <h6 class="title">The Mission Begins</h6>
-                        <p>Founded with a vision to merge AI and robotics
-                          to solve real-world problems through intelligent
-                          automation.</p>
-
-                      </div>
-                      <div class="milestone-2__media">
-                        <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
-                  </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-visible swiper-slide-next" data-swiper-slide-index="1" role="group" aria-label="2 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2013</span>
-                        <h6 class="title">First Prototype Launched</h6>
-                        <p>Founded with a vision to merge AI and robotics
-                          to solve real-world problems through intelligent
-                          automation.</p>
-
-                      </div>
-                      <div class="milestone-2__media">
-                         <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
-                  </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-visible" data-swiper-slide-index="2" role="group" aria-label="3 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2016</span>
-                        <h6 class="title">Expansion into AI Integration</h6>
-                        <p>Founded with a vision to merge AI and robotics
-                          to solve real-world problems through intelligent
-                          automation.</p>
-
-                      </div>
-                      <div class="milestone-2__media">
-                        <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
-                  </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-visible swiper-slide-duplicate-prev" data-swiper-slide-index="3" role="group" aria-label="4 / 4" style="width: 367.5px; margin-right: 5px;">
-                    <div class="milestone-2__item wow fadeInUp" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                      <div class="milestone-2__content">
-                        <span>2019</span>
-                        <h6 class="title">Global Collaborations Started</h6>
-                        <p>Founded with a vision to merge AI and robotics
-                          to solve real-world problems through intelligent
-                          automation.</p>
-
-                      </div>
-                      <div class="milestone-2__media">
-                        <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                      </div>
-                    </div>
-                  </div></div>
-              <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="milestone-2__bottom">
-            <!-- <div class="milestone-2__shape">
-              <img src="assets/imgs/home-2/milestone/line.png" alt="image">
-            </div> -->
-
-            <!-- <div class="navigation">
-              <button class="milestone-2-prev" tabindex="0" aria-label="Previous slide" aria-controls="swiper-wrapper-aa58a8f6bf7aea01"></button>
-              <button class="milestone-2-next" tabindex="0" aria-label="Next slide" aria-controls="swiper-wrapper-aa58a8f6bf7aea01"></button>
-            </div> -->
           </div>
         </section>
          
@@ -1401,11 +406,11 @@ This year is more than growth — it’s our commitment to shaping a cleaner, gr
         }
 
         .people-page-header h1 {
-            font-size: 72px;
+            font-size: 50px;
             font-weight: 400;
             margin-bottom: 10px;
             color: #fff;
-            letter-spacing: -1px;
+            /* letter-spacing: -1px; */
         }
 
         .people-page-header p {
@@ -1416,13 +421,14 @@ This year is more than growth — it’s our commitment to shaping a cleaner, gr
             font-weight: 400;
         }
 
-        /* .people-page-section {
-            margin-bottom: 60px;
-        } */
+        .people-page-section {
+            padding-top: 70px;
+        }
 
         .people-page-section-title {
             font-size: 19px;
             color: #fff;
+            text-align: center;
             margin-bottom: 40px;
             text-transform: capitalize;
         }
@@ -1710,30 +716,17 @@ This year is more than growth — it’s our commitment to shaping a cleaner, gr
             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
           </div>
         </section> -->
-          <div class="people-page-container pt-150px pb-150px">
+          <!-- <div class="people-page-container pt-150px pb-150px">
       <div class="container rr-container-1800">
          <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-4">
-                  <div class="people-page-header">
-            <h1 class="wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">Team</h1>
-            <p class="wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto expedita, laboriosam alias impedit vero blanditiis cumque eius officiis fuga maxime, odio temporibus enim perspiciatis nihil facilis! Aperiam voluptatum ullam architecto!</p>
-            <a href="#" class="rr-btn-border fadeInUp mt-4" data-wow-delay="0.3s">
-                  <span class="text">VIEW ALL</span>
-                  <span class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#clip0_46_7)">
-                        <path d="M22.0007 10.9995C16.6014 10.9995 12.2229 6.0753 12.2229 -0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                        <path d="M12.2229 21.9995C12.2229 15.9253 16.5999 10.9995 22.0007 10.9995" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                        <path d="M22.0005 10.9995H0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                      </g>
-
-                    </svg>
-                  </span>
-                </a>
-        </div>
-
+          <div class="row d-flex justify-content-center">
+              <div class="col-xl-8 text-center mb-40">
+                <h2 class="section-title rr-title-anim-2"> <div style="position:relative;display:inline-block;"> <div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">C</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">l</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">E</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">x</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">c</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">T</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">h</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">S</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">k</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">f</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">T</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">h</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">m</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">l</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">v</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">T</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">x</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div></div> </h2>
+                <p class="sub-para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore numquam sequi recusandae ratione minus laborum velit accusantium aut voluptas porro?</p>
+              </div>
             </div>
-            <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
                
         <div class="people-page-section ">
             <div class="people-page-section-title wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">Board of Directors</div>
@@ -1764,299 +757,229 @@ This year is more than growth — it’s our commitment to shaping a cleaner, gr
                     <div class="people-page-member-role">Lorem ipsum dolor sit</div>
                 </div>
             </div>
+            <div class="text-center pt-50px">
+              <a href="#" class="rr-btn-border">
+                        <span class="text">View all</span>
+                        <span class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_46_7)">
+                              <path d="M22.0007 10.9995C16.6014 10.9995 12.2229 6.0753 12.2229 -0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
+                              <path d="M12.2229 21.9995C12.2229 15.9253 16.5999 10.9995 22.0007 10.9995" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
+                              <path d="M22.0005 10.9995H0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
+                            </g>
+
+                          </svg>
+                        </span>
+                      </a>
+            </div>
         </div>
 
-        <!-- <div class="people-page-section">
-            <div class="people-page-section-title">Additional Team</div>
-            <div class="people-page-team-grid ">
-                <div class="people-page-team-member wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <div class="people-page-avatar people-page-avatar-yellow">
-                        <div class="people-page-avatar-placeholder">NW</div>
-                    </div>
-                  <div class="people-page-member-name">Lorem, ipsum</div>
-                    <div class="people-page-member-role">Lorem ipsum dolor sit</div>
-                </div>
-
-                <div class="people-page-team-member wow fadeInUp" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <div class="people-page-avatar people-page-avatar-green">
-                        <div class="people-page-avatar-placeholder">TY</div>
-                    </div>
-                 <div class="people-page-member-name">Lorem, ipsum</div>
-                    <div class="people-page-member-role">Lorem ipsum dolor sit</div>
-                </div>
-
-                <div class="people-page-team-member wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <div class="people-page-avatar people-page-avatar-purple">
-                        <div class="people-page-avatar-placeholder">ND</div>
-                    </div>
-                   <div class="people-page-member-name">Lorem, ipsum</div>
-                    <div class="people-page-member-role">Lorem ipsum dolor sit</div>
-                </div>
-
-                <div class="people-page-team-member wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <div class="people-page-avatar people-page-avatar-gray">
-                        <div class="people-page-avatar-placeholder">IK</div>
-                    </div>
-                 <div class="people-page-member-name">Lorem, ipsum</div>
-                    <div class="people-page-member-role">Lorem ipsum dolor sit</div>
-                </div>
-
-                <div class="people-page-team-member wow fadeInUp" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <div class="people-page-avatar people-page-avatar-orange">
-                        <div class="people-page-avatar-placeholder">DV</div>
-                    </div>
-                    <div class="people-page-member-name">Lorem, ipsum</div>
-                    <div class="people-page-member-role">Lorem ipsum dolor sit</div>
-                </div>
-
-                <div class="people-page-team-member wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <div class="people-page-more-circle">30+</div>
-                    <div class="people-page-member-name">And more</div>
-                    <div class="people-page-member-role">Join us</div>
-                </div>
-            </div>
-        </div> -->
+     
             </div>
         </div>
        </div>
       </div>
-    </div>
-
-        <section class="testimonial-section-3__area testimonial-section-3__bg pt-150px pb-150px" data-background="./assets/imgs/DUMMY_IMAGE/MAPP.png" style="background-image: url('./assets/imgs/DUMMY_IMAGE/MAPP.png'); background-color: #fff !important;">
-          <div class="testimonial-section-3__wrapper">
-            <div class="container rr-container-1800">
-              <div class="testimonial-section-3__top">
-                <div class="section-heading__wrap_3">
-                  <h4 class="section__subtitle wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"><span></span>WHAT OUR CLIENT SAY</h4>
-                <h2 class="section__title rr-title-anim-2 wow fadeInUp" data-wow-delay="0.3s">
-
-  <!-- LOREM -->
-  <div style="position:relative;display:inline-block;">
-    <div style="position: relative; display:inline-block;">L</div><div style="position: relative; display:inline-block;">o</div><div style="position: relative; display:inline-block;">r</div><div style="position: relative; display:inline-block;">e</div><div style="position: relative; display:inline-block;">m</div>
-  </div>
-
-  <!-- IPSUM -->
-  <div style="position:relative;display:inline-block;">
-    <div style="position: relative; display:inline-block;">i</div><div style="position: relative; display:inline-block;">p</div><div style="position: relative; display:inline-block;">s</div>
-    <div style="position: relative; display:inline-block;">u</div><div style="position: relative; display:inline-block;">m</div>
-  </div>
-
-  <!-- DOLOR -->
-  <div style="position:relative;display:inline-block;">
-    <div style="position: relative; display:inline-block;">d</div><div style="position: relative; display:inline-block;">o</div><div style="position: relative; display:inline-block;">l</div><div style="position: relative; display:inline-block;">o</div><div style="position: relative; display:inline-block;">r</div>
-  </div>
-
-  <!-- SIT -->
-  <div style="position:relative;display:inline-block;">
-    <div style="position: relative; display:inline-block;">s</div><div style="position: relative; display:inline-block;">i</div><div style="position: relative; display:inline-block;">t</div>
-  </div>
-  <div style="position:relative;display:inline-block;">
-    <div style="position: relative; display:inline-block;">a</div><div style="position: relative; display:inline-block;">m</div><div style="position: relative; display:inline-block;">e</div><div style="position: relative; display:inline-block;">t</div>
-  </div>
-
-</h2>
-
+    </div> -->
+ <section class="blog-area4 pt-150px pb-150px rr-ov-hidden">
+        <div class="container rr-container-1600">
+          <div class="row gy-5 d-flex align-items-center justify-content-between">
+            <div class="col-xl-7 d-flex justify-content-start m-0">
+              <div class="section-top4">
+             <div class="section-heading__wrap_3">
+                    <h4 class="section__subtitle"><span></span>case studies</h4>
+                    <h2 class="section__title">Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
                 </div>
               </div>
             </div>
-            <div class="swiper testimonial-section-3__active swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-              <div class="swiper-wrapper" id="swiper-wrapper-9f567d5b573cb28a" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-3126px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 491px; margin-right: 30px;">
-                  <div class="testimonial-section-3__item wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <div class="testimonial-section-3__shape">
-                      <img src="assets/imgs/DUMMY_IMAGE/DOWN_IMAGE_TS.png" alt="shape not found">
-                    </div>
-                  
-                    <p class="testimonial-section-3__dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maiores laboriosam rem necessi tat ibus totam at velit iusto, provident sunt soluta excepturi eveniet</p>
-                       <div class="d-flex  gap-4">
-                        <div class="testimonial-section-3__quate">
-                      <img src="assets/imgs/DUMMY_IMAGE/DUMMY_QUOTE.png" alt="icon not found">
-                    </div>
-                    <div class="testimonial-section-3__author">
-                      <h3 class="name">Lorem, ipsum</h3>
-                      <p class="position">Lorem, ipsum</p>
-                    </div>
-                      </div>
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 3" style="width: 491px; margin-right: 30px;">
-                  <div class="testimonial-section-3__item wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                     <div class="testimonial-section-3__shape">
-                      <img src="assets/imgs/DUMMY_IMAGE/DOWN_IMAGE_TS.png" alt="shape not found">
-                    </div>
-                     <p class="testimonial-section-3__dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maiores laboriosam rem necessi tat ibus totam at velit iusto, provident sunt soluta excepturi eveniet</p>
-                        <div class="d-flex gap-4">
-                        <div class="testimonial-section-3__quate">
-                      <img src="assets/imgs/DUMMY_IMAGE/DUMMY_QUOTE.png" alt="icon not found">
-                    </div>
-                    <div class="testimonial-section-3__author">
-                      <h3 class="name">Lorem, ipsum</h3>
-                      <p class="position">Lorem, ipsum</p>
-                    </div>
-                      </div>
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 491px; margin-right: 30px;">
-                  <div class="testimonial-section-3__item">
-                   <div class="testimonial-section-3__shape">
-                      <img src="assets/imgs/DUMMY_IMAGE/DOWN_IMAGE_TS.png" alt="shape not found">
-                    </div>
-                      <p class="testimonial-section-3__dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maiores laboriosam rem necessi tat ibus totam at velit iusto, provident sunt soluta excepturi eveniet</p>
-                       <div class="d-flex gap-4">
-                        <div class="testimonial-section-3__quate">
-                      <img src="assets/imgs/DUMMY_IMAGE/DUMMY_QUOTE.png" alt="icon not found">
-                    </div>
-                    <div class="testimonial-section-3__author">
-                      <h3 class="name">Lorem, ipsum</h3>
-                      <p class="position">Lorem, ipsum</p>
-                    </div>
-                      </div>
-                  </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 491px; margin-right: 30px;">
-                  <div class="testimonial-section-3__item wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                     <div class="testimonial-section-3__shape">
-                      <img src="assets/imgs/DUMMY_IMAGE/DOWN_IMAGE_TS.png" alt="shape not found">
-                    </div>
-                   <p class="testimonial-section-3__dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maiores laboriosam rem necessi tat ibus totam at velit iusto, provident sunt soluta excepturi eveniet</p>
-                        <div class="d-flex gap-4">
-                        <div class="testimonial-section-3__quate">
-                      <img src="assets/imgs/DUMMY_IMAGE/DUMMY_QUOTE.png" alt="icon not found">
-                    </div>
-                    <div class="testimonial-section-3__author">
-                      <h3 class="name">Lorem, ipsum</h3>
-                      <p class="position">Lorem, ipsum</p>
-                    </div>
-                      </div>
-                  </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group" aria-label="2 / 3" style="width: 491px; margin-right: 30px;">
-                  <div class="testimonial-section-3__item wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                     <div class="testimonial-section-3__shape">
-                      <img src="assets/imgs/DUMMY_IMAGE/DOWN_IMAGE_TS.png" alt="shape not found">
-                    </div>
-                     <p class="testimonial-section-3__dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maiores laboriosam rem necessi tat ibus totam at velit iusto, provident sunt soluta excepturi eveniet</p>
-                        <div class="d-flex gap-4">
-                        <div class="testimonial-section-3__quate">
-                      <img src="assets/imgs/DUMMY_IMAGE/DUMMY_QUOTE.png" alt="icon not found">
-                    </div>
-                    <div class="testimonial-section-3__author">
-                      <h3 class="name">Lorem, ipsum</h3>
-                      <p class="position">Lorem, ipsum</p>
-                    </div>
-                      </div>
-                  </div>
-                </div>
-                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 491px; margin-right: 30px;">
-                  <div class="testimonial-section-3__item">
-                     <div class="testimonial-section-3__shape">
-                      <img src="assets/imgs/DUMMY_IMAGE/DOWN_IMAGE_TS.png" alt="shape not found">
-                    </div>
-                     <p class="testimonial-section-3__dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maiores laboriosam rem necessi tat ibus totam at velit iusto, provident sunt soluta excepturi eveniet</p>
-                    <div class="d-flex gap-4">
-                        <div class="testimonial-section-3__quate">
-                      <img src="assets/imgs/DUMMY_IMAGE/DUMMY_QUOTE.png" alt="icon not found">
-                    </div>
-                    <div class="testimonial-section-3__author">
-                      <h3 class="name">Lorem, ipsum</h3>
-                      <p class="position">Lorem, ipsum</p>
-                    </div>
-                      </div>
-                  </div>
-                </div>
-              <div class="swiper-slide swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 491px; margin-right: 30px;">
-                  <div class="testimonial-section-3__item wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                     <div class="testimonial-section-3__shape">
-                      <img src="assets/imgs/DUMMY_IMAGE/DOWN_IMAGE_TS.png" alt="shape not found">
-                    </div>
-                  <p class="testimonial-section-3__dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maiores laboriosam rem necessi tat ibus totam at velit iusto, provident sunt soluta excepturi eveniet</p>
-                        <div class="d-flex gap-4">
-                        <div class="testimonial-section-3__quate">
-                      <img src="assets/imgs/DUMMY_IMAGE/DUMMY_QUOTE.png" alt="icon not found">
-                    </div>
-                    <div class="testimonial-section-3__author">
-                      <h3 class="name">Lorem, ipsum</h3>
-                      <p class="position">Lorem, ipsum</p>
-                    </div>
-                      </div>
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="1" role="group" aria-label="2 / 3" style="width: 491px; margin-right: 30px;">
-                  <div class="testimonial-section-3__item wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <div class="testimonial-section-3__shape">
-                      <img src="assets/imgs/DUMMY_IMAGE/DOWN_IMAGE_TS.png" alt="shape not found">
-                    </div>
-                     <p class="testimonial-section-3__dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maiores laboriosam rem necessi tat ibus totam at velit iusto, provident sunt soluta excepturi eveniet</p>
-                     <div class="d-flex gap-4">
-                        <div class="testimonial-section-3__quate">
-                      <img src="assets/imgs/DUMMY_IMAGE/DUMMY_QUOTE.png" alt="icon not found">
-                    </div>
-                    <div class="testimonial-section-3__author">
-                      <h3 class="name">Lorem, ipsum</h3>
-                      <p class="position">Lorem, ipsum</p>
-                    </div>
-                      </div>
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 491px; margin-right: 30px;">
-                  <div class="testimonial-section-3__item">
-                     <div class="testimonial-section-3__shape">
-                      <img src="assets/imgs/DUMMY_IMAGE/DOWN_IMAGE_TS.png" alt="shape not found">
-                    </div>
-                       <p class="testimonial-section-3__dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae maiores laboriosam rem necessi tat ibus totam at velit iusto, provident sunt soluta excepturi eveniet</p>
-                      <div class="d-flex gap-4">
-                        <div class="testimonial-section-3__quate">
-                      <img src="assets/imgs/DUMMY_IMAGE/DUMMY_QUOTE.png" alt="icon not found">
-                    </div>
-                    <div class="testimonial-section-3__author">
-                      <h3 class="name">Lorem, ipsum</h3>
-                      <p class="position">Lorem, ipsum</p>
-                    </div>
-                      </div>
-                  </div>
-                </div></div>
-            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-          </div>
-        </section>
-
-<section class="explore-section">
-      <div class="image-layer">
-                <figure class="image image-3 float-bob-y">
-                    <img decoding="async" src="assets/imgs/DUMMY_IMAGE/SECTION_CUP.png" class="CUPImage" alt="Cap">
-                </figure>
-                
-                <figure class="image image-5 float-bob-x">
-                    <img decoding="async" src="assets/imgs/DUMMY_IMAGE/innovation-5.png" alt="Paper Bag">
-                </figure>
+            <div class="col-xl-5">
+              <div class="blog-area4__button">
+               <a href="#" class="rr-btn-border">
+                        <span class="text">VIEW ALL</span>
+                        <span class="icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M22.0007 10.9995C16.6014 10.9995 12.2229 6.0753 12.2229 -0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
+                                <path d="M12.2229 21.9995C12.2229 15.9253 16.5999 10.9995 22.0007 10.9995" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
+                                <path d="M22.0005 10.9995H0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
+                            </svg>
+                        </span>
+                    </a>
+              </div>
             </div>
-  <div class="explore-container">
-    <h2 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-     Lorem ipsum dolor sit amet consectetur adipisicing elit Porro labore
-    </h2>
-
-    <div class="explore-links wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-      <a href="#">About us</a>
-      <a href="#">Product Details</a>
-      <a href="#">Contact us</a>
-    </div>
-    <div class="pt-5">
-      <a href="#" class="rr-btn-button5 btn-dark wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <span class="text">GET IN TOUCH</span>
-                    <span class="icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M22 11C16.6 11 12.2 6.08 12.2 0" stroke="white" stroke-width="2"></path>
-                        <path d="M12.2 22C12.2 15.93 16.6 11 22 11" stroke="white" stroke-width="2"></path>
-                        <path d="M22 11H0" stroke="white" stroke-width="2"></path>
-                      </svg>
-                    </span>
-                  </a>
-    </div>
-  </div>
-</section>
-
-  
-
-
-
-   
-
-
-
+          </div>
+          <div class="blog-area4-wrapper">
+            <div class="swiper blog-slider swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+              <div class="swiper-wrapper" id="swiper-wrapper-05410b74aa56a52c7" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-1988.75px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" role="group" aria-label="3 / 4" style="width: 765.5px; margin-right: 30px;">
+                  <div class="blog-area4__card">
+                     <div class="blog-area4__card-thumb">
+                     <img src="assets/imgs/home-5/hero-img-1.png" alt="thumb">
+                    </div>
+                    <div class="blog-area4__card-content">
+                      <ul class="blog-area4__card-content-list">
+                        <li>A leading multi-outlet Chinese restaurant chain in India </li>
+                       
+                      </ul>
+                      <h3 class="blog-area4__card-content-title">The client approached GreenPack with a clear vision: to create a customized paper container that aligned perfectly with their food presentation, operational needs, and sustainability goals.
+                      </h3>
+                      <p class="blog-area4__card-content-subtitle">The requirement involved developing entirely new container sizes with precise bottom sealing and top knurling. The complexity was high, as specialized machinery was not readily available, making sample development technically challenging</p>
+                      <a class="blog-area4__card-content-link" href="blog-details.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                          <g clip-path="url(#clip0_246_190)">
+                            <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M23.2465 7.96141L7.86475 23.6904" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_246_1903">
+                              <rect width="22" height="22" fill="white" transform="translate(0 16) rotate(-45.6395)"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </a>
+                    </div>
+                   
+                  </div>
+                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 4" style="width: 765.5px; margin-right: 30px;">
+                <div class="blog-area4__card">
+                     <div class="blog-area4__card-thumb">
+                     <img src="assets/imgs/home-5/hero-img-1.png" alt="thumb">
+                    </div>
+                    <div class="blog-area4__card-content">
+                      <ul class="blog-area4__card-content-list">
+                        <li>A fast-growing Quick Service Restaurant (QSR) chain </li>
+                       
+                      </ul>
+                      <h3 class="blog-area4__card-content-title">The client’s popular burgers and sandwiches were receiving complaints, not due to taste, but because oil and grease seeped through their existing packaging.
+                      </h3>
+                      <p class="blog-area4__card-content-subtitle">Conventional MG poster paper failed to contain grease, leading to messy handling, poor presentation, and declining customer satisfaction.</p>
+                      <a class="blog-area4__card-content-link" href="blog-details.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                          <g clip-path="url(#clip0_246_190)">
+                            <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M23.2465 7.96141L7.86475 23.6904" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_246_1903">
+                              <rect width="22" height="22" fill="white" transform="translate(0 16) rotate(-45.6395)"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </a>
+                    </div>
+                   
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 4" style="width: 765.5px; margin-right: 30px;">
+               <div class="blog-area4__card">
+                     <div class="blog-area4__card-thumb">
+                     <img src="assets/imgs/home-5/hero-img-1.png" alt="thumb">
+                    </div>
+                    <div class="blog-area4__card-content">
+                      <ul class="blog-area4__card-content-list">
+                        <li>A regional tea and cafÈ chain  </li>
+                       
+                      </ul>
+                      <h3 class="blog-area4__card-content-title">Paper cups are a direct touchpoint in the tea-drinking experience. For this cafÈ chain, comfort and safety became an unexpected challenge.
+                      </h3>
+                      <p class="blog-area4__card-content-subtitle">The cups used thinner paper, making them uncomfortable to hold when filled with hot tea, increasing spill risks and customer discomfort. </p>
+                      <a class="blog-area4__card-content-link" href="blog-details.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                          <g clip-path="url(#clip0_246_190)">
+                            <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M23.2465 7.96141L7.86475 23.6904" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_246_1903">
+                              <rect width="22" height="22" fill="white" transform="translate(0 16) rotate(-45.6395)"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </a>
+                    </div>
+                   
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" role="group" aria-label="2 / 4" style="width: 765.5px; margin-right: 30px;">
+                 <div class="blog-area4__card">
+                     <div class="blog-area4__card-thumb">
+                     <img src="assets/imgs/home-5/hero-img-1.png" alt="thumb">
+                    </div>
+                    <div class="blog-area4__card-content">
+                      <ul class="blog-area4__card-content-list">
+                        <li>A large institutional buyer sourcing paper cups at scale </li>
+                       
+                      </ul>
+                      <h3 class="blog-area4__card-content-title">When dealing with millions of units, even a minor price difference matters. The client questioned a ₹0.15 per cup cost difference.
+                      </h3>
+                      <p class="blog-area4__card-content-subtitle">Balancing price competitiveness with traceability, hygiene, and sustainability without compromising product integrity.</p>
+                      <a class="blog-area4__card-content-link" href="blog-details.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                          <g clip-path="url(#clip0_246_190)">
+                            <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M23.2465 7.96141L7.86475 23.6904" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_246_1903">
+                              <rect width="22" height="22" fill="white" transform="translate(0 16) rotate(-45.6395)"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </a>
+                    </div>
+                   
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" role="group" aria-label="3 / 4" style="width: 765.5px; margin-right: 30px;">
+                <div class="blog-area4__card">
+                     <div class="blog-area4__card-thumb">
+                     <img src="assets/imgs/home-5/hero-img-1.png" alt="thumb">
+                    </div>
+                    <div class="blog-area4__card-content">
+                      <ul class="blog-area4__card-content-list">
+                        <li>A food brand using paper bowls for chilled products  </li>
+                       
+                      </ul>
+                      <h3 class="blog-area4__card-content-title">A customer reported that a paper bowl collapsed within 15 minutes, raising concerns over quality consistency.
+                      </h3>
+                      <p class="blog-area4__card-content-subtitle">The product was designed for hot food, but was now used for chilled, moisture-heavy applications, changing how paper behaved.</p>
+                      <a class="blog-area4__card-content-link" href="blog-details.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                          <g clip-path="url(#clip0_246_190)">
+                            <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M23.2465 7.96141L7.86475 23.6904" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_246_1903">
+                              <rect width="22" height="22" fill="white" transform="translate(0 16) rotate(-45.6395)"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </a>
+                    </div>
+                   
+                  </div>
+                </div>
+              
+              </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            <!-- <div class="blog-area4-wrapper-controls">
+              <div class="blog-area4-wrapper-controls__arrowRight" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-05410b74aa56a52c7">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="21" viewBox="0 0 18 21" fill="none">
+                  <path d="M16.6154 21V7.7H2.65985L7.91169 13.0088L6.93138 14.0084L0 7L6.92308 0L7.91169 0.9996L2.65846 6.3H18V21H16.6154Z" fill="white"></path>
+                </svg>
+              </div>
+              <div class="blog-area4-wrapper-controls__arrowLeft" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-05410b74aa56a52c7">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="21" viewBox="0 0 18 21" fill="none">
+                  <path d="M1.38461 21V7.7H15.3402L10.0883 13.0088L11.0686 14.0084L18 7L11.0769 0L10.0883 0.9996L15.3415 6.3H0V21H1.38461Z" fill="black"></path>
+                </svg>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+     
         <!-- <div class="blog-area7 pb-150px pt-150px overflow-hidden">
         <div class="rr-container-1800 container">
 
@@ -2110,111 +1033,112 @@ This year is more than growth — it’s our commitment to shaping a cleaner, gr
        
             
             
-            
-      <!--===== Footer Section    S T A R T =====-->
-   <!--===== Footer Section    S T A R T =====-->
-<footer class="footer-area6 rr-ov-hidden">
-          <div class="container rr-container-1600">
-            <div class="footer-area6__top">
-              <div class="row gy-5 d-flex align-items-center justify-content-center">
-                <div class="col-xl-5 col-lg-7 col-md-7 wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                  <h4 class="footer-area6__top-title rr-title-anim-2">
-                    Contact - Lorem ipsum dolor sit amet consectetur adipisicing elit Odio ipsam
-                  </h4>
-                  <div class="footer-area6__button">
-                    <a href="#" class="rr-btn-button2 btn-purple">
-                      <span class="text">more about us</span>
-                      <span class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                          <g clip-path="url(#clip0_246_218)">
-                            <path d="M22.0004 11C16.6011 11 12.2227 6.07578 12.2227 0" stroke="white" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M12.2227 22C12.2227 15.9258 16.5997 11 22.0004 11" stroke="white" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M22.0005 11H0.000488281" stroke="white" stroke-width="2" stroke-miterlimit="10"></path>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_246_218">
-                              <rect width="22" height="22" fill="white"></rect>
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="footer-area6-main">
-              <div class="d-flex justify-content-between flex-wrap gap-5">
-                <!-- <div class="footer-area4-widget wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                  <div class="footer-area4-widget__title">Menu</div>
-                  <div class="footer-area4-widget__nav">
-                    <a class="footer-area4-widget__nav-link" href="#!">Projects</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">Pricing</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">About</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">Insights</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">Contact</a>
-                  </div>
+      <div class="cta-area8">
+        <div class="container-1600">
+          <div class="cta-area8__wrap section-spacing bg-img" style="background-image: url(assets/imgs/home-5/cta-bg6.jpg);">
+            <div class="row justify-content-center text-center">
+              <div class="col-lg-8">
+                <!-- <div class="cta-area8__members rr-ov-hidden">
+                  <img data-speed="0.9" src="assets/imgs/home-8/cta/cta-avatar6_1.png" alt="members" class="cta-area8__members-img" data-lag="0" style="translate: none; rotate: none; scale: none; transform: translate(0px, 21.1495px); will-change: transform;">
+                  1100+ active members
                 </div> -->
-                <div class="footer-area4-widget wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                  <!-- <div class="footer-area4-widget__title">About Company</div> -->
-                   <div class="footer_logo">
-                    <img src="assets/imgs/home-5/3Dlogo-10-pmlad3xgb7i6ug5dzx8yomzxqnmomzdaz1pa9cueew.png.webp" alt="">
-                   </div>
-                  <p class="footer-area4-widget__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, necessitatibus provident. Odio, rerum provident veritatis alias dolores sit iusto recusandae?</p>
-                  <div class="footer-area4-widget__social">
-                    <div class="footer-area4-widget__social-link">
-                      <a href="#!"> <span><i class="fa-brands fa-facebook-f"></i></span> </a>
-                      <a href="#!"> <span><i class="fa-brands fa-twitter"></i></span> </a>
-                      <a href="#!"> <span><i class="fa-brands fa-linkedin-in"></i></span> </a>
-                      <a href="#!"> <span><i class="fa-brands fa-instagram"></i></span> </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="footer-area4-widget wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                  <div class="footer-area4-widget__title">Contact</div>
-                  <div class="footer-area4-widget__nav">
-                    <a class="footer-area4-widget__nav-link" href="#!">Call Us</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">Email Us</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">Visit Us</a>
-                  </div>
-                </div>
-                <div class="footer-area4-widget wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                  <div class="footer-area4-widget__title">Explore</div>
-                  <div class="footer-area4-widget__nav">
-                    <a class="footer-area4-widget__nav-link" href="about.html">About us</a>
-                    <a class="footer-area4-widget__nav-link" href="products.html">Product</a>
-                    <a class="footer-area4-widget__nav-link" href="https://greenpackindia.com/wp-content/uploads/2022/04/Greenpack-Brochure-2022.pdf">Product Brouchure</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">Team</a>
-                    <a class="footer-area4-widget__nav-link" href="contact.html">Contact</a>
-                  </div>
-                </div>
-                <div class="footer-area4-widget wow fadeInUp" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;">
-                  <div class="footer-area4-widget__title">Follow US</div>
-                  <div class="footer-area4-widget__nav">
-                    <a class="footer-area4-widget__nav-link" href="#!">Facebook</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">Twitter</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">Instagram</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">Linkedin</a>
-                    <a class="footer-area4-widget__nav-link" href="#!">Dribbble</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="footer-area4-bottom">
-                <div class="container">
-                  <div class="row g-5 d-flex align-items-center justify-content-center">
-                    <div class="col-xl-11 col-lg-12 col-md-12">
-                      <div class="footer-area4-bottom__wrapper">
-                        <div class="footer-area4-bottom__copyright text-center">
-                          © All rights reserved</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <h2 class="cta-area8__title">
+                  Let’s make this official, sign up<br>and access the vault
+                </h2>
+                <form class="cta-area8__form">
+                  <input type="email" class="cta-area8__input" placeholder="Enter Your Email">
+                  <button class="rr-btn-border btn-black">
+                    <span class="text">GET IN TOUCH </span>
+                    <span class="icon"><i class="fa-regular fa-arrow-right"></i></span>
+                  </button>
+                </form>
               </div>
             </div>
           </div>
-        </footer>
+        </div>
+      </div>
+            
+<footer class="footer-area8 bg-img" style="background-image: url(assets/imgs/home-5/footer-bg6.jpg);">
+        <div class="container-1600">
+          <div class="row gy-4 gy-lg-0 footer-area8__top">
+            <!-- Brand -->
+            <div class="col-lg-6 col-md-6 footer-area8__brand">
+              <h3 class="footer-area8__logo"><img src="assets/imgs/home-5/3Dlogo-10-pmlad3xgb7i6ug5dzx8yomzxqnmomzdaz1pa9cueew.png.webp" alt="logo"></h3>
+              <p class="footer-area8__desc rr-title-anim-2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam, veniam quaerat totam nisi illum eius sequi sit id asperiores voluptatem, ipsa dolor ad consequatur.</p>
+             
+            </div>
+            <!-- <div class="col-lg-3 col-md-6"></div> -->
+            <!-- Links 1 -->
+            <div class="col-lg-2 col-md-6 footer-area8__column">
+              <h4 class="footer-area8__heading">Home</h4>
+              <ul class="footer-area8__list wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <li class="footer-area8__item"><a href="#">Overview</a></li>
+                <li class="footer-area8__item"><a href="#">Benefits</a></li>
+                <li class="footer-area8__item"><a href="#">Services</a></li>
+                <li class="footer-area8__item"><a href="#">Features</a></li>
+                <li class="footer-area8__item"><a href="#">Pricing</a></li>
+              </ul>
+            </div>
+
+            <!-- Links 2 -->
+            <div class="col-lg-2 col-md-6 footer-area8__column">
+              <h4 class="footer-area8__heading">Company</h4>
+              <ul class="footer-area8__list wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                <li class="footer-area8__item"><a href="#">About Us</a></li>
+                <li class="footer-area8__item"><a href="#">Our Team</a></li>
+                <li class="footer-area8__item"><a href="#">How To Use</a></li>
+                <li class="footer-area8__item"><a href="#">FAQ’s</a></li>
+                <li class="footer-area8__item"><a href="#">Testimonials</a></li>
+              </ul>
+            </div>
+
+            <!-- Links 3 -->
+            <div class="col-lg-2 col-md-6 footer-area8__column">
+              <h4 class="footer-area8__heading">All Pages</h4>
+              <ul class="footer-area8__list wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                <li class="footer-area8__item"><a href="#">Help Center</a></li>
+                <li class="footer-area8__item"><a href="#">Integration</a></li>
+                <li class="footer-area8__item"><a href="#">Blog Article</a></li>
+                <li class="footer-area8__item"><a href="#">Privacy Policy</a></li>
+                <li class="footer-area8__item"><a href="#">Error Page</a></li>
+              </ul>
+            </div>
+
+            <!-- App -->
+            <!-- <div class="col-lg-3 col-md-6 footer-area8__column">
+              <h4 class="footer-area8__heading">Download our App</h4>
+               <div class="footer-area8__social d-flex gap-2">
+                <a href="#" class="footer-area8__social-link">Fb</a>
+                <a href="#" class="footer-area8__social-link">In</a>
+                <a href="#" class="footer-area8__social-link">X</a>
+                <a href="#" class="footer-area8__social-link">D</a>
+              </div>
+            </div> -->
+          </div>
+<div class="connect-area7__bottom d-flex flex-column flex-md-row justify-content-between text-white">
+           <h4 class="section__subtitle"><span></span>Lorem, ipsum dolor</h4>
+            <!-- <div class="connect-area7__social d-flex">
+              <a href="#">Facebook</a>
+              <a href="#">Twitter</a>
+              <a href="#">Instagram</a>
+              <a href="#">Dribbble</a>
+            </div> -->
+            <div class="d-flex justify-content-between align-items-center footer-bottom-right">
+              <span class="footer-span">Copyright © 2025 . All Rights Reserved</span>
+             <div class="connect-area7__social d-flex">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of use</a>
+              
+            </div>
+            </div>
+          </div>
+          <!-- <div class="footer-area8__bottom text-center">
+            <p class="footer-area8__copy mb-0">
+            All rights reserved
+            </p>
+          </div> -->
+        </div>
+      </footer>
     </div>
   </div>
 

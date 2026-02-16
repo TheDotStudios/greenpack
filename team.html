@@ -19,24 +19,42 @@
 
   <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/team-page.css" />
   <style>
-    .testimonial-section-3__item {
-  /* padding: 20px; */
-  padding: 35px;
-  max-width: 626px;
-  position: relative;
-  padding-right: 56px;
-  border-radius: 10px;
-  background:#f7f7f7 ;
-}
-.project-section .container
- {
-    max-width: 1200px !important;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    .testimonial-area8{
+      background-color: #fff !important;
+    }
+    .testimonial-area8 .section-title{
+      color: #000 !important;
+    }
 .header-area-7 .main-menu li a:hover {
-    color: #c1dc4d !important;
+    color: #fff !important;
+}
+.brand-section-5__item{
+    height: 110px ;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+    .brand-section-5__item {
+        height: 105px !important;
+    }
+    .brand-section-5__active .swiper-wrapper .swiper-slide {
+    width: 130px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+}
+.main-breadcumb__title{
+  color: #000 !important;
+}
+.main-breadcumb__link{
+  color: #000 !important;
+}
+.main-breadcumb__sep{
+  color: #555555;
+}
+.main-breadcumb__wrap {
+    padding:170px 0 157px;
 }
   </style>
 </head>
@@ -139,7 +157,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li ><a href="products.html">Products</a></li>
-                    <li><a href="#">Team</a></li>
+                    <li><a href="team.html">Team</a></li>
                     <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </nav>
@@ -177,17 +195,17 @@
           <div class="container-fluid p-0">
             <div class="row">
               <div class="col-12">
-                <div class="main-breadcumb__wrap" style="background-image: url('assets/imgs/home-5/cup-banner.png');">
-                  <h1 class="main-breadcumb__title">Contact us</h1>
+                <div class="main-breadcumb__wrap">
+                  <h1 class="main-breadcumb__title">Team</h1>
 
                   <nav class="main-breadcumb__nav" aria-label="breadcrumb">
                     <ul class="main-breadcumb__list">
                       <li class="main-breadcumb__item">
                         <a class="main-breadcumb__link" href="#">Home</a>
                       </li>
-                      <li class="main-breadcumb__sep">//</li>
+                      <li class="main-breadcumb__sep">/</li>
                       <li class="main-breadcumb__item main-breadcumb__item--current">
-                        <span class="main-breadcumb__link">Contact</span>
+                        <span class="main-breadcumb__link">Team</span>
                       </li>
                     </ul>
                   </nav>
@@ -197,132 +215,183 @@
           </div>
         </section>
 
-        <section class="contact-area pt-150px pb-150px">
-          <div class="container">
-            <!-- Big heading -->
-            <div class="row">
-              <div class="col-12 text-center d-flex justify-content-center align-items-center flex-column">
-                <h4 class="section__subtitle"><span></span>Get in touch</h4>
-                <h2 class="contact-area__heading">Connect. Collaborate. Create.</h2>
+
+ <div class="rr-container-1800 pb-150px container">
+      <div class="top-row">
+
+    <!-- Board of Directors -->
+    <div class="fade-up delay-1">
+      <div class="section-label label-board">Board of Directors</div>
+      <div class="card board-section">
+        <div class="board-inner">
+          <div class="board-members">
+
+            <div class="person-card">
+              <div class="avatar ">  <img src="assets/imgs/home-5/hero-img-1.png" alt=""></div>
+              <div class="person-info">
+                <div class="name">Mr. Krishna Kumar Khemka</div>
+                <div class="role">Director</div>
               </div>
             </div>
 
-<div class="contact-area__info-row pt-50px">
-          <div class="container">
-           <div class="col-lg-12">
-            <div class="row">
-                 <div class="col-lg-6 col-md-6 gy-3">
-            <div class="col-md-12">
-                <div class="row">
-                      <div class="col-md-6">
-                <div class="contact-info-card">
-                  <h6 class="contact-info-card__title">Address</h6>
-                  <p class="contact-info-card__text">
-                    Lorem ipsum dolor sit amet
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="contact-info-card">
-                  <h6 class="contact-info-card__title">Phone / Message</h6>
-                  <p class="contact-info-card__text">info@example.com<br>1233 456 678</p>
-                </div>
-              </div>
-                </div>
-                <div class="row mt-3">
-                     <div class="col-md-6 ">
-                <div class="contact-info-card">
-                  <h6 class="contact-info-card__title">Working Hours</h6>
-                  <p class="contact-info-card__text">Monday to Friday 09:00 to 18:30<br>Saturday 15:30</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 ">
-                <div class="contact-info-card">
-                  <h6 class="contact-info-card__title">Follow us</h6>
-                  <div class="contact-info-card__social">
-                    <a href="#" class="social-circle" aria-label="facebook">f</a>
-                    <a href="#" class="social-circle" aria-label="twitter">x</a>
-                    <a href="#" class="social-circle" aria-label="linkedin">in</a>
-                    <a href="#" class="social-circle" aria-label="youtube">▶</a>
-                  </div>
-                </div>
-              </div>
-                </div>
-            </div>
-
-             
-            </div>
-                <div class="col-lg-6 col-md-6 justify-content-center">
-              <div class="">
-                <div class="contact-form-card">
-                  <form class="contact-form" action="#" method="post" novalidate="">
-                    <div class="row g-3 contact-form__top">
-                      <div class="col-md-4">
-                        <label class="visually-hidden" for="c_name">Your Name</label>
-                        <input id="c_name" name="name" type="text" class="contact-form__input" placeholder="Your Name *">
-                      </div>
-                      <div class="col-md-4">
-                        <label class="visually-hidden" for="c_email">Your Email</label>
-                        <input id="c_email" name="email" type="email" class="contact-form__input" placeholder="Your Email *">
-                      </div>
-                      <div class="col-md-4">
-                        <label class="visually-hidden" for="c_subject">Subject</label>
-                        <input id="c_subject" name="subject" type="text" class="contact-form__input" placeholder="Subject">
-                      </div>
-                    </div>
-
-                    <div class="contact-form__middle">
-                      <label class="visually-hidden" for="c_message">Message</label>
-                      <textarea id="c_message" name="message" rows="4" class="contact-form__textarea" placeholder="Message (Tell us about your project)"></textarea>
-                    </div>
-
-                    <div class="contact-form__footer">
-                      <!-- <button type="submit" class="btn contact-form__send" aria-label="Send">
-                        <span class="contact-form__send-text">SEND</span>
-                      </button> -->
-                      <a href="#" class="rr-btn-border wow fadeInRight" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInRight;">
-                  <span class="text">Submit</span>
-                  <span class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#clip0_46_7)">
-                        <path d="M22.0007 10.9995C16.6014 10.9995 12.2229 6.0753 12.2229 -0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                        <path d="M12.2229 21.9995C12.2229 15.9253 16.5999 10.9995 22.0007 10.9995" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                        <path d="M22.0005 10.9995H0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                      </g>
-
-                    </svg>
-                  </span>
-                </a>
-                    </div>
-                  </form>
-                </div>
+            <div class="person-card">
+              <div class="avatar ">  <img src="assets/imgs/home-5/hero-img-1.png" alt=""></div>
+              <div class="person-info">
+                <div class="name">Mr. Raghvendra Khemka</div>
+                <div class="role">Director</div>
               </div>
             </div>
+
+            <div class="person-card">
+              <div class="avatar ">
+                <img src="assets/imgs/home-5/hero-img-1.png" alt="">
+              </div>
+              <div class="person-info">
+                <div class="name">Mr. Saket Kumar Saraf</div>
+                <div class="role">Director</div>
+              </div>
             </div>
-           </div>
-         
+
           </div>
         </div>
-            <!-- Form card -->
-           
+      </div>
+    </div>
 
+    <!-- Divider -->
+    <div class="spacer fade-up delay-2">
+      <div class="divider"></div>
+    </div>
+
+    <!-- Additional Team -->
+    <div class="fade-up delay-3">
+      <div class="section-label label-addl"> Additional Team</div>
+      <div class="card addl-section">
+        <div class="addl-inner">
+          <div class="addl-roles">
+            <div class="role-pill"><span class="dot"></span>Executive Assistant</div>
+            <div class="role-pill"><span class="dot"></span>IT Department</div>
+            <div class="role-pill"><span class="dot"></span>MIS Manager</div>
+            <div class="role-pill"><span class="dot"></span>HR &amp; Admin</div>
+            <div class="role-pill"><span class="dot"></span>Designing Manager</div>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <!-- decorative dark background texture / gradient -->
-          <!-- <div class="contact-area__bg bg-img" style="background-image: url(assets/imgs/home-5/contact-bg.jpg);" aria-hidden="true"></div> -->
-        </section>
-        <div class="map pb-150px">
-          <div class="map-box">
-            <!-- <iframe src="https://maps.app.goo.gl/cj69ELbgA9yqiFvs7" width="600" height="450" style="border: 0;" allowfullscreen="" loading="lazy"></iframe> -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.346230835289!2d78.23662329999999!3d11.6698565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1b65c940927%3A0x78da427bc0b0384d!2sTheDotStudios!5e0!3m2!1sen!2sin!4v1766060214986!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div><!-- /top-row -->
+
+  <!-- ENTITY LEVEL -->
+  <div class="fade-up delay-4">
+    <div class="section-label label-entity">Entity Level</div>
+    <div class="entity-wrapper">
+      <div class="entity-grid">
+
+        <!-- ── GPIPL AHMEDABAD ── -->
+        <div class="entity-tree">
+          <div class="entity-root">
+            GPIPL
+            <div class="sub">(Ahmedabad)</div>
+          </div>
+          <div class="v-line"></div>
+
+          <!-- 3 heads row -->
+          <div class="h-connector" style="--bar-width: 82%;">
+            <!-- Production Head -->
+            <div class="branch">
+              <div class="branch-line"></div>
+              <div class="head-card head-prod">Production Head</div>
+              <div class="v-line"></div>
+              <div class="sub-card sub-prod">Production Manager</div>
+            </div>
+            <!-- Sales Head -->
+            <div class="branch">
+              <div class="branch-line"></div>
+              <div class="head-card head-sales">Sales Head</div>
+              <div class="v-line"></div>
+              <div class="sub-card sub-sales">Sales Manager</div>
+            </div>
+            <!-- Finance Head -->
+            <div class="branch">
+              <div class="branch-line"></div>
+              <div class="head-card head-fin">Finance Head</div>
+              <div class="v-line"></div>
+              <div class="sub-card sub-fin">Accounts Executive</div>
+            </div>
           </div>
         </div>
 
+        <!-- ── GPIPL NOIDA ── -->
+        <div class="entity-tree">
+          <div class="entity-root">
+            GPIPL
+            <div class="sub">(Noida)</div>
+          </div>
+          <div class="v-line"></div>
 
+          <div class="h-connector" style="--bar-width: 82%;">
+            <div class="branch">
+              <div class="branch-line"></div>
+              <div class="head-card head-prod">Production Head</div>
+            </div>
+            <div class="branch">
+              <div class="branch-line"></div>
+              <div class="head-card head-sales">Sales Head</div>
+              <div class="v-line"></div>
+              <div class="sub-card sub-sales">Sales Manager</div>
+            </div>
+            <div class="branch">
+              <div class="branch-line"></div>
+              <div class="head-card head-fin">Finance Head</div>
+              <div class="v-line"></div>
+              <div class="sub-card sub-fin">Accounts Executive</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── GP LLP ── -->
+        <div class="entity-tree">
+          <div class="entity-root">GP LLP</div>
+          <div class="v-line"></div>
+
+          <div class="h-connector" style="--bar-width: 82%;">
+            <div class="branch">
+              <div class="branch-line"></div>
+              <div class="head-card head-prod">Production Head</div>
+              <div class="v-line"></div>
+              <div class="sub-card sub-prod">Production Manager</div>
+            </div>
+            <div class="branch">
+              <div class="branch-line"></div>
+              <div class="head-card head-sales">Sales Head</div>
+              <div class="v-line"></div>
+              <div class="sub-card sub-sales">Sales Manager</div>
+            </div>
+            <div class="branch">
+              <div class="branch-line"></div>
+              <div class="head-card head-fin">Finance Head</div>
+              <div class="v-line"></div>
+              <div class="sub-card sub-fin">Accounts Executive</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /entity-grid -->
+
+      <!-- Legend -->
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#fdb99a;"></div> Production</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#93c5fd;"></div> Sales</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#c4b5fd;"></div> Finance</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--green-soft);"></div> Board / Entity Root</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#bfdbfe;"></div> Support Roles</div>
+      </div>
+
+    </div><!-- /entity-wrapper -->
+  </div>
+</div>
             
             
- <div class="cta-area8">
+      <div class="cta-area8">
         <div class="container-1600">
           <div class="cta-area8__wrap section-spacing bg-img" style="background-image: url(assets/imgs/home-5/cta-bg6.jpg);">
             <div class="row justify-content-center text-center">
