@@ -875,7 +875,7 @@
     var blog_active = new Swiper(".blog-active", {
       loop: true,
       slidesPerView: 1,
-      spaceBetween: 125,
+      spaceBetween: 45,
       speed: 2000,
       pagination: {
         el: ".swiper-pagination",
@@ -905,6 +905,11 @@
         },
         1367: {
           slidesPerView: 2,
+          spaceBetween: 25,
+        },
+         1600: {
+          slidesPerView: 3,
+          spaceBetween: 25,
         },
       },
     });
