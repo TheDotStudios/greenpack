@@ -234,67 +234,311 @@
 
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="about-section-3__thumb rr-ov-hidden">
-                  <video class="wow about-video fadeInUp"
-       data-wow-delay="0.3s"
-       data-speed="0.8"
-       data-lag="0"
-       autoplay
-       muted
-       loop
-       playsinline
-       style="transform: translate(0px, -2.5px); will-change: transform; visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-       
-    <source src="assets/imgs/Corporate Video GreenPack.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+   
+<!-- ── THUMBNAIL ── -->
+<div class="col-lg-6">
+  <div class="about-section-3__thumb" id="videoThumbnail"
+       role="button" tabindex="0"
+       aria-label="Expand video">
 
-                </div>
-              </div>
+    <video class="about-video-preview" autoplay muted loop playsinline>
+      <source src="assets/imgs/Corporate Video GreenPack.mp4" type="video/mp4">
+    </video>
+
+    <!-- ✅ Gradient fade + expand icon — bottom-right only -->
+    <div class="video-overlay">
+      <div class="expand-btn" aria-hidden="true">
+        <!-- Expand / fullscreen arrows icon -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15,3 21,3 21,9"/>
+          <polyline points="9,21 3,21 3,15"/>
+          <line x1="21" y1="3" x2="14" y2="10"/>
+          <line x1="3"  y1="21" x2="10" y2="14"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ── MODAL (will be moved to body root via JS) ── -->
+<div class="video-modal-backdrop" id="videoModal"
+     role="dialog" aria-modal="true" aria-label="Video player">
+
+  <div class="video-modal" id="videoModalBox">
+
+    <button class="modal-close" id="modalClose" aria-label="Close video">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+           stroke="#fff" stroke-width="2.2" stroke-linecap="round">
+        <line x1="1" y1="1" x2="15" y2="15"/>
+        <line x1="15" y1="1" x2="1"  y2="15"/>
+      </svg>
+    </button>
+
+    <div class="video-modal__ratio">
+
+      <video class="video-modal__player" id="modalVideo" preload="metadata">
+        <source src="assets/imgs/Corporate Video GreenPack.mp4" type="video/mp4">
+      </video>
+
+      <div class="video-controls">
+
+        <button class="ctrl-playpause" id="ctrlPlayPause" aria-label="Play or Pause">
+          <svg class="icon-play" width="22" height="22" viewBox="0 0 24 24" fill="#fff">
+            <polygon points="5,3 19,12 5,21"/>
+          </svg>
+          <svg class="icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="#fff">
+            <rect x="5"  y="3" width="4" height="18" rx="1"/>
+            <rect x="15" y="3" width="4" height="18" rx="1"/>
+          </svg>
+        </button>
+
+        <input class="ctrl-progress" id="ctrlProgress"
+               type="range" value="0" min="0" max="100" step="0.05" aria-label="Seek">
+
+        <span class="ctrl-time" id="ctrlTime">0:00 / 0:00</span>
+
+        <div class="ctrl-volume-wrap">
+          <button class="ctrl-mute" id="ctrlMute" aria-label="Toggle mute">
+            <svg id="iconSound" width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="#fff" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            </svg>
+            <svg id="iconSilent" width="20" height="20" viewBox="0 0 24 24"
+                 fill="none" stroke="#fff" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round"
+                 style="display:none">
+              <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+              <line x1="23" y1="9" x2="17" y2="15"/>
+              <line x1="17" y1="9" x2="23" y2="15"/>
+            </svg>
+          </button>
+          <input class="ctrl-vol-slider" id="ctrlVolume"
+                 type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+        </div>
+
+        <button class="ctrl-fullscreen" id="ctrlFullscreen" aria-label="Fullscreen">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="#fff" stroke-width="2" stroke-linecap="round">
+            <polyline points="15,3 21,3 21,9"/>
+            <polyline points="9,21 3,21 3,15"/>
+            <line x1="21" y1="3" x2="14" y2="10"/>
+            <line x1="3"  y1="21" x2="10" y2="14"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  const thumbnail   = document.getElementById('videoThumbnail');
+  const backdrop    = document.getElementById('videoModal');
+  const modalVideo  = document.getElementById('modalVideo');
+  const modalClose  = document.getElementById('modalClose');
+  const btnPlay     = document.getElementById('ctrlPlayPause');
+  const progress    = document.getElementById('ctrlProgress');
+  const timeEl      = document.getElementById('ctrlTime');
+  const btnMute     = document.getElementById('ctrlMute');
+  const iconSound   = document.getElementById('iconSound');
+  const iconSilent  = document.getElementById('iconSilent');
+  const volSlider   = document.getElementById('ctrlVolume');
+  const btnFullscr  = document.getElementById('ctrlFullscreen');
+
+  /* Move modal outside #smooth-wrapper */
+  if (backdrop && backdrop.parentNode !== document.body) {
+    document.body.appendChild(backdrop);
+  }
+
+  function openModal() {
+    backdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (window.ScrollSmoother && ScrollSmoother.get()) ScrollSmoother.get().paused(true);
+    modalVideo.currentTime = 0;
+    modalVideo.volume = 1;
+    modalVideo.muted  = false;
+    volSlider.value   = 1;
+    updateVolIcons();
+    modalVideo.play().then(() => btnPlay.classList.add('playing'))
+      .catch(() => btnPlay.classList.remove('playing'));
+  }
+
+  function closeModal() {
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (window.ScrollSmoother && ScrollSmoother.get()) ScrollSmoother.get().paused(false);
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+    btnPlay.classList.remove('playing');
+  }
+
+  thumbnail.addEventListener('click', openModal);
+  thumbnail.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
+  });
+  modalClose.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  function togglePlay() {
+    if (modalVideo.paused) { modalVideo.play(); btnPlay.classList.add('playing'); }
+    else { modalVideo.pause(); btnPlay.classList.remove('playing'); }
+  }
+  btnPlay.addEventListener('click', togglePlay);
+  modalVideo.addEventListener('click', togglePlay);
+  modalVideo.addEventListener('ended', () => btnPlay.classList.remove('playing'));
+
+  function fmt(s) {
+    if (isNaN(s)) return '0:00';
+    return `${Math.floor(s/60)}:${Math.floor(s%60).toString().padStart(2,'0')}`;
+  }
+  modalVideo.addEventListener('timeupdate', () => {
+    if (!modalVideo.duration) return;
+    const pct = (modalVideo.currentTime / modalVideo.duration) * 100;
+    progress.value = pct;
+    progress.style.background = `linear-gradient(to right,#fff ${pct}%,rgba(255,255,255,0.3) ${pct}%)`;
+    timeEl.textContent = `${fmt(modalVideo.currentTime)} / ${fmt(modalVideo.duration)}`;
+  });
+  progress.addEventListener('input', () => {
+    if (modalVideo.duration) modalVideo.currentTime = (progress.value / 100) * modalVideo.duration;
+  });
+
+  volSlider.addEventListener('input', () => {
+    modalVideo.volume = volSlider.value;
+    modalVideo.muted  = (volSlider.value == 0);
+    updateVolIcons();
+  });
+  btnMute.addEventListener('click', () => {
+    modalVideo.muted = !modalVideo.muted;
+    volSlider.value  = modalVideo.muted ? 0 : modalVideo.volume || 1;
+    updateVolIcons();
+  });
+  function updateVolIcons() {
+    const m = modalVideo.muted || modalVideo.volume === 0;
+    iconSound.style.display  = m ? 'none'  : 'block';
+    iconSilent.style.display = m ? 'block' : 'none';
+  }
+
+  btnFullscr.addEventListener('click', () => {
+    const el = document.getElementById('videoModalBox');
+    if (!document.fullscreenElement) el.requestFullscreen?.();
+    else document.exitFullscreen?.();
+  });
+})();
+</script>
+
             </div>
-            <!-- <div class="about-section-3__bottom section-spacing-top">
-              <div class="row mb-minus-30">
-                <div class="col-lg-4">
-                  <div class="about-section-3__card wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <div class="about-section-3__info">
-                      <h3 class="about-section-3__title">OUR MISSION<a href="#"><i class="fa-regular fa-arrow-right"></i></a></h3>
-                      <p class="about-section-3__dec">At Trexa, we simplify complex tech
-                        to empower innovation &amp; efficiency
-                        in every business we serve.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="about-section-3__card wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                    <div class="about-section-3__info">
-                      <h3 class="about-section-3__title">OUR VISION<a href="#"><i class="fa-regular fa-arrow-right"></i></a></h3>
-                      <p class="about-section-3__dec">At Trexa, we simplify complex tech
-                        to empower innovation &amp; efficiency
-                        in every business we serve.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="about-section-3__card wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-                    <div class="about-section-3__info">
-                      <h3 class="about-section-3__title">Our Expertise<a href="#"><i class="fa-regular fa-arrow-right"></i></a></h3>
-                      <p class="about-section-3__dec">At Trexa, we simplify complex tech
-                        to empower innovation &amp; efficiency
-                        in every business we serve.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+          
           </div>
         </section>
+        
+
+
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+  const thumbnail   = document.getElementById('videoThumbnail');
+  const backdrop    = document.getElementById('videoModal');
+  const modalVideo  = document.getElementById('modalVideo');
+  const modalClose  = document.getElementById('modalClose');
+  const btnPlay     = document.getElementById('ctrlPlayPause');
+  const progress    = document.getElementById('ctrlProgress');
+  const timeDisplay = document.getElementById('ctrlTime');
+  const btnMute     = document.getElementById('ctrlMute');
+  const iconUnmuted = document.getElementById('iconUnmuted');
+  const iconMuted   = document.getElementById('iconMuted');
+
+  /* ── OPEN MODAL ── */
+  function openModal() {
+    backdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    modalVideo.currentTime = 0;
+    modalVideo.play().then(() => {
+      btnPlay.classList.add('playing');
+    }).catch(() => {});
+  }
+
+  /* ── CLOSE MODAL ── */
+  function closeModal() {
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+    btnPlay.classList.remove('playing');
+  }
+
+  /* Trigger */
+  thumbnail.addEventListener('click', openModal);
+  thumbnail.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
+  modalClose.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  /* ── PLAY / PAUSE ── */
+  btnPlay.addEventListener('click', () => {
+    if (modalVideo.paused) {
+      modalVideo.play();
+      btnPlay.classList.add('playing');
+    } else {
+      modalVideo.pause();
+      btnPlay.classList.remove('playing');
+    }
+  });
+
+  /* Click on video also toggles play/pause */
+  modalVideo.addEventListener('click', () => {
+    btnPlay.click();
+  });
+
+  /* ── PROGRESS BAR ── */
+  function formatTime(sec) {
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
+  }
+
+  modalVideo.addEventListener('timeupdate', () => {
+    if (!modalVideo.duration) return;
+    const pct = (modalVideo.currentTime / modalVideo.duration) * 100;
+    progress.value = pct;
+    progress.style.background =
+      `linear-gradient(to right, #fff ${pct}%, rgba(255,255,255,0.3) ${pct}%)`;
+    timeDisplay.textContent =
+      `${formatTime(modalVideo.currentTime)} / ${formatTime(modalVideo.duration)}`;
+  });
+
+  progress.addEventListener('input', () => {
+    if (!modalVideo.duration) return;
+    modalVideo.currentTime = (progress.value / 100) * modalVideo.duration;
+  });
+
+  modalVideo.addEventListener('ended', () => {
+    btnPlay.classList.remove('playing');
+  });
+
+  /* ── MUTE ── */
+  btnMute.addEventListener('click', () => {
+    modalVideo.muted = !modalVideo.muted;
+    iconUnmuted.style.display = modalVideo.muted ? 'none'  : 'block';
+    iconMuted.style.display   = modalVideo.muted ? 'block' : 'none';
+  });
+</script>
 <section class="identity-2 pt-150px pb-150px">
           <div class="container rr-container-1800">
             <div class="identity-2__inner">
               <div class="section-title-2__wrapper">
                 <h4 class="section__subtitle wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"><span></span>Our Journey</h4>
-                <h2 class="title wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Doloremque eius qui tempore quos, aspernatur veniam illum iusto atque non velit.</h2>
+                <h2 class="title wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h2>
                
               </div>
 
@@ -395,390 +639,9 @@ From one reel in 2018 to three factories across India, our journey is proof that
            <!-- <div class="parallax-view rr-ov-hidden">
           <img data-speed="0.8" src="assets/imgs/home-5/Banner-2-1.webp" alt="img" data-lag="0" style="translate: none; rotate: none; scale: none; transform: translate(0px, -17.0987px); will-change: transform;">
         </div> -->
-        <style>
-             .people-page-container {
-                background-color: #1a1a1a;
-            color: #ffffff;
-        }
+       
 
-        .people-page-header {
-            margin-bottom: 80px;
-        }
 
-        .people-page-header h1 {
-            font-size: 50px;
-            font-weight: 400;
-            margin-bottom: 10px;
-            color: #fff;
-            /* letter-spacing: -1px; */
-        }
-
-        .people-page-header p {
-            font-size: 16px;
-            max-width: 400px;
-            color: #666;
-            line-height: 26px;
-            font-weight: 400;
-        }
-
-        .people-page-section {
-            padding-top: 70px;
-        }
-
-        .people-page-section-title {
-            font-size: 19px;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 40px;
-            text-transform: capitalize;
-        }
-
-        .people-page-team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 60px;
-            /* margin-bottom: 80px; */
-        }
-
-        .people-page-team-member {
-            text-align: center;
-        }
-
-        .people-page-avatar {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            margin: 0 auto 24px;
-            overflow: hidden;
-            background-color: #2a2a2a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .people-page-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .people-page-avatar-placeholder {
-            font-size: 48px;
-            font-weight: 300;
-            color: #666;
-        }
-
-        /* .people-page-avatar-pink { background: linear-gradient(135deg, #ffc4d6, #ffb3c9); }
-        .people-page-avatar-blue { background: linear-gradient(135deg, #a3c7ff, #7ba9ff); }
-        .people-page-avatar-peach { background: linear-gradient(135deg, #ffe4d4, #ffd4bf); }
-        .people-page-avatar-yellow { background: linear-gradient(135deg, #ffd966, #ffc933); }
-        .people-page-avatar-green { background: linear-gradient(135deg, #a8d5ba, #8bc9a3); }
-        .people-page-avatar-purple { background: linear-gradient(135deg, #d4c5f9, #c5b3f0); }
-        .people-page-avatar-gray { background: linear-gradient(135deg, #e0e0e0, #d0d0d0); }
-        .people-page-avatar-orange { background: linear-gradient(135deg, #ffb85c, #ff9933); }
-        .people-page-avatar-lightblue { background: linear-gradient(135deg, #b8d4ff, #a3c7ff); } */
-
-        .people-page-member-name {
-            font-size: 20px;
-            font-weight: 400;
-            margin-bottom: 8px;
-            color: #ffffff;
-        }
-
-        .people-page-member-role {
-            font-size: 14px;
-            color: #888;
-            font-weight: 300;
-        }
-
-        .people-page-more-circle {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            margin: 0 auto 24px;
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            font-weight: 300;
-            color: #1a1a1a;
-        }
-
-        @media (max-width: 1024px) {
-          
-
-            .people-page-header h1 {
-                font-size: 56px;
-            }
-
-            .people-page-header p {
-                font-size: 24px;
-            }
-
-            .people-page-team-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 640px) {
-        
-
-            .people-page-header h1 {
-                font-size: 42px;
-            }
-
-            .people-page-header p {
-                font-size: 20px;
-            }
-
-            .people-page-team-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .people-page-avatar, .people-page-more-circle {
-                width: 140px;
-                height: 140px;
-            }
-        }
-        .people-page-head .people-page-team-member .people-page-avatar {
-    width: 250px;
-    height: 250px;
-        }
-        </style>
-        <!-- <section class="team-3 rr-bg-primary pt-150px pb-150px">
-          <div class="container rr-container-1800">
-            <div class="section-heading__wrap_3 text_center">
-              <h4 class="section__subtitle wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"><span></span>Who we are</h4>
-              <h2 class="section__title rr-title-anim-2"><div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">M</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">h</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">c</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">l</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">—</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">l</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">l</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">,</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">l</div></div> <br> <div style="position:relative;display:inline-block;"> <div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">u</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">:</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">Y</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">u</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">h</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">c</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">l</div></div> <br> <div style="position:relative;display:inline-block;"> <div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">c</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">h</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">.</div></div></h2>
-            </div>
-
-            <div class="swiper team-3__active swiper-initialized swiper-horizontal swiper-pointer-events">
-              <div class="swiper-wrapper" id="swiper-wrapper-101dad5ce5f5eb1098" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-1800px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <div class="media">
-                         <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                         <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                      <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                        <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                       <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div>
-                <div class="swiper-slide" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <div class="media">
-                        <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div>
-                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                     <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div>
-                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                   <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div>
-                <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                       <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div>
-                <div class="swiper-slide" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                    <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div>
-              <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <div class="media">
-                       <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                         <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                       <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                      <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="width: 330px; margin-right: 30px;">
-                  <div class="team-3__item">
-                    <div class="media">
-                    <img src="assets/imgs/DUMMY_IMAGE/HERO_01.png" alt="image">
-                    </div>
-                    <p>Design Director <br> &amp; CEO</p>
-                    <h4 class="title"><a href="#">Ravi Mehra</a></h4>
-
-                     
-                  </div>
-                </div></div>
-            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-          </div>
-        </section> -->
-          <!-- <div class="people-page-container pt-150px pb-150px">
-      <div class="container rr-container-1800">
-         <div class="col-md-12">
-          <div class="row d-flex justify-content-center">
-              <div class="col-xl-8 text-center mb-40">
-                <h2 class="section-title rr-title-anim-2"> <div style="position:relative;display:inline-block;"> <div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">C</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">l</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">E</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">x</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">c</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">T</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">h</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">t</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">S</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">p</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">k</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">f</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">T</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">h</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">m</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">l</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">v</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">s</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">n</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">T</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">x</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</div></div> </h2>
-                <p class="sub-para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore numquam sequi recusandae ratione minus laborum velit accusantium aut voluptas porro?</p>
-              </div>
-            </div>
-        <div class="row">
-            <div class="col-md-12">
-               
-        <div class="people-page-section ">
-            <div class="people-page-section-title wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">Board of Directors</div>
-            <div class="people-page-team-grid people-page-head">
-                <div class="people-page-team-member wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                    <div class="people-page-avatar people-page-avatar-pink">
-                        <div class="people-page-avatar-placeholder">
-                          <img src="assets/imgs/home-5/greenpack-team-01.png" alt="">
-                        </div>
-                    </div>
-                    <div class="people-page-member-name">Lorem, ipsum</div>
-                    <div class="people-page-member-role">Lorem ipsum dolor sit</div>
-                </div>
-
-                <div class="people-page-team-member wow fadeInUp" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;">
-                    <div class="people-page-avatar people-page-avatar-blue">
-                        <img src="assets/imgs/home-5/greenpack-team-02.png" alt="">
-                    </div>
-                  <div class="people-page-member-name">Lorem, ipsum</div>
-                    <div class="people-page-member-role">Lorem ipsum dolor sit</div>
-                </div>
-
-                <div class="people-page-team-member wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                    <div class="people-page-avatar people-page-avatar-peach">
-                       <img src="assets/imgs/home-5/Mr. Saket Kumar Saraf - Director (1).jpg" alt="">
-                    </div>
-                 <div class="people-page-member-name">Lorem, ipsum</div>
-                    <div class="people-page-member-role">Lorem ipsum dolor sit</div>
-                </div>
-            </div>
-            <div class="text-center pt-50px">
-              <a href="#" class="rr-btn-border">
-                        <span class="text">View all</span>
-                        <span class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_46_7)">
-                              <path d="M22.0007 10.9995C16.6014 10.9995 12.2229 6.0753 12.2229 -0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                              <path d="M12.2229 21.9995C12.2229 15.9253 16.5999 10.9995 22.0007 10.9995" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                              <path d="M22.0005 10.9995H0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                            </g>
-
-                          </svg>
-                        </span>
-                      </a>
-            </div>
-        </div>
-
-     
-            </div>
-        </div>
-       </div>
-      </div>
-    </div> -->
  <section class="blog-area4 pt-150px pb-150px rr-ov-hidden">
         <div class="container rr-container-1600">
           <div class="row gy-5 d-flex align-items-center justify-content-between">
@@ -820,20 +683,14 @@ From one reel in 2018 to three factories across India, our journey is proof that
                       <h3 class="blog-area4__card-content-title">The client approached GreenPack with a clear vision: to create a customized paper container that aligned perfectly with their food presentation, operational needs, and sustainability goals.
                       </h3>
                       <p class="blog-area4__card-content-subtitle">The requirement involved developing entirely new container sizes with precise bottom sealing and top knurling. The complexity was high, as specialized machinery was not readily available, making sample development technically challenging</p>
-                      <a class="blog-area4__card-content-link" href="blog-details.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                          <g clip-path="url(#clip0_246_190)">
-                            <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M23.2465 7.96141L7.86475 23.6904" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_246_1903">
-                              <rect width="22" height="22" fill="white" transform="translate(0 16) rotate(-45.6395)"></rect>
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </a>
+                     <a class="blog-readmore" href="#!">
+  Read More
+  <svg viewBox="0 0 32 32">
+    <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" />
+    <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" />
+    <path d="M23.2465 7.96141L7.86475 23.6904" />
+  </svg>
+</a>
                     </div>
                    
                   </div>
@@ -850,20 +707,14 @@ From one reel in 2018 to three factories across India, our journey is proof that
                       <h3 class="blog-area4__card-content-title">The client’s popular burgers and sandwiches were receiving complaints, not due to taste, but because oil and grease seeped through their existing packaging.
                       </h3>
                       <p class="blog-area4__card-content-subtitle">Conventional MG poster paper failed to contain grease, leading to messy handling, poor presentation, and declining customer satisfaction.</p>
-                      <a class="blog-area4__card-content-link" href="blog-details.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                          <g clip-path="url(#clip0_246_190)">
-                            <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M23.2465 7.96141L7.86475 23.6904" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_246_1903">
-                              <rect width="22" height="22" fill="white" transform="translate(0 16) rotate(-45.6395)"></rect>
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </a>
+                     <a class="blog-readmore" href="#!">
+  Read More
+  <svg viewBox="0 0 32 32">
+    <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" />
+    <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" />
+    <path d="M23.2465 7.96141L7.86475 23.6904" />
+  </svg>
+</a>
                     </div>
                    
                   </div>
@@ -881,20 +732,14 @@ From one reel in 2018 to three factories across India, our journey is proof that
                       <h3 class="blog-area4__card-content-title">Paper cups are a direct touchpoint in the tea-drinking experience. For this cafÈ chain, comfort and safety became an unexpected challenge.
                       </h3>
                       <p class="blog-area4__card-content-subtitle">The cups used thinner paper, making them uncomfortable to hold when filled with hot tea, increasing spill risks and customer discomfort. </p>
-                      <a class="blog-area4__card-content-link" href="blog-details.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                          <g clip-path="url(#clip0_246_190)">
-                            <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M23.2465 7.96141L7.86475 23.6904" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_246_1903">
-                              <rect width="22" height="22" fill="white" transform="translate(0 16) rotate(-45.6395)"></rect>
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </a>
+                      <a class="blog-readmore" href="#!">
+  Read More
+  <svg viewBox="0 0 32 32">
+    <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" />
+    <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" />
+    <path d="M23.2465 7.96141L7.86475 23.6904" />
+  </svg>
+</a>
                     </div>
                    
                   </div>
@@ -912,20 +757,14 @@ From one reel in 2018 to three factories across India, our journey is proof that
                       <h3 class="blog-area4__card-content-title">When dealing with millions of units, even a minor price difference matters. The client questioned a ₹0.15 per cup cost difference.
                       </h3>
                       <p class="blog-area4__card-content-subtitle">Balancing price competitiveness with traceability, hygiene, and sustainability without compromising product integrity.</p>
-                      <a class="blog-area4__card-content-link" href="blog-details.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                          <g clip-path="url(#clip0_246_190)">
-                            <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M23.2465 7.96141L7.86475 23.6904" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_246_1903">
-                              <rect width="22" height="22" fill="white" transform="translate(0 16) rotate(-45.6395)"></rect>
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </a>
+                     <a class="blog-readmore" href="#!">
+  Read More
+  <svg viewBox="0 0 32 32">
+    <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" />
+    <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" />
+    <path d="M23.2465 7.96141L7.86475 23.6904" />
+  </svg>
+</a>
                     </div>
                    
                   </div>
@@ -943,20 +782,15 @@ From one reel in 2018 to three factories across India, our journey is proof that
                       <h3 class="blog-area4__card-content-title">A customer reported that a paper bowl collapsed within 15 minutes, raising concerns over quality consistency.
                       </h3>
                       <p class="blog-area4__card-content-subtitle">The product was designed for hot food, but was now used for chilled, moisture-heavy applications, changing how paper behaved.</p>
-                      <a class="blog-area4__card-content-link" href="blog-details.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                          <g clip-path="url(#clip0_246_190)">
-                            <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                            <path d="M23.2465 7.96141L7.86475 23.6904" stroke="#F0F2F4" stroke-width="2" stroke-miterlimit="10"></path>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_246_1903">
-                              <rect width="22" height="22" fill="white" transform="translate(0 16) rotate(-45.6395)"></rect>
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </a>
+                      <a class="blog-readmore" href="#!">
+  Read More
+  <svg viewBox="0 0 32 32">
+    <path d="M23.2462 7.96095C19.4712 11.8212 12.8893 11.5088 8.54541 7.26074" />
+    <path d="M24.2746 22.643C19.9319 18.3961 19.4704 11.8228 23.2465 7.96148" />
+    <path d="M23.2465 7.96141L7.86475 23.6904" />
+  </svg>
+</a>
+
                     </div>
                    
                   </div>

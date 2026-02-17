@@ -139,7 +139,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li ><a href="products.html">Products</a></li>
-                    <li><a href="#">Team</a></li>
+                    <li><a href="team.html">Team</a></li>
                     <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </nav>
@@ -668,7 +668,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 5px 10px;
+    padding: 5px 5px;
     color: #666;
     text-decoration: none;
     font-size: 15px;
@@ -682,7 +682,7 @@
 .shop-sidebar__item > a:hover {
     color: #1a1a1a;
     background-color: #f8f9fa;
-    padding-left: 20px;
+    /* padding-left: 20px; */
 }
 
 .shop-sidebar__item.active > a {
@@ -720,10 +720,10 @@
     transition: all 0.3s ease;
 }
 
-.shop-sidebar__item:hover .shop-sidebar__count {
+/* .shop-sidebar__item:hover .shop-sidebar__count {
     background-color: #dee2e6;
     color: #495057;
-}
+} */
 
 .shop-sidebar__item.active .shop-sidebar__count {
     /* background-color: #007bff; */
@@ -779,7 +779,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 12px;
+    /* padding: 8px 12px; */
     color: #777;
     text-decoration: none;
     font-size: 14px;
@@ -1296,20 +1296,38 @@ document.head.appendChild(style);
               <!-- Single Wall Cups -->
               <li class="shop-sidebar__item">
                 <a href="#" data-category="single-wall">
-                  Single Wall Cups
+                 Paper Cups & Accessories 
                   <span class="category-arrow fa fa-chevron-right"></span>
                   <span class="shop-sidebar__count">(3)</span>
                 </a>
                 <ul class="subcategory-list">
                   <li class="subcategory-item">
                     <a href="#" data-subcategory="single-wall-hot">
-                      Hot Beverage Cups
+                      Single Wall Paper Cups 
                       <span class="shop-sidebar__count">(2)</span>
                     </a>
                   </li>
                   <li class="subcategory-item">
                     <a href="#" data-subcategory="single-wall-cold">
-                      Cold Beverage Cups
+                      Double Wall Paper Cups 
+                      <span class="shop-sidebar__count">(1)</span>
+                    </a>
+                  </li>
+                  <li class="subcategory-item">
+                    <a href="#" data-subcategory="single-wall-cold">
+                     Ripple  Wall Paper Cups 
+                      <span class="shop-sidebar__count">(1)</span>
+                    </a>
+                  </li>
+                  <li class="subcategory-item">
+                    <a href="#" data-subcategory="single-wall-cold">
+                      Paper Lids 
+                      <span class="shop-sidebar__count">(1)</span>
+                    </a>
+                  </li>
+                   <li class="subcategory-item">
+                    <a href="#" data-subcategory="single-wall-cold">
+                    Corrugated Cup Sleeves 
                       <span class="shop-sidebar__count">(1)</span>
                     </a>
                   </li>
@@ -1319,20 +1337,26 @@ document.head.appendChild(style);
               <!-- Double Wall Cups -->
               <li class="shop-sidebar__item">
                 <a href="#" data-category="double-wall">
-                  Double Wall Cups
+                  Bowls & Containers 
                      <span class="category-arrow fa fa-chevron-right"></span>
                   <span class="shop-sidebar__count">(2)</span>
                 </a>
                 <ul class="subcategory-list">
                   <li class="subcategory-item">
                     <a href="#" data-subcategory="double-wall-insulated">
-                      Insulated Cups
+                     Portion Bowls 
                       <span class="shop-sidebar__count">(1)</span>
                     </a>
                   </li>
                   <li class="subcategory-item">
                     <a href="#" data-subcategory="double-wall-premium">
-                      Premium Cups
+                      Food Bowls
+                      <span class="shop-sidebar__count">(1)</span>
+                    </a>
+                  </li>
+                  <li class="subcategory-item">
+                    <a href="#" data-subcategory="double-wall-premium">
+                     Meals Container
                       <span class="shop-sidebar__count">(1)</span>
                     </a>
                   </li>
@@ -1342,36 +1366,36 @@ document.head.appendChild(style);
               <!-- Ripple Wall Cups -->
               <li class="shop-sidebar__item">
                 <a href="#" data-category="ripple-wall">
-                  Ripple Wall Cups
+                 Boxes & Trays 
                   <span class="shop-sidebar__count">(2)</span>
                 </a>
               </li>
 
-              <!-- Cups with Handle -->
-              <li class="shop-sidebar__item">
-                <a href="#" data-category="with-handle">
-                  Cups with Handle
-                  <span class="shop-sidebar__count">(1)</span>
-                </a>
-              </li>
+          
 
               <!-- Eco-Friendly -->
               <li class="shop-sidebar__item">
                 <a href="#" data-category="eco-friendly">
-                  Eco-Friendly Cups
+            Cup & Plate Converter Solution
             <span class="category-arrow fa fa-chevron-right"></span>
                   <span class="shop-sidebar__count">(2)</span>
                 </a>
                 <ul class="subcategory-list">
                   <li class="subcategory-item">
                     <a href="#" data-subcategory="eco-friendly-biodegradable">
-                      Biodegradable
+                      LDPE Coated Cup Stock Reels & Sheets
                       <span class="shop-sidebar__count">(1)</span>
                     </a>
                   </li>
                   <li class="subcategory-item">
                     <a href="#" data-subcategory="eco-friendly-compostable">
-                      Compostable
+                     LDPE Coated Cup Stock Paper Blanks/Fans
+                      <span class="shop-sidebar__count">(1)</span>
+                    </a>
+                  </li>
+                  <li class="subcategory-item">
+                    <a href="#" data-subcategory="eco-friendly-compostable">
+                     LDPE Coated Cup Stock Bottom/Bobbins 
                       <span class="shop-sidebar__count">(1)</span>
                     </a>
                   </li>
@@ -1381,9 +1405,25 @@ document.head.appendChild(style);
               <!-- Custom Printed -->
               <li class="shop-sidebar__item">
                 <a href="#" data-category="custom-printed">
-                  Custom Printed Cups
-                  <span class="shop-sidebar__count">(1)</span>
+                 Packaging Converters Solutions
+                  <span class="category-arrow fa fa-chevron-right"></span>
+                  <span class="shop-sidebar__count">(2)</span>
                 </a>
+                <ul class="subcategory-list">
+                  <li class="subcategory-item">
+                    <a href="#" data-subcategory="eco-friendly-biodegradable">
+                     FBB/Duplex Sheets in Customised Sizes
+                      <span class="shop-sidebar__count">(1)</span>
+                    </a>
+                  </li>
+                  <li class="subcategory-item">
+                    <a href="#" data-subcategory="eco-friendly-compostable">
+                   LDPE Coated FBB/Duplex Reels & Sheets
+                      <span class="shop-sidebar__count">(1)</span>
+                    </a>
+                  </li>
+                  
+                </ul>
               </li>
 
             </ul>
@@ -1402,164 +1442,164 @@ document.head.appendChild(style);
             
             <!-- Product 1 -->
             <div class="col-sm-6 col-lg-4">
-              <div class="product-card text-center" data-category="single-wall single-wall-hot with-handle">
+              <a href="product-details.html" class="product-card text-center" data-category="single-wall single-wall-hot with-handle">
                 <div class="product-card__inner">
                   <div class="product-card__image">
                     <img src="assets/imgs/home-5/h-cup.png" alt="Hot Coffee Cup with Handle" class="img-fluid">
                   </div>
                   <div class="product-card__body">
                     <div class="product-card__rating"></div>
-                    <a href="shop-details.html">
+                    <a href="#!">
                       <h5 class="product-card__title">Hot Coffee Cup with Handle</h5>
                     </a>
                     <button class="btn product-card__btn"><a href="product-details.html">Read More</a></button>
                   </div>
                 </div>
-              </div>
+            </a>
             </div>
 
             <!-- Product 2 -->
             <div class="col-sm-6 col-lg-4">
-              <div class="product-card text-center" data-category="single-wall single-wall-cold">
+               <a href="product-details.html" class="product-card text-center" data-category="single-wall single-wall-cold">
                 <div class="product-card__inner">
                   <div class="product-card__image">
                     <img src="assets/imgs/home-5/3.-Paper-Cups-without-handle-1.png" alt="Single Wall Paper Cup" class="img-fluid">
                   </div>
                   <div class="product-card__body">
                     <div class="product-card__rating"></div>
-                    <a href="shop-details.html">
+                    <a href="#!">
                       <h5 class="product-card__title">Single Wall Paper Cup</h5>
                     </a>
                        <button class="btn product-card__btn"><a href="product-details.html">Read More</a></button>
                   </div>
                 </div>
-              </div>
+            </a>
             </div>
 
             <!-- Product 3 -->
             <div class="col-sm-6 col-lg-4">
-              <div class="product-card text-center" data-category="ripple-wall double-wall double-wall-insulated">
+              <a href="product-details.html" class="product-card text-center" data-category="ripple-wall double-wall double-wall-insulated">
                 <div class="product-card__inner">
                   <div class="product-card__image">
                     <img src="assets/imgs/home-5/ripple-paper-cup-double-wall.png" alt="Ripple Wall Insulated Cup" class="img-fluid">
                   </div>
                   <div class="product-card__body">
                     <div class="product-card__rating"></div>
-                    <a href="shop-details.html">
+                    <a href="#!">
                       <h5 class="product-card__title">Ripple Wall Insulated Cup</h5>
                     </a>
                         <button class="btn product-card__btn"><a href="product-details.html">Read More</a></button>
                   </div>
                 </div>
-              </div>
+            </a>
             </div>
 
             <!-- Product 4 -->
             <div class="col-sm-6 col-lg-4">
-              <div class="product-card text-center" data-category="custom-printed single-wall single-wall-hot">
+               <a href="product-details.html" class="product-card text-center" data-category="custom-printed single-wall single-wall-hot">
                 <div class="product-card__inner">
                   <div class="product-card__image">
                     <img src="assets/imgs/home-5/186008.png" alt="Custom Branded Hot Cup" class="img-fluid">
                   </div>
                   <div class="product-card__body">
                     <div class="product-card__rating"></div>
-                    <a href="shop-details.html">
+                    <a href="#!">
                       <h5 class="product-card__title">Custom Branded Hot Cup</h5>
                     </a>
                      <button class="btn product-card__btn"><a href="product-details.html">Read More</a></button>
                   </div>
                 </div>
-              </div>
+            </a>
             </div>
 
             <!-- Product 5 -->
             <div class="col-sm-6 col-lg-4">
-              <div class="product-card text-center" data-category="eco-friendly eco-friendly-biodegradable single-wall">
+              <a href="product-details.html" class="product-card text-center" data-category="eco-friendly eco-friendly-biodegradable single-wall">
                 <div class="product-card__inner">
                   <div class="product-card__image">
                     <img src="assets/imgs/home-5/3.-Paper-Cups-without-handle-1.png" alt="Biodegradable Paper Cup" class="img-fluid">
                   </div>
                   <div class="product-card__body">
                     <div class="product-card__rating"></div>
-                    <a href="shop-details.html">
+                    <a href="#!">
                       <h5 class="product-card__title">Biodegradable Paper Cup</h5>
                     </a>
                       <button class="btn product-card__btn"><a href="product-details.html">Read More</a></button>
                   </div>
                 </div>
-              </div>
+            </a>
             </div>
 
             <!-- Product 6 -->
             <div class="col-sm-6 col-lg-4">
-              <div class="product-card text-center" data-category="double-wall double-wall-premium">
+               <a href="product-details.html" class="product-card text-center" data-category="double-wall double-wall-premium">
                 <div class="product-card__inner">
                   <div class="product-card__image">
                     <img src="assets/imgs/home-5/186008.png" alt="Premium Double Wall Cup" class="img-fluid">
                   </div>
                   <div class="product-card__body">
                     <div class="product-card__rating"></div>
-                    <a href="shop-details.html">
+                    <a href="#!">
                       <h5 class="product-card__title">Premium Double Wall Cup</h5>
                     </a>
                     <button class="btn product-card__btn"><a href="product-details.html">Read More</a></button>
                   </div>
                 </div>
-              </div>
+            </a>
             </div>
 
             <!-- Product 7 -->
             <div class="col-sm-6 col-lg-4">
-              <div class="product-card text-center" data-category="ripple-wall eco-friendly eco-friendly-compostable">
+               <a href="product-details.html" class="product-card text-center" data-category="ripple-wall eco-friendly eco-friendly-compostable">
                 <div class="product-card__inner">
                   <div class="product-card__image">
                     <img src="assets/imgs/home-5/ripple-paper-cup-double-wall.png" alt="Compostable Ripple Cup" class="img-fluid">
                   </div>
                   <div class="product-card__body">
                     <div class="product-card__rating"></div>
-                    <a href="shop-details.html">
+                    <a href="#!">
                       <h5 class="product-card__title">Compostable Ripple Cup</h5>
                     </a>
                      <button class="btn product-card__btn"><a href="product-details.html">Read More</a></button>
                   </div>
                 </div>
-              </div>
+            </a>
             </div>
 
             <!-- Product 8 -->
             <div class="col-sm-6 col-lg-4">
-              <div class="product-card text-center" data-category="single-wall single-wall-hot">
+               <a href="product-details.html" class="product-card text-center" data-category="single-wall single-wall-hot">
                 <div class="product-card__inner">
                   <div class="product-card__image">
                     <img src="assets/imgs/home-5/186008.png" alt="Standard Hot Beverage Cup" class="img-fluid">
                   </div>
                   <div class="product-card__body">
                     <div class="product-card__rating"></div>
-                    <a href="shop-details.html">
+                    <a href="#!">
                       <h5 class="product-card__title">Standard Hot Beverage Cup</h5>
                     </a>
                        <button class="btn product-card__btn"><a href="product-details.html">Read More</a></button>
                   </div>
                 </div>
-              </div>
+            </a>
             </div>
 
             <!-- Product 9 -->
             <div class="col-sm-6 col-lg-4">
-              <div class="product-card text-center" data-category="single-wall single-wall-cold">
+              <a href="product-details.html" class="product-card text-center" data-category="single-wall single-wall-cold">
                 <div class="product-card__inner">
                   <div class="product-card__image">
                     <img src="assets/imgs/home-5/3.-Paper-Cups-without-handle-1.png" alt="Cold Drink Paper Cup" class="img-fluid">
                   </div>
                   <div class="product-card__body">
                     <div class="product-card__rating"></div>
-                    <a href="shop-details.html">
+                    <a href="#!">
                       <h5 class="product-card__title">Cold Drink Paper Cup</h5>
                     </a>
                         <button class="btn product-card__btn"><a href="product-details.html">Read More</a></button>
                   </div>
                 </div>
-              </div>
+            </a>
             </div>
 
           </div>
