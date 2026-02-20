@@ -123,13 +123,12 @@
     <div id="smooth-content">
 
       <!-- Header area start -->
-      <header class="header-area header-area-7">
+      <header class="header-area header-3">
         <div class="header-main">
           <div class="container rr-container-1800">
-            <div class="header-area-7__inner">
+            <div class="header-area__inner">
               <div class="header__logo">
                 <a href="index.html">
-                  <!-- <img src="assets/imgs/logo/dark-logo.png" class="normal-logo" alt="Site Logo" /> -->
                   <img src="assets/imgs/home-5/3Dlogo-10-pmlad3xgb7i6ug5dzx8yomzxqnmomzdaz1pa9cueew.png.webp" class="normal-logo" alt="Site Logo" />
                 </a>
               </div>
@@ -137,9 +136,27 @@
                 <nav class="main-menu">
                   <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <!-- <li><a href="about.html">About Us</a></li> -->
+                    <li class="menu-item-has-children">
+                      <a href="about.html">Company</a>
+                      <ul class="dp-menu">
+                        <li>
+                          <a href="about.html">About</a>
+                        </li>
+                        <li>
+                          <a href="case-studie.html">Case Study</a>
+                        </li>
+                        <li>
+                          <a href="team.html">Team</a>
+                        </li>
+                        <!-- <li>
+                          <a href="">Software Agency</a>
+                        </li> -->
+                        
+                      </ul>
+                    </li>
                     <li ><a href="products.html">Products</a></li>
-                    <li><a href="team.html">Team</a></li>
+                    <!-- <li><a href="team.html">Team</a></li> -->
                     <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </nav>
@@ -799,7 +816,7 @@
 .subcategory-item a:hover {
     color: #333;
     background-color: #f8f9fa;
-    padding-left: 16px;
+    /* padding-left: 16px; */
 }
 
 .subcategory-item a:hover::before {
@@ -875,7 +892,6 @@
     }
 }
 
-/* Custom Scrollbar for Sidebar (Optional Enhancement) */
 .shop-sidebar {
     max-height: calc(100vh - 200px);
     /* overflow-y: auto; */
@@ -900,9 +916,7 @@
 .shop-sidebar::-webkit-scrollbar-thumb:hover {
     background: #999;
 }
-/* ========================================
-   PRODUCT SPECIFICATIONS TABLE STYLES
-   ======================================== */
+
 
 .product-modal__specs {
     /* margin-top: 30px; */
@@ -1025,35 +1039,6 @@
     }
 }
 
-/* Custom Scrollbar for Table Wrapper */
-/* .specs-table-wrapper::-webkit-scrollbar {
-    height: 8px;
-}
-
-.specs-table-wrapper::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-.specs-table-wrapper::-webkit-scrollbar-thumb {
-    background: #c1dc4d;
-    border-radius: 4px;
-}
-
-.specs-table-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #b0cb3d;
-} */
-
-/* Empty State for No Specifications */
-/* .specs-table tbody.empty::after {
-    content: 'No specifications available';
-    display: block;
-    text-align: center;
-    padding: 30px;
-    color: #999;
-    font-style: italic;
-} */
-/* Animation for Filter Changes */
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -1075,6 +1060,45 @@
 .shop-sidebar__item:nth-child(4) { animation-delay: 0.2s; }
 .shop-sidebar__item:nth-child(5) { animation-delay: 0.25s; }
 .shop-sidebar__item:nth-child(6) { animation-delay: 0.3s; }
+
+/* REMOVE these old styles */
+.subcategory-item a::before {
+    content: '→';
+    color: #ccc;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.subcategory-item a:hover::before {
+    color: #007bff;
+    transform: translateX(2px);
+}
+
+/* ADD these new checkbox styles */
+.subcategory-item a::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 3px;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.subcategory-item a:hover::before {
+    border-color: #c1dc4d;
+}
+
+.subcategory-item.active a::before {
+    background-color: #c1dc4d;
+    border-color: #c1dc4d;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%23000' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+}
 </style>
 <script>
     // Category Filter System
@@ -1082,77 +1106,116 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize filter functionality
     initCategoryFilter();
+function initCategoryFilter() {
+    const categoryItems = document.querySelectorAll('.shop-sidebar__item');
+    const productCards = document.querySelectorAll('.product-card');
     
-    function initCategoryFilter() {
-        const categoryItems = document.querySelectorAll('.shop-sidebar__item');
-        const productCards = document.querySelectorAll('.product-card');
-        
-        // Add click event to each category item
-        categoryItems.forEach(item => {
-            const mainLink = item.querySelector('a');
-            const arrow = item.querySelector('.category-arrow');
-            
-            // Main category click
-            mainLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const category = this.getAttribute('data-category');
-                
-                // Toggle active state
+    // Track selected categories/subcategories
+    let selectedFilters = new Set(['all']);
+
+    categoryItems.forEach(item => {
+        const mainLink = item.querySelector('a');
+        const arrow = item.querySelector('.category-arrow');
+
+        mainLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const category = this.getAttribute('data-category');
+
+            if (category === 'all') {
+                // Reset all selections
+                selectedFilters.clear();
+                selectedFilters.add('all');
                 categoryItems.forEach(cat => cat.classList.remove('active'));
+                document.querySelectorAll('.subcategory-item').forEach(sub => sub.classList.remove('active'));
                 item.classList.add('active');
-                
-                // Filter products
-                filterProducts(category);
-                
-                // Toggle subcategory if exists
-                if (arrow) {
-                    const subcategoryList = item.querySelector('.subcategory-list');
-                    if (subcategoryList) {
-                        const isOpen = subcategoryList.classList.contains('open');
-                        
-                        // Close all other subcategories
-                        document.querySelectorAll('.subcategory-list').forEach(sub => {
-                            sub.classList.remove('open');
-                        });
-                        document.querySelectorAll('.category-arrow').forEach(arr => {
-                            arr.classList.remove('rotate');
-                        });
-                        
-                        // Toggle current subcategory
-                        if (!isOpen) {
-                            subcategoryList.classList.add('open');
-                            arrow.classList.add('rotate');
-                        }
-                    }
-                }
-            });
-            
-            // Subcategory clicks
-            const subcategoryLinks = item.querySelectorAll('.subcategory-item a');
-            subcategoryLinks.forEach(subLink => {
-                subLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const subcategory = this.getAttribute('data-subcategory');
-                    
-                    // Remove active from all
-                    categoryItems.forEach(cat => cat.classList.remove('active'));
-                    subcategoryLinks.forEach(sub => sub.parentElement.classList.remove('active'));
-                    
-                    // Add active to clicked subcategory
-                    this.parentElement.classList.add('active');
+            } else {
+                // Remove 'all' if a specific category is chosen
+                selectedFilters.delete('all');
+                document.querySelector('[data-category="all"]')?.parentElement.classList.remove('active');
+
+                if (selectedFilters.has(category)) {
+                    selectedFilters.delete(category);
+                    item.classList.remove('active');
+                } else {
+                    selectedFilters.add(category);
                     item.classList.add('active');
-                    
-                    // Filter products by subcategory
-                    filterProducts(subcategory);
-                });
+                }
+
+                if (selectedFilters.size === 0) {
+                    selectedFilters.add('all');
+                    document.querySelector('[data-category="all"]')?.parentElement.classList.add('active');
+                }
+            }
+
+            // Toggle subcategory dropdown
+            if (arrow) {
+                const subcategoryList = item.querySelector('.subcategory-list');
+                if (subcategoryList) {
+                    const isOpen = subcategoryList.classList.contains('open');
+                    subcategoryList.classList.toggle('open', !isOpen);
+                    arrow.classList.toggle('rotate', !isOpen);
+                }
+            }
+
+            applyFilters(selectedFilters);
+        });
+
+        // Subcategory clicks
+        const subcategoryLinks = item.querySelectorAll('.subcategory-item a');
+        subcategoryLinks.forEach(subLink => {
+            subLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const subcategory = this.getAttribute('data-subcategory');
+                const subItem = this.parentElement;
+
+                selectedFilters.delete('all');
+                document.querySelector('[data-category="all"]')?.parentElement.classList.remove('active');
+
+                if (selectedFilters.has(subcategory)) {
+                    selectedFilters.delete(subcategory);
+                    subItem.classList.remove('active');
+                } else {
+                    selectedFilters.add(subcategory);
+                    subItem.classList.add('active');
+                }
+
+                if (selectedFilters.size === 0) {
+                    selectedFilters.add('all');
+                    document.querySelector('[data-category="all"]')?.parentElement.classList.add('active');
+                }
+
+                applyFilters(selectedFilters);
             });
         });
-        
-        // Show all products initially
+    });
+
+    showAllProducts();
+}
+
+function applyFilters(selectedFilters) {
+    const productCards = document.querySelectorAll('.product-card');
+    let visibleCount = 0;
+
+    if (selectedFilters.has('all')) {
         showAllProducts();
+        return;
     }
+
+    productCards.forEach(card => {
+        const cardCategories = card.getAttribute('data-category') || '';
+        const matches = [...selectedFilters].some(filter => cardCategories.includes(filter));
+
+        if (matches) {
+            card.parentElement.style.display = 'block';
+            card.style.animation = 'fadeIn 0.5s ease-in-out';
+            visibleCount++;
+        } else {
+            card.parentElement.style.display = 'none';
+        }
+    });
+
+    showNoProductsMessage(visibleCount);
+}
     
     function filterProducts(category) {
         const productCards = document.querySelectorAll('.product-card');
@@ -1277,8 +1340,8 @@ document.head.appendChild(style);
     <div class="row gy-4">
 
       <!-- SIDEBAR -->
-      <aside class="col-lg-3">
-        <div class="shop-sidebar">
+      <aside class="col-lg-3 ">
+        <div class="shop-sidebar fixxed">
 
           <!-- Categories -->
           <div class="shop-sidebar__widget shop-sidebar__categories">
@@ -1434,7 +1497,7 @@ document.head.appendChild(style);
 
 
       <!-- MAIN CONTENT / PRODUCTS -->
-      <div class="col-lg-9">
+      <div class="col-lg-9 relaxed">
         <div class="shop-main">
 
           <!-- PRODUCT GRID -->
@@ -2052,347 +2115,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script> -->
 </section>
 
-
-<!-- Include the JavaScript file before closing body tag -->
-<script src="category-filter.js"></script>
-     <script>
-    // Project Gallery Filter System
-class ProjectGallery {
-    constructor() {
-        this.filterTabs = document.querySelectorAll('.filter-tab');
-        this.projectItems = document.querySelectorAll('.project-item');
-        this.projectsGrid = document.querySelector('.projects-grid');
-        
-        this.init();
-    }
-
-    init() {
-        // Add click event listeners to filter tabs
-        this.filterTabs.forEach(tab => {
-            tab.addEventListener('click', (e) => this.handleFilterClick(e));
-        });
-
-        // Add keyboard navigation
-        this.filterTabs.forEach(tab => {
-            tab.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.handleFilterClick(e);
-                }
-            });
-        });
-
-        // Make filter tabs focusable
-        this.filterTabs.forEach(tab => {
-            tab.setAttribute('tabindex', '0');
-            tab.setAttribute('role', 'button');
-        });
-
-        // Smooth scroll behavior for filter tabs
-        this.setupSmoothScroll();
-    }
-
-    handleFilterClick(event) {
-        const clickedTab = event.currentTarget;
-        const filterValue = clickedTab.getAttribute('data-filter');
-
-        // Update active state
-        this.filterTabs.forEach(tab => tab.classList.remove('active'));
-        clickedTab.classList.add('active');
-
-        // Filter projects with smooth animation
-        this.filterProjects(filterValue);
-
-        // Announce to screen readers
-        this.announceFilter(clickedTab.textContent, filterValue);
-    }
-
-    filterProjects(filterValue) {
-        // Add loading class for smooth transition
-        this.projectsGrid.classList.add('loading');
-
-        // First, hide all items
-        this.projectItems.forEach((item) => {
-            item.classList.add('filter-hide');
-            item.classList.remove('filter-show');
-        });
-
-        // Wait for hide animation to complete
-        setTimeout(() => {
-            let visibleIndex = 0;
-            const visibleItems = [];
-
-            // Determine which items should be visible
-            this.projectItems.forEach(item => {
-                const categories = item.getAttribute('data-category');
-                const shouldShow = filterValue === 'all' || categories.includes(filterValue);
-
-                if (shouldShow) {
-                    visibleItems.push(item);
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-
-            // Reorder items in DOM to maintain masonry flow
-            // This is crucial for column-based masonry layout
-            const fragment = document.createDocumentFragment();
-            visibleItems.forEach(item => {
-                fragment.appendChild(item.cloneNode(true));
-            });
-
-            // Show items with staggered animation
-            setTimeout(() => {
-                visibleItems.forEach((item, index) => {
-                    item.classList.remove('filter-hide');
-                    item.classList.add('filter-show');
-                    item.style.animationDelay = `${index * 0.1}s`;
-                });
-
-                // Remove loading class
-                setTimeout(() => {
-                    this.projectsGrid.classList.remove('loading');
-                }, 300);
-            }, 50);
-        }, 400);
-    }
-
-    setupSmoothScroll() {
-        const filtersBox = document.querySelector('.filters');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        filtersBox.addEventListener('mousedown', (e) => {
-            isDown = true;
-            filtersBox.style.cursor = 'grabbing';
-            startX = e.pageX - filtersBox.offsetLeft;
-            scrollLeft = filtersBox.scrollLeft;
-        });
-
-        filtersBox.addEventListener('mouseleave', () => {
-            isDown = false;
-            filtersBox.style.cursor = 'default';
-        });
-
-        filtersBox.addEventListener('mouseup', () => {
-            isDown = false;
-            filtersBox.style.cursor = 'default';
-        });
-
-        filtersBox.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - filtersBox.offsetLeft;
-            const walk = (x - startX) * 2;
-            filtersBox.scrollLeft = scrollLeft - walk;
-        });
-    }
-
-    announceFilter(tabText, filterValue) {
-        // Create or update announcement for screen readers
-        let announcer = document.getElementById('filter-announcer');
-        
-        if (!announcer) {
-            announcer = document.createElement('div');
-            announcer.id = 'filter-announcer';
-            announcer.setAttribute('role', 'status');
-            announcer.setAttribute('aria-live', 'polite');
-            announcer.style.position = 'absolute';
-            announcer.style.left = '-10000px';
-            announcer.style.width = '1px';
-            announcer.style.height = '1px';
-            announcer.style.overflow = 'hidden';
-            document.body.appendChild(announcer);
-        }
-
-        const message = filterValue === 'all' 
-            ? 'Showing all projects' 
-            : `Filtered to show ${tabText} projects`;
-        
-        announcer.textContent = message;
-    }
-}
-
-// Additional smooth interactions
-class SmoothInteractions {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        this.setupViewButtons();
-        this.setupParallaxEffect();
-        this.setupIntersectionObserver();
-    }
-
-    setupViewButtons() {
-        const viewButtons = document.querySelectorAll('.view-btn');
-        
-        viewButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const projectCard = button.closest('.project-card');
-                const image = projectCard.querySelector('.image-box img');
-                
-                // Simple lightbox effect (you can enhance this with a proper lightbox library)
-                this.showImagePreview(image.src, image.alt);
-            });
-        });
-    }
-
-    showImagePreview(src, alt) {
-        // Create simple modal overlay
-        const overlay = document.createElement('div');
-        overlay.className = 'image-preview-overlay';
-        overlay.style.cssText = `
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            cursor: pointer;
-            animation: fadeIn 0.3s ease-out;
-        `;
-
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = alt;
-        img.style.cssText = `
-            max-width: 90%;
-            max-height: 90vh;
-            border-radius: 8px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        `;
-
-        overlay.appendChild(img);
-        document.body.appendChild(overlay);
-
-        // Close on click
-        overlay.addEventListener('click', () => {
-            overlay.style.animation = 'fadeOut 0.3s ease-out';
-            setTimeout(() => overlay.remove(), 300);
-        });
-
-        // Close on Escape key
-        const handleEscape = (e) => {
-            if (e.key === 'Escape') {
-                overlay.click();
-                document.removeEventListener('keydown', handleEscape);
-            }
-        };
-        document.addEventListener('keydown', handleEscape);
-    }
-
-    setupParallaxEffect() {
-        const projectCards = document.querySelectorAll('.project-card');
-
-        projectCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 30;
-                const rotateY = (centerX - x) / 30;
-
-                const image = card.querySelector('.image-box img');
-                if (image) {
-                    image.style.transform = `scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                }
-            });
-
-            card.addEventListener('mouseleave', () => {
-                const image = card.querySelector('.image-box img');
-                if (image) {
-                    image.style.transform = 'scale(1) rotateX(0) rotateY(0)';
-                }
-            });
-        });
-    }
-
-    setupIntersectionObserver() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.project-item').forEach(item => {
-            observer.observe(item);
-        });
-    }
-}
-
-// Performance optimization: Debounce function
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize gallery
-    const gallery = new ProjectGallery();
-    const interactions = new SmoothInteractions();
-
-    // Add smooth scroll restoration
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-
-    // Add page visibility handling for animations
-    document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-            document.querySelectorAll('.project-card').forEach(card => {
-                card.style.animationPlayState = 'paused';
-            });
-        } else {
-            document.querySelectorAll('.project-card').forEach(card => {
-                card.style.animationPlayState = 'running';
-            });
-        }
-    });
-
-    // Log initialization
-    console.log('🎨 Project Gallery initialized successfully');
-    console.log(`📊 Total projects: ${document.querySelectorAll('.project-item').length}`);
-    console.log(`🏷️ Filter categories: ${document.querySelectorAll('.filter-tab').length}`);
-});
-
-// Handle window resize for responsive behavior
-window.addEventListener('resize', debounce(() => {
-    // Recalculate any dynamic positioning if needed
-    console.log('📐 Window resized, recalculating layout...');
-}, 250));
-
-// Export for module usage if needed
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { ProjectGallery, SmoothInteractions };
-}
-    </script>
-            
+    
             
   <div class="cta-area8">
         <div class="container-1600">
@@ -2426,18 +2149,21 @@ if (typeof module !== 'undefined' && module.exports) {
             <div class="col-lg-6 col-md-6 footer-area8__brand">
               <h3 class="footer-area8__logo"><img src="assets/imgs/home-5/3Dlogo-10-pmlad3xgb7i6ug5dzx8yomzxqnmomzdaz1pa9cueew.png.webp" alt="logo"></h3>
               <p class="footer-area8__desc rr-title-anim-2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam, veniam quaerat totam nisi illum eius sequi sit id asperiores voluptatem, ipsa dolor ad consequatur.</p>
-             
+             <div class="footer-area8__social d-flex gap-2">
+                <a href="#" class="footer-area8__social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="footer-area8__social-link"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="footer-area8__social-link"><i class="fa-brands fa-whatsapp"></i></a>
+                <!-- <a href="#" class="footer-area8__social-link">D</a> -->
+              </div>
             </div>
             <!-- <div class="col-lg-3 col-md-6"></div> -->
             <!-- Links 1 -->
             <div class="col-lg-2 col-md-6 footer-area8__column">
-              <h4 class="footer-area8__heading">Home</h4>
+              <h4 class="footer-area8__heading">Locations</h4>
               <ul class="footer-area8__list wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                <li class="footer-area8__item"><a href="#">Overview</a></li>
-                <li class="footer-area8__item"><a href="#">Benefits</a></li>
-                <li class="footer-area8__item"><a href="#">Services</a></li>
-                <li class="footer-area8__item"><a href="#">Features</a></li>
-                <li class="footer-area8__item"><a href="#">Pricing</a></li>
+                <li class="footer-area8__item"><a href="#">Varanasi – Raw Material Hub</a></li>
+                <li class="footer-area8__item"><a href="#">Ahmedabad – Coating & Printing Unit</a></li>
+                <li class="footer-area8__item"><a href="#">Noida – Conversion Unit</a></li>
               </ul>
             </div>
 
@@ -2445,23 +2171,22 @@ if (typeof module !== 'undefined' && module.exports) {
             <div class="col-lg-2 col-md-6 footer-area8__column">
               <h4 class="footer-area8__heading">Company</h4>
               <ul class="footer-area8__list wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                <li class="footer-area8__item"><a href="#">About Us</a></li>
-                <li class="footer-area8__item"><a href="#">Our Team</a></li>
-                <li class="footer-area8__item"><a href="#">How To Use</a></li>
-                <li class="footer-area8__item"><a href="#">FAQ’s</a></li>
-                <li class="footer-area8__item"><a href="#">Testimonials</a></li>
+                <li class="footer-area8__item"><a href="about.html">About Us</a></li>
+                <li class="footer-area8__item"><a href="team.html">Our Team</a></li>
+                <li class="footer-area8__item"><a href="case-studie.html">Case Study</a></li>
+                <li class="footer-area8__item"><a href="products.html">Our Products</a></li>
               </ul>
             </div>
 
             <!-- Links 3 -->
             <div class="col-lg-2 col-md-6 footer-area8__column">
-              <h4 class="footer-area8__heading">All Pages</h4>
+              <h4 class="footer-area8__heading">Case Study</h4>
               <ul class="footer-area8__list wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                <li class="footer-area8__item"><a href="#">Help Center</a></li>
-                <li class="footer-area8__item"><a href="#">Integration</a></li>
-                <li class="footer-area8__item"><a href="#">Blog Article</a></li>
-                <li class="footer-area8__item"><a href="#">Privacy Policy</a></li>
-                <li class="footer-area8__item"><a href="#">Error Page</a></li>
+                <li class="footer-area8__item"><a href="CPC_CRC.html">Custom Paper Containers for a Chinese Restaurant Chain</a></li>
+                <li class="footer-area8__item"><a href="SGL_QSR.html">Solving Grease Leakage for a QSR Chain</a></li>
+                <li class="footer-area8__item"><a href="RPC_CC.html">Redesigning Paper Cups for a Café Chain</a></li>
+                <li class="footer-area8__item"><a href="CT_HVCS.html">Cost Transparency in High-Volume Cup Supply</a></li>
+                <li class="footer-area8__item"><a href="WPE_BLP.html">When Paper Was Expected to Behave Like Plastic</a></li>
               </ul>
             </div>
 
@@ -2485,12 +2210,12 @@ if (typeof module !== 'undefined' && module.exports) {
               <a href="#">Dribbble</a>
             </div> -->
             <div class="d-flex justify-content-between align-items-center footer-bottom-right">
-              <span class="footer-span">Copyright © 2025 . All Rights Reserved</span>
-             <div class="connect-area7__social d-flex">
+              <span class="footer-span">Copyright © 2026 . All Rights Reserved</span>
+             <!-- <div class="connect-area7__social d-flex">
               <a href="#">Privacy Policy</a>
               <a href="#">Terms of use</a>
               
-            </div>
+            </div> -->
             </div>
           </div>
           <!-- <div class="footer-area8__bottom text-center">
@@ -2580,7 +2305,53 @@ if (typeof module !== 'undefined' && module.exports) {
     }
   });
 </script>
+<script>
+// Register plugin
+gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.matchMedia({
+
+  // Desktop
+  "(min-width: 992px)": function () {
+
+    ScrollTrigger.create({
+      trigger: ".fixxed",
+      pin: true,
+      start: "top 10px",
+      endTrigger: ".relaxed",
+      end: "bottom bottom",
+      pinSpacing: false,
+      // markers: true
+    });
+
+  }
+
+});
+</script>
+
+<script>
+// Register plugin
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.matchMedia({
+
+  // Desktop
+  "(min-width: 992px)": function () {
+
+    ScrollTrigger.create({
+      trigger: ".header-area",
+      pin: true,
+      start: "top 10px",
+      endTrigger: ".footer-area8",
+      end: "bottom bottom",
+      pinSpacing: false,
+      // markers: true
+    });
+
+  }
+
+});
+</script>
 </body>
 
 </html>
