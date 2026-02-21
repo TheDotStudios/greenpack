@@ -232,13 +232,13 @@
     }
 
     if (!range) {
-      console.warn('priceRange input not found (expected id="priceRange").');
+      // console.warn('priceRange input not found (expected id="priceRange").');
       return;
     }
     if (!output) {
-      console.warn(
-        'priceOutput element not found (expected id="priceOutput").'
-      );
+      // console.warn(
+      //   'priceOutput element not found (expected id="priceOutput").'
+      // );
       return;
     }
 
@@ -1148,7 +1148,7 @@
   const zoomPin = document.querySelector(".zoom-pin");
 
   if (!zoomThumb) {
-    console.warn("Element '.zoom-thumb' not found. GSAP animation skipped.");
+    // console.warn("Element '.zoom-thumb' not found. GSAP animation skipped.");
     return;
   }
 
