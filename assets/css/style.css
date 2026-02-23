@@ -1748,6 +1748,7 @@ section {
 }
 .rr-btn-border:hover{
   color: #fff !important;
+  background-color: #000;
 }
 .rr-btn-border:hover .icon {
   rotate: -45deg;
@@ -22219,7 +22220,7 @@ max-width: 100%;
 }
 .blog-section-5__item:hover .blog-section-5__icon a {
   color: var(--black);
-  background: var(--yellow);
+  background: #c1dc4d;
 }
 .blog-section-5__thumb {
   position: relative;
