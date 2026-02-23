@@ -19947,7 +19947,7 @@ max-width: 100%;
 
 .bg-img {
   background-size: cover;
-  background-position: center;
+  background-position: unset !important;
   background-repeat: no-repeat;
 }
 
