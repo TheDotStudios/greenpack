@@ -27598,7 +27598,9 @@ max-width: 100%;
     font-size: 35px !important;
     line-height: 1.3 !important;
   }
-
+.carousel-slide-label, .carousel-slide-label img{
+  padding: 15px !important;
+}
 }
 
 .main-sidebar2-widget__categories ul li a .text {
