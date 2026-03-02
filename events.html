@@ -18,30 +18,51 @@
   <link rel="stylesheet" href="assets/vandor/odometer/odometer-theme-default.css">
 
   <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
   <style>
-    .testimonial-section-3__item {
-  /* padding: 20px; */
-  padding: 35px;
-  max-width: 626px;
-  position: relative;
-  padding-right: 56px;
-  border-radius: 10px;
-  background:#f7f7f7 ;
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+@media (min-width: 640px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-.project-section .container
- {
-    max-width: 1200px !important;
-    margin: 0 auto;
-    padding: 0 20px;
+
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
-/* .header-area-7 .main-menu li a:hover {
-    color: #c1dc4d !important;
-} */
+
+.project_card_01 img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 0;
+}
+
+
   </style>
 </head>
 
 <body>
+  <!-- #c1dc4d -->
+   <!-- #c1dc4d -->
   <!-- <div class="loader-wrap">
     <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
       <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
@@ -201,23 +222,23 @@
         </div>
       </header>
       <!-- Header area end -->
-
-<section class="main-breadcumb">
+          <section class="main-breadcumb">
           <div class="container-fluid p-0">
             <div class="row">
               <div class="col-12">
                 <div class="main-breadcumb__wrap" style="background-image: url('assets/imgs/home-5/cup-banner.png');">
-                  <h1 class="main-breadcumb__title">Contact us</h1>
+                  <!-- <h1 class="main-breadcumb__title">Custom Paper Containers for a Chinese Restaurant Chain</h1> -->
 
                   <nav class="main-breadcumb__nav" aria-label="breadcrumb">
                     <ul class="main-breadcumb__list">
                       <li class="main-breadcumb__item">
-                        <a class="main-breadcumb__link" href="#">Home</a>
+                        <a class="main-breadcumb__link" href="index.html">Home</a>
                       </li>
                       <li class="main-breadcumb__sep">//</li>
-                      <li class="main-breadcumb__item main-breadcumb__item--current">
-                        <span class="main-breadcumb__link">Contact</span>
+                      <li class="main-breadcumb__item">
+                        <a class="main-breadcumb__link" href="events.html">Events and Trade fairs</a>
                       </li>
+                       
                     </ul>
                   </nav>
                 </div>
@@ -225,133 +246,293 @@
             </div>
           </div>
         </section>
+    
+        
+    <section class="project-section">
+    <div class="container">
 
-        <section class="contact-area pt-150px pb-150px">
-          <div class="container">
-            <!-- Big heading -->
-            <div class="row">
-              <div class="col-12 text-center d-flex justify-content-center align-items-center flex-column">
-                <h4 class="section__subtitle"><span></span>Get in touch</h4>
-                <h2 class="contact-area__heading">Connect. Collaborate. Create.</h2>
-              </div>
+        <!-- Section Title -->
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-8">
+            <div class="section-title-2__wrapper mb-5">
+              <h2 class="title text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet
+              </h2>
             </div>
+          </div>
+        </div>
 
-<div class="contact-area__info-row pt-50px">
-          <div class="container">
-           <div class="col-lg-12">
-            <div class="row">
-                 <div class="col-lg-6 col-md-6 gy-3">
-            <div class="col-md-12">
-                <div class="row">
-                      <div class="col-md-6">
-                <div class="contact-info-card">
-                  <h6 class="contact-info-card__title">Address</h6>
-                  <p class="contact-info-card__text">
-                    Lorem ipsum dolor sit amet
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="contact-info-card">
-                  <h6 class="contact-info-card__title">Phone / Message</h6>
-                  <p class="contact-info-card__text">info@example.com<br>1233 456 678</p>
-                </div>
-              </div>
-                </div>
-                <div class="row mt-3">
-                     <div class="col-md-6 ">
-                <div class="contact-info-card">
-                  <h6 class="contact-info-card__title">Working Hours</h6>
-                  <p class="contact-info-card__text">Monday to Friday 09:00 to 18:30<br>Saturday 15:30</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 ">
-                <div class="contact-info-card">
-                  <h6 class="contact-info-card__title">Follow us</h6>
-                  <div class="contact-info-card__social">
-                    <a href="#" class="social-circle" aria-label="facebook">f</a>
-                    <a href="#" class="social-circle" aria-label="twitter">x</a>
-                    <a href="#" class="social-circle" aria-label="linkedin">in</a>
-                    <a href="#" class="social-circle" aria-label="youtube">▶</a>
-                  </div>
-                </div>
-              </div>
-                </div>
+        <!-- Filter Tabs -->
+        <div class="filters-box">
+            <div class="filters">
+                <ul class="filter-tabs">
+                    <li class="filter-tab active" data-filter="all">All Events</li>
+                    <li class="filter-tab" data-filter="aahar2022">AAHAR 2022</li>
+                    <li class="filter-tab" data-filter="aahar2024">AAHAR 2024</li>
+                    <li class="filter-tab" data-filter="CIIEvent">CII Event - MSME</li>
+                    <li class="filter-tab" data-filter="Employee">Employee Engagement</li>
+                    <li class="filter-tab" data-filter="WomensDay">Womens Day</li>
+                </ul>
             </div>
+        </div>
 
-             
-            </div>
-                <div class="col-lg-6 col-md-6 justify-content-center">
-              <div class="">
-                <div class="contact-form-card">
-                  <form class="contact-form" action="#" method="post" novalidate="">
-                    <div class="row g-3 contact-form__top">
-                      <div class="col-md-4">
-                        <label class="visually-hidden" for="c_name">Your Name</label>
-                        <input id="c_name" name="name" type="text" class="contact-form__input" placeholder="Your Name *">
-                      </div>
-                      <div class="col-md-4">
-                        <label class="visually-hidden" for="c_email">Your Email</label>
-                        <input id="c_email" name="email" type="email" class="contact-form__input" placeholder="Your Email *">
-                      </div>
-                      <div class="col-md-4">
-                        <label class="visually-hidden" for="c_subject">Subject</label>
-                        <input id="c_subject" name="subject" type="text" class="contact-form__input" placeholder="Subject">
-                      </div>
-                    </div>
+        <!-- GRID START -->
+        <div class="projects-grid">
 
-                    <div class="contact-form__middle">
-                      <label class="visually-hidden" for="c_message">Message</label>
-                      <textarea id="c_message" name="message" rows="4" class="contact-form__textarea" placeholder="Message (Tell us about your project)"></textarea>
-                    </div>
-
-                    <div class="contact-form__footer">
-                      <!-- <button type="submit" class="btn contact-form__send" aria-label="Send">
-                        <span class="contact-form__send-text">SEND</span>
-                      </button> -->
-                      <a href="#" class="rr-btn-border wow fadeInRight" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInRight;">
-                  <span class="text">Submit</span>
-                  <span class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#clip0_46_7)">
-                        <path d="M22.0007 10.9995C16.6014 10.9995 12.2229 6.0753 12.2229 -0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                        <path d="M12.2229 21.9995C12.2229 15.9253 16.5999 10.9995 22.0007 10.9995" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                        <path d="M22.0005 10.9995H0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                      </g>
-
-                    </svg>
-                  </span>
-                </a>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            </div>
-           </div>
          
-          </div>
+                    <div class="project-item" data-category="aahar2022">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2022/1.jpeg" alt="Corrugated Cup Sleeves">
+                            
+                        </div>
+                    </div>
+                    <div class="project-item" data-category="aahar2022">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2022/2.jpeg" alt="Double Wall Paper Cups">
+                            
+                        </div>
+                    </div>
+                     <div class="project-item" data-category="aahar2022">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2022/3.jpeg" alt="Ripple Wall Paper Cups">
+                            
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="CIIEvent">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/CII Event - MSME/1.jpeg" alt="2 CP Tray">
+                            
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="CIIEvent">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/CII Event - MSME/2.jpeg" alt="Boat Tray">
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/1.JPG" alt="Food Bowls">
+                            
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/2.JPG" alt="Meal Container">
+                            
+                        </div>
+                    </div>
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/3.JPG" alt="Portion Bowls">
+                            
+                        </div>
+                    </div>
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/4.JPG" alt="Food Bowls">
+                            
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/5.JPG" alt="Meal Container">
+                            
+                        </div>
+                    </div>
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/6.JPG" alt="Portion Bowls">
+                            
+                        </div>
+                    </div>
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/7.JPG" alt="Food Bowls">
+                            
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/8.JPG" alt="Meal Container">
+                            
+                        </div>
+                    </div>
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/9.JPG" alt="Portion Bowls">
+                            
+                        </div>
+                    </div>
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/10.JPG" alt="Food Bowls">
+                            
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/11.jpeg" alt="Meal Container">
+                            
+                        </div>
+                    </div>
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/12.jpeg" alt="Portion Bowls">
+                            
+                        </div>
+                    </div>
+                    <div class="project-item" data-category="aahar2024">
+                        <div class=" project_card_01">
+                            
+                              <img src="assets/imgs/EVENTS/AAHAR 2024/13.jpeg" alt="Portion Bowls">
+                            
+                        </div>
+                    </div>
+                    <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/1.jpeg" alt="LDPE Coated Cup Stock Bottom-Bobbins">
+                            
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/2.jpeg" alt="LDPE Coated Cup Stock Paper Blanks-Fans">
+                            
+                        </div>
+                    </div>
+                     <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/3.jpeg" alt="LDPE Coated Cup Stock Reels & Sheets">
+                            
+                        </div>
+                    </div>
+                      <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/4.jpeg" alt="LDPE Coated Cup Stock Bottom-Bobbins">
+                            
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/5.jpeg" alt="LDPE Coated Cup Stock Paper Blanks-Fans">
+                            
+                        </div>
+                    </div>
+                     <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/6.jpeg" alt="LDPE Coated Cup Stock Reels & Sheets">
+                            
+                        </div>
+                    </div>
+                      <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/7.jpeg" alt="LDPE Coated Cup Stock Bottom-Bobbins">
+                            
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/8.jpeg" alt="LDPE Coated Cup Stock Paper Blanks-Fans">
+                            
+                        </div>
+                    </div>
+                     <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/9.jpeg" alt="LDPE Coated Cup Stock Reels & Sheets">
+                            
+                        </div>
+                    </div>
+                      <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/10.jpeg" alt="LDPE Coated Cup Stock Bottom-Bobbins">
+                            
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="Employee">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Employee Engagement Photos/11.jpeg" alt="LDPE Coated Cup Stock Paper Blanks-Fans">
+                            
+                        </div>
+                    </div>
+                     
+
+                    <div class="project-item" data-category="WomensDay">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Womens Day Celebration/1.jpeg" alt="LB">
+                            
+                        </div>
+                    </div>
+                     <div class="project-item" data-category="WomensDay">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Womens Day Celebration/2.jpeg" alt="LB">
+                            
+                        </div>
+                    </div>
+                     <div class="project-item" data-category="WomensDay">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Womens Day Celebration/3.jpeg" alt="LB">
+                            
+                        </div>
+                    </div>
+                     <div class="project-item" data-category="WomensDay">
+                        <div class=" project_card_01 ">
+                            
+                              <img src="assets/imgs/EVENTS/Womens Day Celebration/4.jpg" alt="LB">
+                            
+                        </div>
+                    </div>
+
         </div>
-            <!-- Form card -->
-           
+        <!-- GRID END -->
 
-          </div>
+    </div>
+</section>
 
-          <!-- decorative dark background texture / gradient -->
-          <!-- <div class="contact-area__bg bg-img" style="background-image: url(assets/imgs/home-5/contact-bg.jpg);" aria-hidden="true"></div> -->
-        </section>
-        <div class="map pb-150px">
-          <div class="map-box">
-            <!-- <iframe src="https://maps.app.goo.gl/cj69ELbgA9yqiFvs7" width="600" height="450" style="border: 0;" allowfullscreen="" loading="lazy"></iframe> -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.346230835289!2d78.23662329999999!3d11.6698565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1b65c940927%3A0x78da427bc0b0384d!2sTheDotStudios!5e0!3m2!1sen!2sin!4v1766060214986!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-
-
-            
-            
- <div class="cta-area8">
+          <div class="cta-area8">
         <div class="container-1600">
           <div class="cta-area8__wrap section-spacing bg-img" style="background-image: url(assets/imgs/home-5/cta-bg6.jpg);">
             <div class="row justify-content-center text-center">
@@ -375,7 +556,8 @@
           </div>
         </div>
       </div>
-            
+
+
 <footer class="footer-area8 bg-img" style="background-image: url(assets/imgs/home-5/footer-bg6.jpg);">
         <div class="container-1600">
           <div class="row gy-4 gy-lg-0 footer-area8__top">
@@ -539,6 +721,24 @@
     }
   });
 </script>
+<!-- <script>
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.matchMedia({
+  "(min-width: 992px)": function () {
+    ScrollTrigger.create({
+      trigger: ".stickySection",
+      pin: true,
+      start: "top 10px",
+      endTrigger: ".col-md-7",
+      end: "bottom bottom",
+      pinSpacing: false,
+      // markers: true
+    });
+  }
+});
+
+</script> -->
+
 <script>
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -560,6 +760,31 @@ ScrollTrigger.matchMedia({
 
   }
 
+});
+</script>
+<script>
+const filterTabs = document.querySelectorAll('.filter-tab');
+const allItems = document.querySelectorAll('.project-item');
+
+filterTabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+
+        const filterValue = this.getAttribute('data-filter');
+
+        filterTabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+
+        allItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+
+            if (filterValue === "all" || category === filterValue) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+    });
 });
 </script>
 </body>
