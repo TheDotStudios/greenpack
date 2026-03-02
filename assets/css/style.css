@@ -27601,6 +27601,9 @@ max-width: 100%;
 .carousel-slide-label, .carousel-slide-label img{
   padding: 15px !important;
 }
+.work-section{
+  padding: 200px 0 100px;
+}
 }
 
 .main-sidebar2-widget__categories ul li a .text {
