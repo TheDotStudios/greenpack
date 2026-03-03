@@ -3388,7 +3388,7 @@ section {
 .header-3 .main-menu li a {
   padding: 10px 26.4px;
   border-radius: 500px;
-  color: #000;
+  color: #555555;
   /* text-transform: uppercase; */
   transition: all 0.3s ease-in-out;
 }
