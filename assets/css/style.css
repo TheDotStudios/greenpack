@@ -3045,7 +3045,7 @@ section {
   border-radius: 20px;
   box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
   position: relative;
-  padding: 20px;
+  padding: 10px 10px 20px 10px;
   transition: all 0.3s ease;
   border: 1px solid var(--border-color-two);
 }
