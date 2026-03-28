@@ -1211,3 +1211,26 @@
     },
   });
 })(jQuery);
+
+
+document.querySelector('.cta-area8__form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const smoother = ScrollSmoother.get();
+
+    // 🛑 Pause smoother (prevents auto movement)
+    if (smoother) smoother.paused(true);
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: 'Thanks for contacting us! We will get in touch with you shortly.',
+        confirmButtonColor: '#000'
+    }).then(() => {
+
+        if (smoother) smoother.paused(false);
+    });
+
+    this.reset();
+});
