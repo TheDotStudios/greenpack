@@ -43,7 +43,29 @@
     margin-right: 10px !important;
 }
 }
+.tcard-video-wrap {
+  position: relative;
+}
+
+.mute-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mute-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
   </style>
+  
 </head>
 
 <body>
@@ -155,7 +177,7 @@
                           <a href="team.html">Team</a>
                         </li>
                         <li class="menu-item-has-children">
-                          <a href="Infrastructure.html">Infra Structure</a>
+                          <a href="varanasi_Infra.html">Infra Structure</a>
                             <ul class="dp-menu">
                                 <li>
                                 <a href="varanasi_Infra.html">Varanasi</a>
@@ -207,13 +229,12 @@
       </header>
       <!-- Header area end -->
 
-<section class="main-breadcumb overflow-hidden">
+        <section class="main-breadcumb overflow-hidden">
           <div class="container-fluid p-0">
             <div class="row">
               <div class="col-12">
                 <div class="main-breadcumb__wrap" style="background-image: url('assets/imgs/home-5/cup-banner.png');">
                   <h1 class="main-breadcumb__title">About us</h1>
-
                   <nav class="main-breadcumb__nav" aria-label="breadcrumb">
                     <ul class="main-breadcumb__list">
                       <li class="main-breadcumb__item">
@@ -230,7 +251,7 @@
             </div>
           </div>
         </section>
-<section class="about-section-3__area pt-150px overflow-hidden pb-150px">
+        <section class="about-section-3__area pt-150px overflow-hidden pb-150px">
           <div class="container rr-container-1800">
             <div class="row">
               <div class="col-lg-6">
@@ -238,7 +259,7 @@
                   <div class="section-heading__wrap_3">
                     <h4 class="section__subtitle wow fadeInUp" data-wow-delay="0.3s" ><span></span>About us</h4>
                     <h2 class="section__title rr-title-anim-2">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis iste ad at
+                      Our journey began with purpose-driven innovation for sustainable packaging excellence.
                     </h2>
                   </div>
                   <div class="about-section-3__content">
@@ -247,7 +268,7 @@
                       <span></span>
                     </div>
                     <div class="about-section-3__info">
-                      <p class="about-section-3__text wow fadeInUp" data-wow-delay="0.3s" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ea nam facere necessitatibus quia illum molestias nobis repellendus eaque delectus!</p>
+                      <p class="about-section-3__text wow fadeInUp" data-wow-delay="0.3s" >GreenPack began with a vision to replace single-use plastics with sustainable paper packaging. Today, we help food brands grow responsibly through reliable, safe, and eco-friendly solutions.</p>
                       <a href="#" class="rr-btn-border">
                         <span class="text">VIEW ALL</span>
                         <span class="icon">
@@ -263,299 +284,160 @@
 
                 </div>
               </div>
-   
-<!-- ── THUMBNAIL ── -->
-<div class="col-lg-6">
-  <div class="about-section-3__thumb" id="videoThumbnail"
-       role="button" tabindex="0"
-       aria-label="Expand video">
 
-    <video class="about-video-preview" autoplay muted loop playsinline>
-      <source src="assets/imgs/Corporate Video GreenPack.mp4" type="video/mp4">
-    </video>
+              <!-- ── THUMBNAIL ── -->
+              <div class="col-lg-6">
+                <div class="about-section-3__thumb" id="videoThumbnail"
+                    role="button" tabindex="0"
+                    aria-label="Expand video">
 
-    <!-- ✅ Gradient fade + expand icon — bottom-right only -->
-    <div class="video-overlay">
-      <div class="expand-btn" aria-hidden="true">
-        <!-- Expand / fullscreen arrows icon -->
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-             stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15,3 21,3 21,9"/>
-          <polyline points="9,21 3,21 3,15"/>
-          <line x1="21" y1="3" x2="14" y2="10"/>
-          <line x1="3"  y1="21" x2="10" y2="14"/>
-        </svg>
-      </div>
-    </div>
+                  <video class="about-video-preview" autoplay muted loop playsinline>
+                    <source src="assets/imgs/Corporate Video GreenPack.mp4" type="video/mp4">
+                  </video>
 
-  </div>
-</div>
+                  <!-- ✅ Gradient fade + expand icon — bottom-right only -->
+                  <div class="video-overlay">
+                    <div class="expand-btn" aria-hidden="true">
+                      <!-- Expand / fullscreen arrows icon -->
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                          stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15,3 21,3 21,9"/>
+                        <polyline points="9,21 3,21 3,15"/>
+                        <line x1="21" y1="3" x2="14" y2="10"/>
+                        <line x1="3"  y1="21" x2="10" y2="14"/>
+                      </svg>
+                    </div>
+                  </div>
 
+                </div>
+              </div>
+              <!-- ── MODAL (will be moved to body root via JS) ── -->
+              <div class="video-modal-backdrop" id="videoModal"
+                  role="dialog" aria-modal="true" aria-label="Video player">
 
-<!-- ── MODAL (will be moved to body root via JS) ── -->
-<div class="video-modal-backdrop" id="videoModal"
-     role="dialog" aria-modal="true" aria-label="Video player">
+                <div class="video-modal" id="videoModalBox">
 
-  <div class="video-modal" id="videoModalBox">
+                  <button class="modal-close" id="modalClose" aria-label="Close video">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        stroke="#fff" stroke-width="2.2" stroke-linecap="round">
+                      <line x1="1" y1="1" x2="15" y2="15"/>
+                      <line x1="15" y1="1" x2="1"  y2="15"/>
+                    </svg>
+                  </button>
 
-    <button class="modal-close" id="modalClose" aria-label="Close video">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-           stroke="#fff" stroke-width="2.2" stroke-linecap="round">
-        <line x1="1" y1="1" x2="15" y2="15"/>
-        <line x1="15" y1="1" x2="1"  y2="15"/>
-      </svg>
-    </button>
+                  <div class="video-modal__ratio">
 
-    <div class="video-modal__ratio">
+                    <video class="video-modal__player" id="modalVideo" preload="metadata">
+                      <source src="assets/imgs/Corporate Video GreenPack.mp4" type="video/mp4">
+                    </video>
 
-      <video class="video-modal__player" id="modalVideo" preload="metadata">
-        <source src="assets/imgs/Corporate Video GreenPack.mp4" type="video/mp4">
-      </video>
+                    <div class="video-controls">
 
-      <div class="video-controls">
+                      <button class="ctrl-playpause" id="ctrlPlayPause" aria-label="Play or Pause">
+                        <svg class="icon-play" width="22" height="22" viewBox="0 0 24 24" fill="#fff">
+                          <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                        <svg class="icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="#fff">
+                          <rect x="5"  y="3" width="4" height="18" rx="1"/>
+                          <rect x="15" y="3" width="4" height="18" rx="1"/>
+                        </svg>
+                      </button>
 
-        <button class="ctrl-playpause" id="ctrlPlayPause" aria-label="Play or Pause">
-          <svg class="icon-play" width="22" height="22" viewBox="0 0 24 24" fill="#fff">
-            <polygon points="5,3 19,12 5,21"/>
-          </svg>
-          <svg class="icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="#fff">
-            <rect x="5"  y="3" width="4" height="18" rx="1"/>
-            <rect x="15" y="3" width="4" height="18" rx="1"/>
-          </svg>
-        </button>
+                      <input class="ctrl-progress" id="ctrlProgress"
+                            type="range" value="0" min="0" max="100" step="0.05" aria-label="Seek">
 
-        <input class="ctrl-progress" id="ctrlProgress"
-               type="range" value="0" min="0" max="100" step="0.05" aria-label="Seek">
+                      <span class="ctrl-time" id="ctrlTime">0:00 / 0:00</span>
 
-        <span class="ctrl-time" id="ctrlTime">0:00 / 0:00</span>
+                      <div class="ctrl-volume-wrap">
+                        <button class="ctrl-mute" id="ctrlMute" aria-label="Toggle mute">
+                          <svg id="iconSound" width="20" height="20" viewBox="0 0 24 24"
+                              fill="none" stroke="#fff" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                          </svg>
+                          <svg id="iconSilent" width="20" height="20" viewBox="0 0 24 24"
+                              fill="none" stroke="#fff" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round"
+                              style="display:none">
+                            <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+                            <line x1="23" y1="9" x2="17" y2="15"/>
+                            <line x1="17" y1="9" x2="23" y2="15"/>
+                          </svg>
+                        </button>
+                        <input class="ctrl-vol-slider" id="ctrlVolume"
+                              type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+                      </div>
 
-        <div class="ctrl-volume-wrap">
-          <button class="ctrl-mute" id="ctrlMute" aria-label="Toggle mute">
-            <svg id="iconSound" width="20" height="20" viewBox="0 0 24 24"
-                 fill="none" stroke="#fff" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-            </svg>
-            <svg id="iconSilent" width="20" height="20" viewBox="0 0 24 24"
-                 fill="none" stroke="#fff" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round"
-                 style="display:none">
-              <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
-              <line x1="23" y1="9" x2="17" y2="15"/>
-              <line x1="17" y1="9" x2="23" y2="15"/>
-            </svg>
-          </button>
-          <input class="ctrl-vol-slider" id="ctrlVolume"
-                 type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume">
-        </div>
+                      <button class="ctrl-fullscreen" id="ctrlFullscreen" aria-label="Fullscreen">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="#fff" stroke-width="2" stroke-linecap="round">
+                          <polyline points="15,3 21,3 21,9"/>
+                          <polyline points="9,21 3,21 3,15"/>
+                          <line x1="21" y1="3" x2="14" y2="10"/>
+                          <line x1="3"  y1="21" x2="10" y2="14"/>
+                        </svg>
+                      </button>
 
-        <button class="ctrl-fullscreen" id="ctrlFullscreen" aria-label="Fullscreen">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-               stroke="#fff" stroke-width="2" stroke-linecap="round">
-            <polyline points="15,3 21,3 21,9"/>
-            <polyline points="9,21 3,21 3,15"/>
-            <line x1="21" y1="3" x2="14" y2="10"/>
-            <line x1="3"  y1="21" x2="10" y2="14"/>
-          </svg>
-        </button>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script>
-(function () {
-  const thumbnail   = document.getElementById('videoThumbnail');
-  const backdrop    = document.getElementById('videoModal');
-  const modalVideo  = document.getElementById('modalVideo');
-  const modalClose  = document.getElementById('modalClose');
-  const btnPlay     = document.getElementById('ctrlPlayPause');
-  const progress    = document.getElementById('ctrlProgress');
-  const timeEl      = document.getElementById('ctrlTime');
-  const btnMute     = document.getElementById('ctrlMute');
-  const iconSound   = document.getElementById('iconSound');
-  const iconSilent  = document.getElementById('iconSilent');
-  const volSlider   = document.getElementById('ctrlVolume');
-  const btnFullscr  = document.getElementById('ctrlFullscreen');
-
-  /* Move modal outside #smooth-wrapper */
-  if (backdrop && backdrop.parentNode !== document.body) {
-    document.body.appendChild(backdrop);
-  }
-
-  function openModal() {
-    backdrop.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-    if (window.ScrollSmoother && ScrollSmoother.get()) ScrollSmoother.get().paused(true);
-    modalVideo.currentTime = 0;
-    modalVideo.volume = 1;
-    modalVideo.muted  = false;
-    volSlider.value   = 1;
-    updateVolIcons();
-    modalVideo.play().then(() => btnPlay.classList.add('playing'))
-      .catch(() => btnPlay.classList.remove('playing'));
-  }
-
-  function closeModal() {
-    backdrop.classList.remove('is-open');
-    document.body.style.overflow = '';
-    if (window.ScrollSmoother && ScrollSmoother.get()) ScrollSmoother.get().paused(false);
-    modalVideo.pause();
-    modalVideo.currentTime = 0;
-    btnPlay.classList.remove('playing');
-  }
-
-  thumbnail.addEventListener('click', openModal);
-  thumbnail.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
-  });
-  modalClose.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  function togglePlay() {
-    if (modalVideo.paused) { modalVideo.play(); btnPlay.classList.add('playing'); }
-    else { modalVideo.pause(); btnPlay.classList.remove('playing'); }
-  }
-  btnPlay.addEventListener('click', togglePlay);
-  modalVideo.addEventListener('click', togglePlay);
-  modalVideo.addEventListener('ended', () => btnPlay.classList.remove('playing'));
-
-  function fmt(s) {
-    if (isNaN(s)) return '0:00';
-    return `${Math.floor(s/60)}:${Math.floor(s%60).toString().padStart(2,'0')}`;
-  }
-  modalVideo.addEventListener('timeupdate', () => {
-    if (!modalVideo.duration) return;
-    const pct = (modalVideo.currentTime / modalVideo.duration) * 100;
-    progress.value = pct;
-    progress.style.background = `linear-gradient(to right,#fff ${pct}%,rgba(255,255,255,0.3) ${pct}%)`;
-    timeEl.textContent = `${fmt(modalVideo.currentTime)} / ${fmt(modalVideo.duration)}`;
-  });
-  progress.addEventListener('input', () => {
-    if (modalVideo.duration) modalVideo.currentTime = (progress.value / 100) * modalVideo.duration;
-  });
-
-  volSlider.addEventListener('input', () => {
-    modalVideo.volume = volSlider.value;
-    modalVideo.muted  = (volSlider.value == 0);
-    updateVolIcons();
-  });
-  btnMute.addEventListener('click', () => {
-    modalVideo.muted = !modalVideo.muted;
-    volSlider.value  = modalVideo.muted ? 0 : modalVideo.volume || 1;
-    updateVolIcons();
-  });
-  function updateVolIcons() {
-    const m = modalVideo.muted || modalVideo.volume === 0;
-    iconSound.style.display  = m ? 'none'  : 'block';
-    iconSilent.style.display = m ? 'block' : 'none';
-  }
-
-  btnFullscr.addEventListener('click', () => {
-    const el = document.getElementById('videoModalBox');
-    if (!document.fullscreenElement) el.requestFullscreen?.();
-    else document.exitFullscreen?.();
-  });
-})();
-</script>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </div>
           
           </div>
         </section>
 
-<script>
-  const thumbnail   = document.getElementById('videoThumbnail');
-  const backdrop    = document.getElementById('videoModal');
-  const modalVideo  = document.getElementById('modalVideo');
-  const modalClose  = document.getElementById('modalClose');
-  const btnPlay     = document.getElementById('ctrlPlayPause');
-  const progress    = document.getElementById('ctrlProgress');
-  const timeDisplay = document.getElementById('ctrlTime');
-  const btnMute     = document.getElementById('ctrlMute');
-  const iconUnmuted = document.getElementById('iconUnmuted');
-  const iconMuted   = document.getElementById('iconMuted');
 
-  /* ── OPEN MODAL ── */
-  function openModal() {
-    backdrop.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-    modalVideo.currentTime = 0;
-    modalVideo.play().then(() => {
-      btnPlay.classList.add('playing');
-    }).catch(() => {});
-  }
 
-  /* ── CLOSE MODAL ── */
-  function closeModal() {
-    backdrop.classList.remove('is-open');
-    document.body.style.overflow = '';
-    modalVideo.pause();
-    modalVideo.currentTime = 0;
-    btnPlay.classList.remove('playing');
-  }
+        <section class="gp-manifesto-root">
+    <header class="gp-masthead">
+        <h1 class="section-title text-dark">Why Brands Choose GreenPack</h1>
+        <p class="pb-5 text-center" style="max-width: 50%;">Safe, customizable, and sustainable packaging solutions with flexible quantities and reliable nationwide delivery, designed to support growing brands and ensure consistent quality.</p>
+        <!-- <span class="gp-slug">STANDARDS // 2026</span> -->
+    </header>
 
-  /* Trigger */
-  thumbnail.addEventListener('click', openModal);
-  thumbnail.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
-  modalClose.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    <div class="gp-canvas-mosaic">
+        <article class="gp-feature-module gp-mod-highlight">
+            <div style="flex: 1.2;">
+                <span class="gp-index-marker">01.</span>
+                <h3 class="gp-heading-md">Food-Grade Certified Materials</h3>
+                <p class="gp-prose-body">All our packaging is made using certified food-safe materials that meet global quality and hygiene standards. Ensuring safety, reliability, and trust for every foodservice application.</p>
+            </div>
+            <div style="flex: 1; border-left: 1px solid var(--gp-border); padding-left: 40px; display: flex; align-items: center;" class="gp-mobile-hide">
+                <p style="font-style: italic; color: var(--gp-sage); font-size: 0.95rem;">"Our commitment to safety is the foundation of every partnership we build."</p>
+            </div>
+        </article>
 
-  /* ── PLAY / PAUSE ── */
-  btnPlay.addEventListener('click', () => {
-    if (modalVideo.paused) {
-      modalVideo.play();
-      btnPlay.classList.add('playing');
-    } else {
-      modalVideo.pause();
-      btnPlay.classList.remove('playing');
-    }
-  });
+        <article class="gp-feature-module">
+            <span class="gp-index-marker">02.</span>
+            <h3 class="gp-heading-md">Flexible MOQs for Growing Brands</h3>
+            <p class="gp-prose-body">Supporting businesses at every stage with low and flexible minimum order quantities, removing scale barriers for startups.</p>
+        </article>
 
-  /* Click on video also toggles play/pause */
-  modalVideo.addEventListener('click', () => {
-    btnPlay.click();
-  });
+        <article class="gp-feature-module">
+            <span class="gp-index-marker">03.</span>
+            <h3 class="gp-heading-md">Custom Branding & Design</h3>
+            <p class="gp-prose-body">Packaging that reflects your brand identity and enhances presentation. From concept to production, we ensure visually appealing solutions.</p>
+        </article>
 
-  /* ── PROGRESS BAR ── */
-  function formatTime(sec) {
-    const m = Math.floor(sec / 60);
-    const s = Math.floor(sec % 60).toString().padStart(2, '0');
-    return `${m}:${s}`;
-  }
+        <article class="gp-feature-module">
+            <span class="gp-index-marker">04.</span>
+            <h3 class="gp-heading-md">Reliable Nationwide Supply</h3>
+            <p class="gp-prose-body">Multiple production facilities and efficient logistics ensure consistent manufacturing and timely deliveries across the nation.</p>
+        </article>
 
-  modalVideo.addEventListener('timeupdate', () => {
-    if (!modalVideo.duration) return;
-    const pct = (modalVideo.currentTime / modalVideo.duration) * 100;
-    progress.value = pct;
-    progress.style.background =
-      `linear-gradient(to right, #fff ${pct}%, rgba(255,255,255,0.3) ${pct}%)`;
-    timeDisplay.textContent =
-      `${formatTime(modalVideo.currentTime)} / ${formatTime(modalVideo.duration)}`;
-  });
+        <article class="gp-feature-module">
+            <span class="gp-index-marker">05.</span>
+            <h3 class="gp-heading-md">Sustainable Practices</h3>
+            <p class="gp-prose-body">Responsible sourcing, waste reduction, and eco-friendly materials that support both business growth and environmental health.</p>
+        </article>
+    </div>
+</section>
 
-  progress.addEventListener('input', () => {
-    if (!modalVideo.duration) return;
-    modalVideo.currentTime = (progress.value / 100) * modalVideo.duration;
-  });
 
-  modalVideo.addEventListener('ended', () => {
-    btnPlay.classList.remove('playing');
-  });
-
-  /* ── MUTE ── */
-  btnMute.addEventListener('click', () => {
-    modalVideo.muted = !modalVideo.muted;
-    iconUnmuted.style.display = modalVideo.muted ? 'none'  : 'block';
-    iconMuted.style.display   = modalVideo.muted ? 'block' : 'none';
-  });
-</script>
         <section class="identity-2 pt-150px overflow-hidden pb-150px">
           <div class="container rr-container-1800 pb-100px">
             <div class="identity-2__inner">
@@ -722,21 +604,24 @@
         <div class="swiper-slide">
           <div class="testimonial-area8__card testimonial-area8__card--video">
             <!-- video area -->
-          <div class="tcard-video-wrap" id="videoWrap1">
-  <video
-    id="vid1"
-    src="assets/imgs/Bhavesh Paper Rajkot Gujarat.mp4"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata">
-  </video>
+          <div class="tcard-video-wrap" >
+  
+          <video
+            id="vid1"
+            src="assets/imgs/Bhavesh Paper Rajkot Gujarat.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
 
-  <!-- badge -->
   <div class="tcard-badge">Video Review</div>
+          <button class="mute-btn" id="muteBtn1">
+            <i class="fa fa-volume-mute"></i>
+          </button>
 
-</div>
+        </div>
+
 
             <!-- meta strip -->
             <div class="tcard-video-meta">
@@ -745,8 +630,9 @@
                      src="assets/imgs/home-5/dummy-man-570x570-1.png"
                      alt="James Carter">
                 <div class="tcard-video-info">
-                  <div class="tcard-video-name">Lorem, ipsum.</div>
-                  <div class="tcard-video-role">Lorem, ipsum.</div>
+                  <div class="tcard-video-name">Yagnik Patel</div>
+                  <div class="tcard-video-role">Bhavesh Paper Products</div>
+                  <div class="tcard-video-role">Rajkot, Gujarat</div>
                   <div class="tcard-stars">
                   <svg viewBox="0 0 24 24" class="tcard-star"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   <svg viewBox="0 0 24 24" class="tcard-star"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -758,12 +644,12 @@
                 
               </div>
               <p class="tcard-video-text">
-               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, voluptatem fugiat quidem omnis cum reprehenderit amet dignissimos, perspiciatis numquam alias natus harum illum repudiandae eos laudantium veniam pariatur, cupiditate optio.
+               We have been working with Greenpack for the past three years, and all our raw material requirements are sourced from them. They offer a wide range of products with many varieties and options, which makes it easy for us to find the right solution for our needs. Their team always provides proper guidance and helps us choose the correct material.
               </p>
             </div>
              <!-- quote deco -->
             <span class="testimonial-area8__quote" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="120" height="95" viewBox="0 0 158 125" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 158 125" fill="none">
                 <path d="M67.4352 8.91278L61.7022 0C22.0365 26.9593 0 59.7157 0 86.675C0 112.743 18.9549 125 35.0399 125C55.3134 125 69.6353 107.616 69.6353 89.3488C69.6353 73.9762 59.9393 60.828 46.9361 55.9224C43.1915 54.5819 39.6657 53.4696 39.6657 47.0095C39.6657 38.7671 45.6174 26.5173 67.4352 8.91278ZM154.918 8.91278L149.185 0C109.957 26.9593 87.4832 59.7157 87.4832 86.675C87.4832 112.743 106.875 125 122.96 125C143.452 125 158 107.616 158 89.3488C158 73.9762 148.085 60.828 134.638 55.9224C130.893 54.5819 127.586 53.4696 127.586 47.0095C127.586 38.7671 133.756 26.5101 154.911 8.90565L154.918 8.91278Z" fill="#E9E2D9"/>
               </svg>
             </span>
@@ -775,7 +661,7 @@
           <div class="testimonial-area8__card testimonial-area8__card--image">
             <!-- image with overlay -->
             <div class="tcard-img-wrap">
-              <img src="assets/imgs/DUMMY_IMAGE/DUMMY_IMAGE_02.png"
+              <img src="assets/imgs/Bistro-57-Logo.png"
                    alt="SIDDHARTH GUPTA">
               <div class="tcard-img-overlay">
                 <div class="tcard-img-overlay-name">SIDDHARTH GUPTA</div>
@@ -798,7 +684,7 @@
               </p>
             </div>
             <span class="testimonial-area8__quote" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="120" height="95" viewBox="0 0 158 125" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 158 125" fill="none">
                 <path d="M67.4352 8.91278L61.7022 0C22.0365 26.9593 0 59.7157 0 86.675C0 112.743 18.9549 125 35.0399 125C55.3134 125 69.6353 107.616 69.6353 89.3488C69.6353 73.9762 59.9393 60.828 46.9361 55.9224C43.1915 54.5819 39.6657 53.4696 39.6657 47.0095C39.6657 38.7671 45.6174 26.5173 67.4352 8.91278ZM154.918 8.91278L149.185 0C109.957 26.9593 87.4832 59.7157 87.4832 86.675C87.4832 112.743 106.875 125 122.96 125C143.452 125 158 107.616 158 89.3488C158 73.9762 148.085 60.828 134.638 55.9224C130.893 54.5819 127.586 53.4696 127.586 47.0095C127.586 38.7671 133.756 26.5101 154.911 8.90565L154.918 8.91278Z" fill="#E9E2D9"/>
               </svg>
             </span>
@@ -809,9 +695,9 @@
      <div class="swiper-slide">
           <div class="testimonial-area8__card testimonial-area8__card--video">
             <!-- video area -->
-          <div class="tcard-video-wrap" id="videoWrap1">
+          <div class="tcard-video-wrap" >
   <video
-    id="vid1"
+    id="vid2"
     src="assets/imgs/Shree Hanuman Container Raipur Chhattisgarh.mp4"
     autoplay
     muted
@@ -822,6 +708,13 @@
 
   <!-- badge -->
   <div class="tcard-badge">Video Review</div>
+<button class="mute-btn" id="muteBtn2">
+            <i class="fa fa-volume-mute"></i>
+          </button>
+
+
+
+
 
 </div>
 
@@ -832,8 +725,8 @@
                      src="assets/imgs/home-5/dummy-man-570x570-1.png"
                      alt="James Carter">
                 <div class="tcard-video-info">
-                  <div class="tcard-video-name">Lorem, ipsum.</div>
-                  <div class="tcard-video-role">Lorem, ipsum.</div>
+                  <div class="tcard-video-name">Shree Hanuman</div>
+                  <div class="tcard-video-role">Raipur, Chhattisgarh</div>
                   <div class="tcard-stars">
                   <svg viewBox="0 0 24 24" class="tcard-star"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   <svg viewBox="0 0 24 24" class="tcard-star"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -845,12 +738,14 @@
                 
               </div>
               <p class="tcard-video-text">
-               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, voluptatem fugiat quidem omnis cum reprehenderit amet dignissimos, perspiciatis numquam alias natus harum illum repudiandae eos laudantium veniam pariatur, cupiditate optio.
+              
+We have been in the paper industry for more than 10 years, and we have been working with Greenpack for the last 5 years. Greenpack is an excellent company, and we are very happy with their quality and consistency. They offer a wide range of products with many varieties and options, which makes it easy for us to find the right material for our requirements.
+
               </p>
             </div>
              <!-- quote deco -->
             <span class="testimonial-area8__quote" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="120" height="95" viewBox="0 0 158 125" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 158 125" fill="none">
                 <path d="M67.4352 8.91278L61.7022 0C22.0365 26.9593 0 59.7157 0 86.675C0 112.743 18.9549 125 35.0399 125C55.3134 125 69.6353 107.616 69.6353 89.3488C69.6353 73.9762 59.9393 60.828 46.9361 55.9224C43.1915 54.5819 39.6657 53.4696 39.6657 47.0095C39.6657 38.7671 45.6174 26.5173 67.4352 8.91278ZM154.918 8.91278L149.185 0C109.957 26.9593 87.4832 59.7157 87.4832 86.675C87.4832 112.743 106.875 125 122.96 125C143.452 125 158 107.616 158 89.3488C158 73.9762 148.085 60.828 134.638 55.9224C130.893 54.5819 127.586 53.4696 127.586 47.0095C127.586 38.7671 133.756 26.5101 154.911 8.90565L154.918 8.91278Z" fill="#E9E2D9"/>
               </svg>
             </span>
@@ -860,7 +755,7 @@
         <div class="swiper-slide">
           <div class="testimonial-area8__card testimonial-area8__card--image">
             <div class="tcard-img-wrap">
-              <img src="assets/imgs/DUMMY_IMAGE/DUMMY_IMAGE_02.png"
+              <img src="assets/imgs/Video_testi.webp"
                    alt="DR. RUBJEET SINGH">
               <div class="tcard-img-overlay">
                 <div class="tcard-img-overlay-name">DR. RUBJEET SINGH</div>
@@ -882,7 +777,7 @@
               </p>
             </div>
             <span class="testimonial-area8__quote" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="120" height="95" viewBox="0 0 158 125" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 158 125" fill="none">
                 <path d="M67.4352 8.91278L61.7022 0C22.0365 26.9593 0 59.7157 0 86.675C0 112.743 18.9549 125 35.0399 125C55.3134 125 69.6353 107.616 69.6353 89.3488C69.6353 73.9762 59.9393 60.828 46.9361 55.9224C43.1915 54.5819 39.6657 53.4696 39.6657 47.0095C39.6657 38.7671 45.6174 26.5173 67.4352 8.91278ZM154.918 8.91278L149.185 0C109.957 26.9593 87.4832 59.7157 87.4832 86.675C87.4832 112.743 106.875 125 122.96 125C143.452 125 158 107.616 158 89.3488C158 73.9762 148.085 60.828 134.638 55.9224C130.893 54.5819 127.586 53.4696 127.586 47.0095C127.586 38.7671 133.756 26.5101 154.911 8.90565L154.918 8.91278Z" fill="#E9E2D9"/>
               </svg>
             </span>
@@ -897,223 +792,7 @@
   </div>
 </section>
 
-        <section class="blog work-section bg-img aboutWork overflow-hidden" id="infrastructure">
-          <div class="blog__inner">
-            <div class="container rr-container-1800">
-              <div class="infra-title">
-                <h4 class="section__subtitle"><span></span>Lorem, ipsum dolor</h4>
-
-              </div>
-              <div class="service-section__info">
-                <h4 class="title wow fadeInUp" data-wow-delay="0.3s" >Infrastructure - Lorem ipsum dolor sit amet consectetur adipisicing <br>
-                  Lorem ipsum dolor sit amet </h4>
-                <a href="#" class="rr-btn-border fadeInUp" data-wow-delay="0.3s">
-                  <span class="text">VIEW ALL</span>
-                  <span class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#clip0_46_7)">
-                        <path d="M22.0007 10.9995C16.6014 10.9995 12.2229 6.0753 12.2229 -0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                        <path d="M12.2229 21.9995C12.2229 15.9253 16.5999 10.9995 22.0007 10.9995" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                        <path d="M22.0005 10.9995H0.000488281" stroke="#101010" stroke-width="2" stroke-miterlimit="10"></path>
-                      </g>
-
-                    </svg>
-                  </span>
-                </a>
-              </div>
-              <div class="blog__wrapper">
-                <div class="swiper blog-active swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                  <div class="swiper-wrapper" id="swiper-wrapper-c8c5cbca884104046" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-1628px, 0px, 0px);">
-                    <div class="swiper-slide " data-swiper-slide-index="0" role="group" aria-label="1 / 2" style="width: 689px; margin-right: 125px;">
-                      <div class="blog__item">
-                        <div class="blog__media rr-ov-hidden">
-                          <a href="varanasi_Infra.html"><img  src="assets/imgs/Varanasi_Infra.png" alt="img"></a>
-                        </div>
-                        <div class="blog__content">
-                         <div class="blog__top">
-                            <span>Infrastructure</span>
-
-                            <h2 class="title fadeInUp" data-wow-delay="0.3s">
-                              <a href="varanasi_Infra.html">Varanasi – Raw Material Hub</a>
-                            </h2>
-
-                          <!-- <p>GreenPack operates through strategically located manufacturing units across India, each designed to ensure efficiency, quality control, and seamless production at every stage of sustainable packaging.</p> -->
-                          <!-- <h4 class="TextFont">Varanasi – Raw Material Hub
-                          </h4> -->
-                            <ul class="infra-details">
-                              <li>Spread across 75,000 sq. ft. and operational since 2018, our Varanasi facility is supported by a skilled workforce of 135 professionals.
-                          </li>
-                              <li>  This unit forms the backbone of our operations, focusing on base paper processing and blank production, ensuring consistent material quality from the very first step.</li>
-                              
-                            </ul>
-                          </div>
-
-
-                          <div class="blog__bottom">
-                            <a href="varanasi_Infra.html">Read More</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide" data-swiper-slide-index="1" role="group" aria-label="2 / 2" style="width: 689px; margin-right: 105px;">
-                      <div class="blog__item">
-                        <div class="blog__media rr-ov-hidden">
-                          <a href="ahmadabad_infra.html"><img  src="assets/imgs/Ahmedabad_Infra.png" alt="img" ></a>
-                        </div>
-                        <div class="blog__content">
-                          <div class="blog__top">
-                            <span>Infrastructure</span>
-
-                            <h2 class="title fadeInUp" data-wow-delay="0.3s">
-                              <a href="ahmadabad_infra.html">Ahmedabad – Coating & Printing Unit</a>
-                            </h2>
-
-                          <!-- <p>GreenPack operates through strategically located manufacturing units across India, each designed to ensure efficiency, quality control, and seamless production at every stage of sustainable packaging</p> -->
-                          <!-- <h4 class="TextFont">Varanasi – Raw Material Hub
-                          </h4> -->
-                            <ul class="infra-details">
-                              <li>Established in 2021, the Ahmedabad facility covers 40,500 sq. ft. and is operated by a dedicated team of 40 members.
-                          </li>
-                              <li> It specializes in advanced coating, high-quality printing, and export-oriented operations, supporting both domestic and international packaging requirements.</li>
-                              
-                            </ul>
-                          </div>
-
-
-                          <div class="blog__bottom">
-                            <a href="ahmadabad_infra.html">Read More</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide" data-swiper-slide-index="0" role="group" aria-label="1 / 2" style="width: 689px; margin-right: 105px;">
-                      <div class="blog__item">
-                        <div class="blog__media rr-ov-hidden">
-                          <a href="noida_infra.html"><img  src="assets/imgs/Noida_Infra.png" alt="img"  ></a>
-                        </div>
-                        <div class="blog__content">
-                          <div class="blog__top">
-  <span>Infrastructure</span>
-
-  <h2 class="title fadeInUp" data-wow-delay="0.3s">
-    <a href="n">Noida (Conversion Unit) </a>
-  </h2>
-<!-- 
-  <p>GreenPack operates through strategically located manufacturing units across India, each designed to ensure efficiency, quality control, and seamless production at every stage of sustainable packaging</p> -->
-  <ul class="infra-details">
-    <li>Operational since 2022, our Noida unit spans 26,500 sq. ft. and employs 70 experienced professionals.</li>
-    <li>  This facility handles cup, bowl, and container forming, along with final packaging, delivering ready-to-use, food-safe products to our customers.</li>
-    
-  </ul>
-</div>
-
-
-                          <div class="blog__bottom">
-                            <a href="noida_infra.html">Read More</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                     <div class="swiper-slide " data-swiper-slide-index="0" role="group" aria-label="1 / 2" style="width: 689px; margin-right: 125px;">
-                      <div class="blog__item">
-                        <div class="blog__media rr-ov-hidden">
-                          <a href="varanasi_Infra.html"><img  src="assets/imgs/Varanasi_Infra.png" alt="img"></a>
-                        </div>
-                        <div class="blog__content">
-                         <div class="blog__top">
-                            <span>Infrastructure</span>
-
-                            <h2 class="title fadeInUp" data-wow-delay="0.3s">
-                              <a href="varanasi_Infra.html">Varanasi – Raw Material Hub</a>
-                            </h2>
-
-                          <!-- <p>GreenPack operates through strategically located manufacturing units across India, each designed to ensure efficiency, quality control, and seamless production at every stage of sustainable packaging.</p> -->
-                          <!-- <h4 class="TextFont">Varanasi – Raw Material Hub
-                          </h4> -->
-                            <ul class="infra-details">
-                              <li>Spread across 75,000 sq. ft. and operational since 2018, our Varanasi facility is supported by a skilled workforce of 135 professionals.
-                          </li>
-                              <li>  This unit forms the backbone of our operations, focusing on base paper processing and blank production, ensuring consistent material quality from the very first step.</li>
-                              
-                            </ul>
-                          </div>
-
-
-                          <div class="blog__bottom">
-                            <a href="varanasi_Infra.html">Read More</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide" data-swiper-slide-index="1" role="group" aria-label="2 / 2" style="width: 689px; margin-right: 105px;">
-                      <div class="blog__item">
-                        <div class="blog__media rr-ov-hidden">
-                          <a href="ahmadabad_infra.html"><img  src="assets/imgs/Ahmedabad_Infra.png" alt="img" ></a>
-                        </div>
-                        <div class="blog__content">
-                          <div class="blog__top">
-                            <span>Infrastructure</span>
-
-                            <h2 class="title fadeInUp" data-wow-delay="0.3s">
-                              <a href="ahmadabad_infra.html">Ahmedabad – Coating & Printing Unit</a>
-                            </h2>
-
-                          <!-- <p>GreenPack operates through strategically located manufacturing units across India, each designed to ensure efficiency, quality control, and seamless production at every stage of sustainable packaging</p> -->
-                          <!-- <h4 class="TextFont">Varanasi – Raw Material Hub
-                          </h4> -->
-                            <ul class="infra-details">
-                              <li>Established in 2021, the Ahmedabad facility covers 40,500 sq. ft. and is operated by a dedicated team of 40 members.
-                          </li>
-                              <li> It specializes in advanced coating, high-quality printing, and export-oriented operations, supporting both domestic and international packaging requirements.</li>
-                              
-                            </ul>
-                          </div>
-
-
-                          <div class="blog__bottom">
-                            <a href="ahmadabad_infra.html">Read More</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide" data-swiper-slide-index="0" role="group" aria-label="1 / 2" style="width: 689px; margin-right: 105px;">
-                      <div class="blog__item">
-                        <div class="blog__media rr-ov-hidden">
-                          <a href="noida_infra.html"><img  src="assets/imgs/Noida_Infra.png" alt="img"  ></a>
-                        </div>
-                        <div class="blog__content">
-                          <div class="blog__top">
-  <span>Infrastructure</span>
-
-  <h2 class="title fadeInUp" data-wow-delay="0.3s">
-    <a href="noida_infra.html">Noida (Conversion Unit) </a>
-  </h2>
-<!-- 
-  <p>GreenPack operates through strategically located manufacturing units across India, each designed to ensure efficiency, quality control, and seamless production at every stage of sustainable packaging</p> -->
-  <ul class="infra-details">
-    <li>Operational since 2022, our Noida unit spans 26,500 sq. ft. and employs 70 experienced professionals.</li>
-    <li>  This facility handles cup, bowl, and container forming, along with final packaging, delivering ready-to-use, food-safe products to our customers.</li>
-    
-  </ul>
-</div>
-
-
-                          <div class="blog__bottom">
-                            <a href="noida_infra.html">Read More</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                   
-                 
-                  </div>
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-progressbar"><span class="swiper-pagination-progressbar-fill" style="transform: translate3d(0px, 0px, 0px) scaleX(0.5) scaleY(1); transition-duration: 2000ms;"></span></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-       
+      
             
             
       <div class="cta-area8">
@@ -1131,7 +810,7 @@
                 <form class="cta-area8__form">
                   <input type="email" class="cta-area8__input" placeholder="Enter Your Email">
                   <button class="rr-btn-border btn-black">
-                    <span class="text">GET IN TOUCH </span>
+                    <span class="text">SUBSCRIBE</span>
                     <span class="icon"><i class="fa-regular fa-arrow-right"></i></span>
                   </button>
                 </form>
@@ -1141,28 +820,25 @@
         </div>
       </div>
             
-<footer class="footer-area8 bg-img" style="background-image: url(assets/imgs/home-5/footer-bg6.jpg);">
+ <footer class="footer-area8 bg-img" style="background-image: url(assets/imgs/home-5/footer-bg6.jpg);">
         <div class="container-1600">
           <div class="row gy-4 gy-lg-0 footer-area8__top">
             <!-- Brand -->
             <div class="col-lg-6 col-md-6 footer-area8__brand">
               <h3 class="footer-area8__logo"><img src="assets/imgs/home-5/3Dlogo-10-pmlad3xgb7i6ug5dzx8yomzxqnmomzdaz1pa9cueew.png.webp" alt="logo"></h3>
-              <p class="footer-area8__desc rr-title-anim-2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam, veniam quaerat totam nisi illum eius sequi sit id asperiores voluptatem, ipsa dolor ad consequatur.</p>
+              <p class="footer-area8__desc rr-title-anim-2">Delivers sustainable paper-based packaging solutions designed for food safety, performance, and environmental responsibility, helping brands serve better today while building a cleaner tomorrow.</p>
              <div class="footer-area8__social d-flex gap-2">
-                <a href="#" class="footer-area8__social-link"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="footer-area8__social-link"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" class="footer-area8__social-link"><i class="fa-brands fa-whatsapp"></i></a>
-                <!-- <a href="#" class="footer-area8__social-link">D</a> -->
+                <a href="https://www.facebook.com/greenpackindiapvtltd/" class="footer-area8__social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/greenpack-india/" target="_blank" class="footer-area8__social-link"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/greenpack_india/" target="_blank" class="footer-area8__social-link"><i class="fa-brands fa-instagram"></i></a>
               </div>
             </div>
-            <!-- <div class="col-lg-3 col-md-6"></div> -->
-            <!-- Links 1 -->
             <div class="col-lg-2 col-md-6 footer-area8__column">
               <h4 class="footer-area8__heading">Locations</h4>
-              <ul class="footer-area8__list wow fadeInUp" data-wow-delay="0.3s" >
-                <li class="footer-area8__item"><a href="#">Varanasi – Raw Material Hub</a></li>
-                <li class="footer-area8__item"><a href="#">Ahmedabad – Coating & Printing Unit</a></li>
-                <li class="footer-area8__item"><a href="#">Noida – Conversion Unit</a></li>
+              <ul class="footer-area8__list wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <li class="footer-area8__item"><a href="varanasi_Infra.html">Varanasi – Raw Material Hub</a></li>
+                <li class="footer-area8__item"><a href="ahmadabad_infra.html">Ahmedabad – Coating & Printing Unit</a></li>
+                <li class="footer-area8__item"><a href="noida_infra.html">Noida – Conversion Unit</a></li>
               </ul>
             </div>
 
@@ -1188,40 +864,16 @@
                 <li class="footer-area8__item"><a href="WPE_BLP.html">When Paper Was Expected to Behave Like Plastic</a></li>
               </ul>
             </div>
-
-            <!-- App -->
-            <!-- <div class="col-lg-3 col-md-6 footer-area8__column">
-              <h4 class="footer-area8__heading">Download our App</h4>
-               <div class="footer-area8__social d-flex gap-2">
-                <a href="#" class="footer-area8__social-link">Fb</a>
-                <a href="#" class="footer-area8__social-link">In</a>
-                <a href="#" class="footer-area8__social-link">X</a>
-                <a href="#" class="footer-area8__social-link">D</a>
-              </div>
-            </div> -->
           </div>
-<div class="connect-area7__bottom d-flex flex-column flex-md-row justify-content-between text-white">
-           <h4 class="section__subtitle"><span></span>Lorem, ipsum dolor</h4>
-            <!-- <div class="connect-area7__social d-flex">
-              <a href="#">Facebook</a>
-              <a href="#">Twitter</a>
-              <a href="#">Instagram</a>
-              <a href="#">Dribbble</a>
-            </div> -->
+        <div class="connect-area7__bottom d-flex flex-column flex-md-row justify-content-between text-white">
+           <h4 class="section__subtitle"><span></span>Green Pack India</h4>
+          
             <div class="d-flex justify-content-between align-items-center footer-bottom-right">
               <span class="footer-span">Copyright © 2026 . All Rights Reserved</span>
-             <!-- <div class="connect-area7__social d-flex">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of use</a>
-              
-            </div> -->
+          
             </div>
           </div>
-          <!-- <div class="footer-area8__bottom text-center">
-            <p class="footer-area8__copy mb-0">
-            All rights reserved
-            </p>
-          </div> -->
+         
         </div>
       </footer>
     </div>
@@ -1244,8 +896,105 @@
     <script src="assets/vandor/nice-select/nice-select.js"></script>
   <script src="assets/vandor/wow/wow.min.js"></script>
   <script src="assets/vandor/common-js/common.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="assets/js/main.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
+   <script>
+(function () {
+  const thumbnail   = document.getElementById('videoThumbnail');
+  const backdrop    = document.getElementById('videoModal');
+  const modalVideo  = document.getElementById('modalVideo');
+  const modalClose  = document.getElementById('modalClose');
+  const btnPlay     = document.getElementById('ctrlPlayPause');
+  const progress    = document.getElementById('ctrlProgress');
+  const timeEl      = document.getElementById('ctrlTime');
+  const btnMute     = document.getElementById('ctrlMute');
+  const iconSound   = document.getElementById('iconSound');
+  const iconSilent  = document.getElementById('iconSilent');
+  const volSlider   = document.getElementById('ctrlVolume');
+  const btnFullscr  = document.getElementById('ctrlFullscreen');
+
+  /* Move modal outside #smooth-wrapper */
+  if (backdrop && backdrop.parentNode !== document.body) {
+    document.body.appendChild(backdrop);
+  }
+
+  function openModal() {
+    backdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (window.ScrollSmoother && ScrollSmoother.get()) ScrollSmoother.get().paused(true);
+    modalVideo.currentTime = 0;
+    modalVideo.volume = 1;
+    modalVideo.muted  = false;
+    volSlider.value   = 1;
+    updateVolIcons();
+    modalVideo.play().then(() => btnPlay.classList.add('playing'))
+      .catch(() => btnPlay.classList.remove('playing'));
+  }
+
+  function closeModal() {
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (window.ScrollSmoother && ScrollSmoother.get()) ScrollSmoother.get().paused(false);
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+    btnPlay.classList.remove('playing');
+  }
+
+  thumbnail.addEventListener('click', openModal);
+  thumbnail.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
+  });
+  modalClose.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  function togglePlay() {
+    if (modalVideo.paused) { modalVideo.play(); btnPlay.classList.add('playing'); }
+    else { modalVideo.pause(); btnPlay.classList.remove('playing'); }
+  }
+  btnPlay.addEventListener('click', togglePlay);
+  modalVideo.addEventListener('click', togglePlay);
+  modalVideo.addEventListener('ended', () => btnPlay.classList.remove('playing'));
+
+  function fmt(s) {
+    if (isNaN(s)) return '0:00';
+    return `${Math.floor(s/60)}:${Math.floor(s%60).toString().padStart(2,'0')}`;
+  }
+  modalVideo.addEventListener('timeupdate', () => {
+    if (!modalVideo.duration) return;
+    const pct = (modalVideo.currentTime / modalVideo.duration) * 100;
+    progress.value = pct;
+    progress.style.background = `linear-gradient(to right,#fff ${pct}%,rgba(255,255,255,0.3) ${pct}%)`;
+    timeEl.textContent = `${fmt(modalVideo.currentTime)} / ${fmt(modalVideo.duration)}`;
+  });
+  progress.addEventListener('input', () => {
+    if (modalVideo.duration) modalVideo.currentTime = (progress.value / 100) * modalVideo.duration;
+  });
+
+  volSlider.addEventListener('input', () => {
+    modalVideo.volume = volSlider.value;
+    modalVideo.muted  = (volSlider.value == 0);
+    updateVolIcons();
+  });
+  btnMute.addEventListener('click', () => {
+    modalVideo.muted = !modalVideo.muted;
+    volSlider.value  = modalVideo.muted ? 0 : modalVideo.volume || 1;
+    updateVolIcons();
+  });
+  function updateVolIcons() {
+    const m = modalVideo.muted || modalVideo.volume === 0;
+    iconSound.style.display  = m ? 'none'  : 'block';
+    iconSilent.style.display = m ? 'block' : 'none';
+  }
+
+  btnFullscr.addEventListener('click', () => {
+    const el = document.getElementById('videoModalBox');
+    if (!document.fullscreenElement) el.requestFullscreen?.();
+    else document.exitFullscreen?.();
+  });
+})();
+</script>
     <script>
         const swiper_01 = new Swiper('.product-slider', {
             loop: true,
@@ -1327,8 +1076,22 @@ ScrollTrigger.matchMedia({
 
 });
 </script>
-
-
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".mute-btn");
+  buttons.forEach(function(btn) {
+    btn.addEventListener("click", function () {
+      const video = btn.closest(".tcard-video-wrap").querySelector("video");
+      if (!video) return;
+      video.muted = !video.muted;
+      video.play();
+      btn.innerHTML = video.muted
+        ? '<i class="fa fa-volume-mute"></i>'
+        : '<i class="fa fa-volume-up"></i>';
+    });
+  });
+});
+</script>
 </body>
 
 </html>
