@@ -3216,7 +3216,10 @@ section {
   padding: 0px 10px;
   align-items: center;
   border-radius: 0px;
-  background: var(--white);
+  /* background: var(--white); */
+          backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(235, 235, 235, 0.58) !important;
   justify-content: space-between;
   /* margin-top: 30px; */
 }
@@ -3381,10 +3384,10 @@ section {
 .header-3 .header__nav .main-menu {
   padding: 10px;
   border-radius: 500px;
-  border: 1px solid rgba(255, 255, 255, 0.644);
+  /* border: 1px solid rgba(255, 255, 255, 0.644);
  background: transparent;
     -webkit-backdrop-filter: blur(10.25px);
-  backdrop-filter: blur(10.25px);
+  backdrop-filter: blur(10.25px); */
 }
 .header-3 .main-menu li a {
   padding: 10px 26.4px;
@@ -27748,3 +27751,87 @@ max-width: 100%;
 .gp-feature-module:nth-child(3) { animation-delay: 0.3s; }
 .gp-feature-module:nth-child(4) { animation-delay: 0.4s; }
 .gp-feature-module:nth-child(5) { animation-delay: 0.5s; }
+
+
+/* ===== PB Banner Slider - Fully Scoped ===== */
+.pb-slider-container {
+  position: relative;
+  width: 100%;
+}
+
+#pbBannerSwiper {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#pbBannerSwiper .swiper-slide img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.pb-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+  backdrop-filter: blur(4px);
+  user-select: none;
+}
+
+.pb-nav-prev { left: 10px; }
+.pb-nav-next { right: 10px; }
+
+.pb-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 10;
+}
+
+/* Scoped bullet styles - won't affect other sliders */
+.pb-dots .pb-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.pb-dots .pb-bullet.pb-bullet-active {
+  background: #fff;
+  width: 24px;
+  border-radius: 4px;
+}
+.normal-logo{
+      max-width: 250px;
+    height: 85px;
+    object-fit: contain;
+}
+@media screen and (max-width:600px) {
+  .normal-logo {
+    max-width: 250px;
+    height: 45px !important;
+    object-fit: contain;
+}
+}

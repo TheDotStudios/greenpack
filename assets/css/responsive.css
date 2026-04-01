@@ -7,7 +7,11 @@
     gap: 20px;
     align-items: start;
 }
-
+.normal-logo {
+    max-width: 220px !important;
+    height: 80px !important;
+    object-fit: contain;
+}
 .about-section-wrapper .section-heading .title {
     position: relative;
     z-index: 2;
@@ -46,8 +50,14 @@
     margin-bottom: 40px;
 }
 .intro-area4__content-title {
-        font-size: 60px !important;
+        /* font-size: 60px !important; */
+        font-size: 48px !important;
     }
+    .gp-item {
+    min-width: 100%;
+    width: 180px  !important;
+    flex-shrink: 0;
+}
     .cup-image{
         height: 300px !important;
         width: 270px !important;
