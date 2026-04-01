@@ -680,7 +680,8 @@ h6 {
 }
 @media (max-width: 575px) {
   .offset-logo {
-    width: 95px;
+    /* width: 95px; */
+    width: 160px;
   }
 }
 .offset-logo img {
@@ -20090,6 +20091,7 @@ max-width: 100%;
 .footer-area8__logo {
   color: #fff;
   font-size: 1.5rem;
+  max-width: 270px;
   margin-bottom: 20px;
   /* margin-bottom: 0px; */
 }
