@@ -127,8 +127,7 @@
   <div id="smooth-wrapper">
     <div id="smooth-content">
 
-      <!-- Header area start -->
-      <header class="header-area header-3">
+   <header class="header-area header-3">
         <div class="header-main">
           <div class="container rr-container-1800">
             <div class="header-area__inner">
@@ -265,7 +264,7 @@
                       </a>
               </div>
             </div>
-            <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+            <div class="col-xl-6 col-lg-6 justify-content-center d-flex align-items-center wow fadeInUp" data-wow-delay=".3s">
               <div class="row gap-2 pt-100px d-flex justify-content-center">
           
               <div class="col-xl-12 col-lg-12">
@@ -278,7 +277,10 @@
             position: relative;
             /* padding: 60px 0; */
         }
-
+.product-banner-image img{
+  height: 300px;
+  object-fit: cover;
+}
         .product-slider {
             overflow: hidden !important;
             /* padding: 0px 45px; */
@@ -433,75 +435,99 @@
                 transform: scale(0.7);
             }
         }
+        /* ===== GP Banner Slider - Pure CSS/JS, No Swiper ===== */
+.gp-banner-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gp-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.gp-item {
+  min-width: 100%;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.gp-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.gp-btn {
+  position: absolute;
+  top: 50%;
+  display: none;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  padding: 0;
+}
+
+.gp-btn:hover { background: rgba(0,0,0,0.7); }
+.gp-btn-prev { left: 12px; }
+.gp-btn-next { right: 12px; }
+
+.gp-dots {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  z-index: 10;
+}
+
+.gp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.gp-dot.gp-dot-active {
+  background: #fff;
+  width: 24px;
+  border-radius: 4px;
+}
     </style>
-  <div class="product-slider-container">
-        <div class="swiper product-slider">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 - Indigo -->
-                <div class="swiper-slide">
-                    <div class="product-slide">
-                        <div class="product-content">
-                            <div class="product-images">
-                                <img src="assets/imgs/green-banner-01-n-removebg-preview.png" alt="Indigo Cup" class="cup-image">
-                            </div>
-                            <h2 class="brand-name">Ripple Wall Paper Cups</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 - Chaayos -->
-                <div class="swiper-slide">
-                    <div class="product-slide">
-                        <div class="product-content">
-                            <div class="product-images">
-                               <img src="assets/imgs/green-banner-02-n-removebg-preview.png" alt="Indigo Cup" class="cup-image">
-                            </div>
-                             <h2 class="brand-name">Double Wall Paper Cups</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 - Gourmet -->
-                <div class="swiper-slide">
-                    <div class="product-slide">
-                        <div class="product-content">
-                            <div class="product-images">
-                                <img src="assets/imgs/green-banner-03-n-removebg-preview.png" alt="Indigo Cup" class="cup-image">
-                            </div>
-                             <h2 class="brand-name">Single Wall Paper Cups</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 4 - Custom -->
-                <div class="swiper-slide">
-                    <div class="product-slide">
-                        <div class="product-content">
-                            <div class="product-images">
-                              <img src="assets/imgs/green-banner-04-n-removebg-preview.png" alt="Indigo Cup" class="cup-image">
-                            </div>
-                             <h2 class="brand-name">Food Bowls</h2>
-                        </div>
-                    </div>
-                </div>
-
-
-                 <div class="swiper-slide">
-                    <div class="product-slide">
-                        <div class="product-content">
-                            <div class="product-images">
-                              <img src="assets/imgs/Paper_Lids.png" alt="Indigo Cup" class="cup-image">
-                            </div>
-                             <h2 class="brand-name">Paper Lids</h2>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
+<div class="gp-banner-wrap">
+  <div class="gp-track" id="gpTrack">
+    <div class="gp-item"><img src="assets/imgs/Final for Double Wall Paper Cup with Lid.jpg" alt="Banner 1"></div>
+    <div class="gp-item"><img src="assets/imgs/Colourful paper cups.jpg" alt="Banner 2"></div>
+    <div class="gp-item"><img src="assets/imgs/Close-up of a shopper customer_s hand.jpg" alt="Banner 3"></div>
+    <!-- Add more gp-item divs here for more images -->
+  </div>
+  <button class="gp-btn gp-btn-prev" id="gpPrev">&#8249;</button>
+  <button class="gp-btn gp-btn-next" id="gpNext">&#8250;</button>
+  <div class="gp-dots" style="display: none;" id="gpDots"></div>
+</div>
 
    
               </div>
@@ -2209,6 +2235,72 @@ We have been in the paper industry for more than 10 years, and we have been work
       });
     });
   });
+  </script>
+  <script>
+    (function () {
+  var track = document.getElementById('gpTrack');
+  var dotsWrap = document.getElementById('gpDots');
+  var items = track ? track.querySelectorAll('.gp-item') : [];
+  var total = items.length;
+  var current = 0;
+  var autoTimer;
+
+  if (!track || total === 0) return;
+
+  // Build dots
+  for (var i = 0; i < total; i++) {
+    var dot = document.createElement('button');
+    dot.className = 'gp-dot' + (i === 0 ? ' gp-dot-active' : '');
+    dot.setAttribute('data-i', i);
+    dot.addEventListener('click', function () {
+      goTo(parseInt(this.getAttribute('data-i')));
+    });
+    dotsWrap.appendChild(dot);
+  }
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    var dots = dotsWrap.querySelectorAll('.gp-dot');
+    dots.forEach(function (d, i) {
+      d.classList.toggle('gp-dot-active', i === current);
+    });
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  document.getElementById('gpNext').addEventListener('click', function () {
+    next(); resetTimer();
+  });
+  document.getElementById('gpPrev').addEventListener('click', function () {
+    prev(); resetTimer();
+  });
+
+  // ===== AUTO SLIDE =====
+  function startTimer() { autoTimer = setInterval(next, 3000); }
+  function resetTimer() { clearInterval(autoTimer); startTimer(); }
+  startTimer();
+
+  // ===== TOUCH SLIDE =====
+  var touchStartX = 0;
+  var touchEndX = 0;
+
+  track.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', function (e) {
+    touchEndX = e.changedTouches[0].screenX;
+    var diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {       // min 50px swipe threshold
+      if (diff > 0) { next(); }      // swipe left → next
+      else { prev(); }               // swipe right → prev
+      resetTimer();
+    }
+  }, { passive: true });
+
+})();
   </script>
 </body>
 
