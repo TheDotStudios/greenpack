@@ -27828,6 +27828,7 @@ max-width: 100%;
 .normal-logo{
       max-width: 250px;
     height: 85px;
+  padding-left: 10px;
     object-fit: contain;
 }
 @media screen and (max-width:600px) {
