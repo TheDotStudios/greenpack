@@ -81,6 +81,7 @@
   .work-section__item {
     min-width: 100%;
     width: 200px;
+    padding: 0px 18px 25px 25px !important;
     margin-bottom: 0 !important;
     flex-shrink: 0;
     box-sizing: border-box;
