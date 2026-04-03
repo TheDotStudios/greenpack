@@ -482,8 +482,12 @@
   .gallery-col { position: static; }
   .gallery-stage { max-width: 480px; }
 }
-@media (max-width: 640px) {
-  
+@media (max-width: 600px) {
+  .breadcrumb {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 0px;
+}
   .product-title { font-size: 28px; }
   .box-grid, .fb-grid { grid-template-columns: 1fr; }
   .selects-row { flex-direction: column; }
@@ -666,8 +670,8 @@
 
 
 
-  <div class="container rr-container-1350 pt-150px overflow-hidden pb-150px">
-         <div class="container pb-100px">
+  <div class="container rr-container-1350 pt-150px overflow-hidden pb-150px sm-pt-100px sm-pb-70px">
+         <div class="container pb-100px sm-pt-50px sm-pb-40px">
         <!-- Breadcrumb -->
         <div class="breadcrumb">
             <a href="#">HOME</a> / <a href="#">CUPS & CUP ACCESSORIES</a></span>
@@ -775,7 +779,7 @@
 
       <hr class="divider">
 <!-- end page-wrapper -->
-<div class="container pt-100px">
+<div class="container pt-100px sm-pt-20px">
         <!-- ─── Tabs ─── -->
       <div class="tabs-block">
         <div class="tab-nav" role="tablist" id="view-specifications">

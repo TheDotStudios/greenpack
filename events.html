@@ -19,7 +19,13 @@
 
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
+  
   <style>
+     @media screen and (max-width: 600px) {
+    .main-breadcumb__wrap {
+        padding: 150px 0 70px !important;
+    }
+}
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -263,7 +269,7 @@
         <!-- Section Title -->
         <div class="row align-items-center justify-content-center">
           <div class="col-md-8">
-            <div class="section-title-2__wrapper mb-5">
+            <div class="section-title-2__wrapper mb-5 sm-mb-10px">
               <h2 class="title text-center">
                 Connecting With Industry Leaders Through Global Packaging Events and Trade Fairs
               </h2>
@@ -272,7 +278,7 @@
         </div>
 
         <!-- Filter Tabs -->
-        <div class="filters-box">
+        <div class="filters-box sm-pt-20px">
             <div class="filters">
                 <ul class="filter-tabs">
                     <li class="filter-tab active" data-filter="all">All Events</li>
