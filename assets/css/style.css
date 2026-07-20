@@ -3072,7 +3072,7 @@ section {
   line-height: normal;
 }
 .product-card__image {
-  background: #f0ebe5;
+  /* background: #f0ebe5; */
   border-radius: 16px;
   padding: 30px;
   display: flex;
@@ -7804,7 +7804,9 @@ footer.footer-5-area {
 .identity-2__item {
   display: grid;
   padding: 45px 75px;
-  grid-template-columns: 200px 400px 1fr;
+  /* grid-template-columns: 200px 400px 1fr; */
+  /* grid-template-columns: 200px 800px 1fr; */
+  grid-template-columns: 400px 800px 1fr;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   /* background: linear-gradient(180deg, var(--primary) 0%, #191919 100%); */
   background: #f3ece6;
@@ -7848,14 +7850,16 @@ footer.footer-5-area {
   transform: translateY(0);
 }
 .identity-2__item .number span {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 30px;
+  /* font-size: 20px; */
+  font-size: 52px;
+  font-weight: 600;
+  /* line-height: 30px; */
   color: var(--black);
   font-family: var(--font_instr);
 }
 .identity-2__item .text .title {
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: 36px;
   font-weight: 600;
   line-height: 40px;
   color: var(--black);
@@ -7870,7 +7874,8 @@ footer.footer-5-area {
   color: #3c3c3c;
   font-size: 18px;
   font-weight: 400;
-  max-width: 624px;
+  /* max-width: 624px; */
+  max-width: 1200px;
   margin-top: 30px;
   line-height: 28px;
   font-family: var(--font_instr);
@@ -25644,69 +25649,57 @@ max-width: 100%;
     margin-top: 15px;
 }
 .contact-area .contact-form-card {
-  padding: 90px 60px;
+  /* padding: 90px 60px; */
+  padding: 60px 60px;
   border-radius: 10px;
   position: relative;
   z-index: 4;
   margin-top: 8px;
   border-radius: 8px;
-  /* background: rgba(0, 0, 0, 0.1); */
-  background: #101010;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  /* box-shadow: 0 12px 40px rgba(3, 3, 3, 0.45); */
-  -webkit-backdrop-filter: blur(25px);
-          backdrop-filter: blur(25px);
+  background: #ffffff;                        /* was #101010 */
+  border: 1px solid rgba(16, 16, 16, 0.08);    /* subtle border instead of white */
+  box-shadow: 0 12px 40px rgba(16, 24, 40, 0.08); /* soft shadow to lift it off page */
 }
+
 .contact-area .contact-form {
   position: relative;
-  color: var(--white);
-  /* Circular SEND button */
+  color: #101010;   /* was var(--white) */
 }
-.contact-area .contact-form__top {
-  margin-bottom: 18px;
-}
+
 .contact-area .contact-form__top .contact-form__input {
   width: 100%;
   padding: 12px 14px;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--white);
+  border-bottom: 1px solid rgba(16, 16, 16, 0.15);  /* was rgba(255,255,255,.12) */
+  color: #101010;                                    /* was var(--white) */
   outline: none;
   font-size: 14px;
 }
-.contact-area .contact-form__top .contact-form__input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.55);
-}
 .contact-area .contact-form__top .contact-form__input::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(16, 16, 16, 0.5);   /* was rgba(255,255,255,.55) */
 }
 .contact-area .contact-form__top .contact-form__input:focus {
-  border-bottom-color: rgba(255, 255, 255, 0.22);
+  border-bottom-color: rgba(16, 16, 16, 0.4);
 }
-.contact-area .contact-form__middle {
-  margin: 22px 0;
-}
+
 .contact-area .contact-form__middle .contact-form__textarea {
   width: 100%;
   min-height: 120px;
   padding: 18px 14px;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--white);
+  border-bottom: 1px solid rgba(16, 16, 16, 0.15);
+  color: #101010;
   outline: none;
   font-size: 14px;
   resize: vertical;
 }
-.contact-area .contact-form__middle .contact-form__textarea::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.55);
-}
 .contact-area .contact-form__middle .contact-form__textarea::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(16, 16, 16, 0.5);
 }
 .contact-area .contact-form__middle .contact-form__textarea:focus {
-  border-bottom-color: rgba(255, 255, 255, 0.22);
+  border-bottom-color: rgba(16, 16, 16, 0.4);
 }
 .contact-area .contact-form__footer {
   display: flex;
