@@ -3072,7 +3072,8 @@ section {
   line-height: normal;
 }
 .product-card__image {
-  /* background: #f0ebe5; */
+  /* background: #f0ebe5;
+   */
   border-radius: 16px;
   padding: 30px;
   display: flex;
@@ -25915,29 +25916,53 @@ max-width: 100%;
       
 
 
-        /* Filter Tabs */
-        .filters-box {
-            position: relative;
-            margin-bottom: 51px;
-        }
+      .filters-box {
+    min-width: 0;      /* critical if this is inside a flex/grid parent */
+    width: 100%;
+    max-width: 100%;
+}
 
-        .filters {
-            overflow-x: auto;
-            overflow-y: hidden;
-            scrollbar-width: none;
-        }
+.filters-box {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+}
 
-        .filters::-webkit-scrollbar {
-            display: none;
-        }
+.filters {
+    min-width: 0 !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;   /* tells the browser this element handles horizontal swipe */
 
-        .filter-tabs {
-            display: flex;
-            gap: 11px;
-            /* padding-top: 35px; */
-            list-style: none;
-        }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 
+.filters::-webkit-scrollbar {
+    display: none !important;
+}
+
+.filter-tabs {
+    width: max-content !important;
+    display: flex;
+    gap: 11px;
+    list-style: none;
+}
+.filters {
+    cursor: grab;
+}
+.filters.dragging {
+    cursor: grabbing;
+    user-select: none; /* stop text getting selected while dragging */
+}
+.filter-tabs {
+    width: max-content; /* let it grow past the container so overflow triggers */
+    display: flex;
+    gap: 11px;
+    list-style: none;
+}
         .filter-tab {
             position: relative;
             display: inline-flex;
